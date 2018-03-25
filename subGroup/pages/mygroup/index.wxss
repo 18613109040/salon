@@ -1,0 +1,96 @@
+/* 我的团购*/
+/*头部  */
+.big_box {
+  background: #f3f3f3;
+}
+
+.header_nav {
+  display: flex;
+  padding: 38rpx 0;
+  background: #fff;
+}
+.change{
+border-bottom: 1px solid #877FD4 ;
+color: #877FD4;
+}
+.nav_li_txt{
+   color: #4a4a4a;
+   border: none;
+}
+
+.nav_li {
+  width: 42%;
+  font-size: 26rpx;
+  color: #4a4a4a;
+  text-align: center;
+  box-sizing: border-box;
+}
+.nav_li:nth-child(2){
+   border-right: 1px solid #ddd; 
+   border-left: 1px solid #ddd; 
+  
+}
+.bod_none {
+  border: none;
+}
+/*内容  */
+.content{
+  margin-top: 20rpx;
+  background-color: #fff;
+  padding: 0 28rpx;
+  border-bottom: 2rpx solid #ccc;
+}
+.cont_top{
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  padding: 28rpx 0 30rpx 0;
+}
+.one{
+  color: #ccc;
+}
+.two{
+  color: #da2b36;
+}
+.hea_img{
+  width: 100rpx;
+  height: 100rpx;
+  padding-right: 22rpx;
+}
+.cont_word{
+  color: 4A4A4A;
+  font-size: 28rpx;
+  display: inline-block;
+}
+.cont_money{
+  color: #f9be41;
+  font-size: 32rpx;
+}
+/*按钮  */
+.btn{
+  padding:0 0 30rpx 500rpx;
+}
+.btn_word{
+width: 200rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #fff;
+  background-color: #877FD4 ;
+  text-align: center;
+  font-size: 26rpx;
+  border-radius: 10rpx;
+}
+
+/*拼团成功  */
+.two_suc{
+  color: #877fd4;
+}
+.check{
+  font-size: 26rpx;
+  color: #ccc;
+  border-bottom: 2rpx solid #ccc;
+}
+.btn_check{
+  padding-left: 640rpx;
+  padding-bottom: 30rpx;
+}

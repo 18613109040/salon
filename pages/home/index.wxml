@@ -1,0 +1,55 @@
+<view class='home_container'>
+  <view class="swiper">
+    <swiper class='swiper_container' autoplay="{{true}}" indicator-active-color="#FD678F" circular='{{true}}' indicator-dots="{{true}}">
+      <block wx:for="{{shopInfo.shopImage}}" wx:key='index'>
+        <swiper-item class="swiper_container_item">
+          <image class='swiper_item_img' bindtap='photo_album' src="{{item.imgUrl}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <view class='menu'>
+    <view wx:for="{{title}}" wx:key="{{index}}" class='{{index==title.length-1?"menu-item ":"menu-item border"}}'>
+      <navigator url='{{item.url}}' hover-class="none" open-type="{{item.openType}}">
+        <view class='name'>{{item.name}}</view>
+        <view class='ailas'>{{item.ailas}}</view>
+      </navigator>
+    </view>
+  </view>
+  <component-shopmap shopInfo="{{shopInfo}}" />
+  <view class='list'>
+    <view class='list-thumb'>
+      <text class='chinese-name'>预约名师</text>
+      <text class='englise-name'>Human ingenuity</text>
+    </view>
+    <view class='list-line' bindtap='openhuman'>
+      查看更多
+    </view>
+  </view>
+  <view class="scroll-view_card">
+    <scroll-view scroll-x>
+      <view class='business_card'>
+        <view class='business_card_item'  bindtap='openman'  data-id='{{item.serverId}}' wx:for="{{appointmentTeacher}}" wx:key="{{index}}">
+          <view class='business_image'>
+            <image src="{{item.imgUrl}}"></image>
+          </view>
+          <view class='business_name'>{{item.serverName}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class='list'>
+    <view class='list-thumb'>
+      <text class='chinese-name'>热门套餐</text>
+      <text class='englise-name'>Hot packages</text>
+    </view>
+    <navigator url='/subHotPackage/pages/home/index' hover-class="none" class='list-line'>
+      查看更多
+    </navigator>
+  </view>
+  <view wx:for="{{hotRecommendPackage}}" wx:key="{{index}}" class='margin-package-item'>
+    <component-hotpackitem data="{{item}}" />
+  </view>
+
+</view>

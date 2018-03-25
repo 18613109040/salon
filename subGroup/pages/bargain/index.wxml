@@ -1,0 +1,8 @@
+<!--砍价空白页-->
+<view class='seckill'>
+    <image class='kill_one' src='../../../images/zimg/header.png'></image>
+<view class='word_box'>
+    <image class='kill_two' src='../../../images/zimg/butterfly_gray@3x.png'></image>
+    <view class='word'>目前没有砍价活动</view>
+</view>
+</view>

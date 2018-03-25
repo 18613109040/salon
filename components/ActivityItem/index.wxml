@@ -1,0 +1,17 @@
+<view class='activity-item' bindtap='toActive'>
+  <view class='activity-item-image'>
+    <image src='{{activeData.image}}'></image>
+  </view>
+  <view class='title'>【{{activeData.name}}】</view>
+  <view class='activity-footer'>
+    <view class='activity-message'>
+      <label class='iconfont icon-speaker'></label>
+      <text class='number'> {{activeData.number}}个 </text>
+      <text>{{activeData.name}}活动进行中</text>
+    </view>
+    <view class='activity-arrow'>
+      <text class='text-ac'>更多{{activeData.name}}活动</text>
+      <label class='iconfont icon-arrow'></label>
+    </view>
+  </view>
+</view>

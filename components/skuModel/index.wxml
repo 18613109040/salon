@@ -1,0 +1,37 @@
+<!-- 单独购买弹框 -->
+<view  wx:if='{{showModel}}'>
+  <view class='Separatepurchase ' bindtap="onTouchstart"></view>
+  <view class='Separatepurchase-box' >
+    <view class='Separatepurchase-one clearfix'>
+      <view class='Separatepurchase-one-a'>
+        <image class='Separatepurchase-one-a-img' src='{{image}}'></image>
+      </view>
+      <view class='Separatepurchase-one-b'>
+        <view class='Separatepurchase-one-b-top'>
+          <text class='Separatepurchase-one-txt1'>{{packageName}}</text>
+          <text class='Separatepurchase-one-txt2'>¥{{price}}</text>
+        </view>
+        <view class='Separatepurchase-one-b-bottom'>{{skuValues}}</view>
+      </view>
+      <view class='Separatepurchase-one-c' bindtap='onTouchstart'>
+        <label class='Separatepurchase-one-c-img icon-colose iconfont' ></label> 
+      </view>
+    </view>
+    <view class='Separatepurchase-three clearfix' wx:for="{{packageSku}}" wx:for-item="item" wx:key="index" wx:for-index="index">
+      <view class='Separatepurchase-three-top'>
+        {{item.title}}
+      </view>
+      <view class='Separatepurchase-three-center'>
+        <view class='btn {{subItem.select?"active":subItem.ishas?"sku-name":"sku-name-nohas"}}' bindtap='onChangeSku' wx:for="{{item.value}}" wx:key="idx" wx:for-index="idx" wx:for-item="subItem" data-id="{{index}}-{{idx}}" data-item="{{subItem}}">
+          <text>{{subItem.name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='Separatepurchase-four' wx:if="{{selectShop}}" bindtap="clickEnter">
+      确定购买
+    </view>
+    <view wx:else class='nochange-sku'>
+      确定购买
+    </view>
+  </view>
+</view>

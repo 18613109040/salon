@@ -1,0 +1,73 @@
+<view class="big_box">
+  <view class='title'>
+    <view class='why'>
+      <text>退款原因 </text>
+    </view>
+    <view class='box_min' bindtap="onShowCall">
+      <text class='why_txt'>{{refundName||"请选择退款原因"}}</text>
+      <image src='../../../images/drop down_gray@2x.png' class='img_donw'></image>
+    </view>
+  </view>
+  <view class='money_box'>
+    <view>
+      <text class='money_one'>退款金额</text>
+      <text class='money_tow'>¥{{money}}</text>
+    </view>
+    <view>
+      <text class='money_therr' space="true" decode='true'>最多能退&nbsp;&nbsp;¥{{allmoney}}</text>
+    </view>
+  </view>
+
+  <view class='quanma_box' wx:for="{{refundData}}" wx:key="{{index}}">
+    <view>
+      <text class='text_quanma '>券</text>
+      <text class='text_quanma quan'>码</text>
+    </view>
+    <view class='quanma'>
+      <text>{{item.pickCode}}</text>
+    </view>
+    <view class='yes'>
+      <icon type='success' color="{{item.select?'#877FD4':'#ddd'}}" bindtap='clickTab' data-index='{{index}}' wx:if="{{item.pickCodeStatus==0}}"></icon>
+      <text wx:else>不可退</text>
+    </view>
+  </view>
+  <view class='apply'>
+    <text>申请说明</text>
+  </view>
+  
+  
+  <view>
+    <textarea class='txt_inpt' maxlength="100" value='{{refundExplain}}' bindinput='clikInput' placeholder='请你详细填写申请说明，字数限制100字以内'></textarea>
+  </view>
+  <view class='call'>
+    <text>联系电话 13588888888</text>
+  </view>
+</view>
+<view class='btn' bindtap='postData' wx:if="{{money>0&&refundName!=''}}" >
+  <text>提交</text>
+</view>
+<view class='btn-no' wx:else>
+  <text>提交</text>
+</view>
+<!-- <view wx:if="{{sheetAction==true}}" >
+  <view class="drawer "bindtap="closeMaskAnimation" ></view>
+  <view class='drawer_box'animation="{{animationData}}" > -->
+  <view wx:if="{{sheetAction==true}}" bindtap="closeMaskAnimation"> 
+  <view class="drawer"></view>
+  <view class='drawer_box' animation="{{animationData}}">
+    <view bindtap='selectRedio' >
+      <view class='drawer-tetx' wx:for='{{refundList}}' wx:key="{{index}}" data-index='{{index}}' bindtap='clickchange'>
+        <view class="drawer-title">
+          <text class="drawer-top">{{item.value}}</text>
+        </view>
+        <!-- 勾选  -->
+        <view class="drawer-img" >
+           <label class="">
+            <icon wx:if="{{chooseIndex==index}}" type="success" size="20" color="#FF7920" />
+            <icon wx:else type="circle" size="20" />
+          </label> 
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

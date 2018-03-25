@@ -1,0 +1,62 @@
+@keyframes blinking{
+  0% {color: #9B9B9B}
+
+  100% {color:#FD678F}
+
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 32rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-speaker::after{
+  font-size: 30rpx;
+  content: '\e61b';
+  color: #9B9B9B;
+  animation:blinking 2s infinite;
+}
+.icon-arrow::after{
+  font-size: 25rpx;
+  content: '\e624'
+}
+.activity-item {
+ margin: 0rpx 20rpx;
+ background: #fff;
+ border-radius: 16rpx;
+}
+.activity-item-image image{
+  width: 100%;
+  height: 260rpx;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}
+.activity-item .title{
+  color: #4A4A4A ;
+  font-size: 32rpx;
+  margin-top: 10rpx;
+}
+.activity-footer{
+   padding: 20rpx; 
+   display: flex;
+   align-items: center;
+}
+
+.activity-message{
+  flex: 1;
+  font-size: 24rpx;
+}
+.activity-message .number{
+  color: #4A90E2;
+}
+.activity-arrow .text-ac{
+  margin-right: 10rpx;
+}
+.activity-arrow{
+  color: #FD678F;
+  font-size: 26rpx;
+  flex-basis: 200rpx;
+  text-align: end;
+}

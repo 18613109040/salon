@@ -1,0 +1,53 @@
+.address1{
+  background: #ECDEF8 ;
+  padding: 40rpx;
+  display: flex;
+  align-items: center;
+}
+.address2{
+  background: #fff;
+  padding: 40rpx;
+  display: flex;
+  align-items: center;
+}
+
+ .shop-name{
+  font-size: 36rpx;
+  color: #000000;
+}
+.shop-address{
+  font-size: 28rpx;
+color:#4A4A4A ;
+margin-top: 10rpx;
+text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+}
+.shop-distance{
+  font-size: 28rpx;
+  color: #4A90E2;
+  margin-left: 20rpx;
+}
+.shop-info{
+  flex: 1;
+}
+ .navmap1{
+  flex-basis: 100rpx;
+  font-size: 22rpx;
+  text-align: center;
+  color: #BA9BD8;
+}
+ .navmap2{
+  flex-basis: 100rpx;
+  font-size: 22rpx;
+  text-align: center;
+  color: #5F57B4;
+}
+ .navmap1 image{
+  width: 54rpx;
+  height: 54rpx;
+}
+.navmap2 image{
+  width: 54rpx;
+  height: 54rpx;
+}

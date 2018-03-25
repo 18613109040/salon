@@ -1,0 +1,105 @@
+<form bindsubmit="formSubmit" report-submit="{{true}}">
+  <view class='bespoke'>
+    <view class='bespoke-header'>
+      <view class='header-left'>
+        <image class='img1' src='{{appointmentTeacherdetail.imgUrl}}'></image>
+        <view>{{appointmentTeacherdetail.serverName}}</view>
+        <view class='header-text1'>（{{appointmentTeacherdetail.alias}}）</view>
+      </view>
+      <view class='header-right' bindtap='onpendrawer' wx:if="{{packageName==''}}">
+        <view class='header-text2'>服务</view>
+        <view class='header-text1'>(必填)</view>
+        <image class='img2' src='../../../images/list_purple@2x.png'></image>
+      </view>
+      <view wx:else class='header-right' bindtap='onpendrawer'>
+        <view class='header-text2'>{{packageName}}</view>
+        <image class='img2' src='../../../images/list_purple@2x.png'></image>
+      </view>
+    </view>
+    <view class='bespoke-centont'>
+      <view class="section">
+        <view class="section__title">您的称呼</view>
+        <input class="section__title-inpurt" placeholder="请输入您的称呼" name="buyerNickName"/>
+      </view>
+      <view class="section_1">
+        <view class="section__title">手机号码</view>
+        <view class='section-text1'>
+
+          <input value='{{shopInfo.phone || ""}}' placeholder='请输入您的手机号' name="buyerPhone" type='number'  bindblur="changeInput"></input>
+
+          <!-- <text class='box-text2'>修改</text> -->
+        </view>
+      </view>
+  
+      <view class="list" bindtap='showClick'>
+        <view class="list_title">预约时间</view>
+        <view class="list_conter list_active" wx:if="{{!subscribeDate}}">
+          <view class="list_xz" >请选择</view>
+          <label class='iconfont icon-arrow-r'></label>
+        </view>
+        <view class="list_conter list_active_1" wx:else>
+          <view>{{subscribeDate}}</view>
+          <label class='iconfont icon-arrow-r'></label>
+        </view>
+      </view>
+
+      <view class="section between">
+        <view class="section__title">人数</view>
+        <view>
+          <view class="view_list_from ">
+            <label class='iconfont icon-desc view_list_jia' bindtap='desNum'></label>
+            <view class="view_list_gezi">{{number}}</view>
+            <label class='iconfont icon-add view_list_same' bindtap='addNum'></label>
+          </view>
+        </view>
+      </view>
+      <view class="section">
+        <view class="section__title">备注留言</view>
+        <input class="section__title-inpurt" placeholder="选填"  name="buyerRemark"/>
+      </view>
+    </view>
+    <view class='tip'>选择相应项目，到店后优先安排服务 </view>
+  </view>
+  <button  class='gotopay' formType="submit">确定</button >
+</form>
+<view wx:if="{{sheetAction}}">
+  <view class="drawer"></view>
+  <view class='drawer_box'>
+    <view class='drawer_box-header'>选择服务</view>
+    <view class='close-drawer' bindtap='closedrawer'>
+      <image src='../../../images/close_black@2x.png'></image>
+    </view>
+    <view class='drawer_box-character'>
+      <view class='header-left'>
+        <image class='img1' src='{{appointmentTeacherdetail.imgUrl}}'></image>
+        <view class='header-left-name'>{{appointmentTeacherdetail.serverName}}</view>
+        <view class='header-text1'>（{{appointmentTeacherdetail.alias}}）</view>
+      </view>
+    </view>
+    <view class='drawer_box-tip'>服务项目</view>
+    <view class='drawer_box-box'>
+      <scroll-view scroll-y class='scroll-list'>
+        <view class='scroll-box {{selectIndex==index?"scroll-box1":""}}' data-index="{{index}}" bindtap='changeTab' wx:for="{{appointmentTeacherdetail.packageInfoList}}" wx:key="{{index}}">{{item.packageName}}</view>
+      </scroll-view>
+    </view>
+    <view class='enter_change' bindtap='enter'>确定</view>
+  </view>
+</view>
+<!-- 预约时间  -->
+<view wx:if='{{showPick==true}}'>
+  <view class="sb-drawer_screen" catchtap="cancelAddress"></view>
+  <view class="sb-drawer_pick">
+    <view class='pick-header'>
+      <view class='cancel' bindtap='cancelAddress'>取消</view>
+      <view class='enter' bindtap='enterAddress'>确定</view>
+    </view>
+    <picker-view class="picker_center" indicator-style="height: 120rpx;" style=' height: 500rpx;' value="[0,0]" bindchange="bindChange">
+      <picker-view-column>
+        <view wx:for="{{week}}" wx:key="{{index}}" style="line-height: 34px">{{item.dateAndWeekInfo}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{timeSlots}}" wx:key="{{index}}" style="line-height: 34px">{{item.timeSlot}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>

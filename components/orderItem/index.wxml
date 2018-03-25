@@ -1,0 +1,56 @@
+<view class='list'>
+  <view class='title'>
+    <view>
+      <text class='time'>下单时间：</text>
+      <text class='time_num'>{{detail.createDt}}</text>
+    </view>
+
+  <!-- <view class='to-be-consumed' >
+          <text>待消费</text>
+        </view> 
+
+         <view class='finished'>
+          <text>已完成</text>
+        </view>
+
+        <view class='refunding'>
+          <text>退款中</text>
+        </view>
+
+        <view class='cancelled'>
+          <text>已取消</text>
+        </view>
+
+        <view class='to-be-comment'>
+          <text>待评价</text>
+        </view>   -->
+
+    <view class='pay_state'>
+      <text>{{detail.orderStatusText}}</text>
+    </view>
+  </view>
+  <view   bindtap='gotoDetail' url='/subMyInfo/pages/orderDetails/index?id={{detail.orderId}}' hover-class='none' class='comment_center'>
+    <view>
+      <image class='logo' src='{{detail.packageImg}}'></image>
+    </view>
+    <view class='center_txt'>
+      <text class='txt_noe'>{{detail.packageName}}</text>
+    
+        <text class='txt_tow' space="true" decode="true" wx:if="{{detail.packageSkuValue}}" class='text-li'>{{detail.packageSkuValue}}</text>
+        
+    
+      <text class='txt_therr'>¥{{detail.totalMoney}}</text>
+    </view>
+    <view>
+    <text class='txt_tow'>x{{detail.packageNum}}</text>
+    </view>
+  </view>
+  <view class='pay_style'>
+    <view class='pay_style_box' bindtap='payImmediately' wx:if="{{detail.orderStatus==21}}">
+      <text>微信支付</text>
+    </view>
+    <text wx:elif="{{detail.orderStatus==23&&detail.evaluateStatus!=2}}" bindtap='evaluation' class='pingjia'>待评价</text>
+    <text wx:else class='look'>查看详情</text>
+  </view>
+
+</view>

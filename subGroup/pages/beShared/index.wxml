@@ -1,0 +1,44 @@
+<!--subGroup/pages/beShared/index.wxml-->
+<view class='beShared'>
+  <view class='beShared_top'>
+    <view class='imgBox'>
+      <image class='top_img' src='../../../images/subGrounp/fight2.png'></image>
+    </view>
+    <view class='textBox'>
+      <view class='top_text'>
+        <view style='margin-right:30px;'>
+          <view class='top_title'>滋润泡泡浴 <text> (60分钟)</text></view>
+          <view> <text>￥399</text> ￥196</view>
+          <view>50人成团，已有49人参团</view>
+        </view>
+        <view>x3</view>
+      </view>
+      <view class='top_spirce'><text>实付 </text> ￥588</view>
+    </view>
+  </view>
+
+  <view class='tuanyuan'>
+    <view class="scroll-view_card">
+      <scroll-view scroll-x> 
+        <view class='business_card'>
+          <view>
+            <image class='tuanzhu' style='width:71px; height:71px' src='../../../images/avatar.png'></image>
+          </view>
+          <view class='business_card_item' wx:for="[1,2,3,4,5,6,7,8,9,7]" wx:key="{{index}}">
+              <view class='business_image'>
+                <image src='../../../images/avatar.png'></image>
+              </view>
+            </view>
+        </view>
+      </scroll-view>
+
+      <view class='tuanzhu_text'>剩余 <text style='color:rgb(131,179,235)'>23:30:12.09 </text> 结束，仅剩 <text style='color:rgb(131,179,235)'>1个</text> 名额</view>
+      <view class='t_shared'>分享到3个群后，成团率高达98%</view>
+    </view>
+  </view>
+  <view class='xiadan'>
+    <view>订单编号 <text> 201822313271700001</text></view>
+    <view>下单事件 <text> 2018-02-03 13:30</text></view>    
+  </view>
+  <view  class='btn'>邀请好友参团</view>
+</view>

@@ -1,0 +1,146 @@
+page{
+  background: #fff;
+  border-top: 1px solid #ccc;
+}
+.pay_win_img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.pay_win {
+  text-align: center;
+  margin-top: 130rpx;
+}
+.pay-tip{
+  text-align: center;
+  font-size: 34rpx;
+  line-height: 60rpx;
+color: #9B9B9B;
+}
+.pay-tip_1{
+  text-align: center;
+  font-size: 34rpx;
+  line-height: 60rpx;
+color: #9B9B9B;
+opacity: 0.5;
+}
+
+.pay_win_title {
+  font-family: PingFangHK-Regular;
+  font-size: 40rpx;
+  color: #a7a7a7;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
+.pay_bottom {
+  width: 100%;
+  text-align: center;
+}
+
+.pay_left, .pay_right {
+  box-sizing: border-box;
+  width: 40%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  height: 84rpx;
+  line-height: 84rpx;
+  position: absolute;
+  bottom: 10%;
+  font-size: 16px;
+  color: #9b9b9b;
+  letter-spacing: 1px;
+  border-radius: 10rpx;
+}
+
+.pay_right {
+  right: 0rpx;
+  margin-right: 40rpx;
+}
+
+.pay_left {
+  left: 0rpx;
+  margin-left: 40rpx;
+}
+.teacher-car{
+  padding: 20rpx;
+  position: relative;
+  margin-top: -200rpx;
+}
+.bg{
+  margin: 20rpx;
+  padding: 20rpx 20rpx 0rpx 20rpx;
+  border-top-right-radius: 16rpx;
+  opacity: 0.3;
+  border-top-left-radius: 16rpx;
+  background-image: linear-gradient(-1deg, #E0D0EE , #8F7DEC);
+}
+.teacher-car .header{
+  display: flex;
+  align-items: center;
+  padding: 20rpx 20rpx 0rpx 20rpx;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+  /* background-image: linear-gradient(180deg, #E0D0EE , #8F7DEC); */
+}
+
+.teacher-image{
+  width: 130rpx;
+  height: 130rpx;
+  transform: translateY(20rpx)
+}
+.teacher-image image{
+  width: 130rpx;
+  height: 130rpx;
+  border-radius: 100%;
+
+}
+/*内容容器布局*/
+
+.content-header {
+  flex: 1;
+  margin-left: 30rpx;
+}
+.content-header .name{
+ font-size: 32rpx;
+color: #1C1C1C;
+}
+.content-header .des{
+  font-size: 24rpx;
+color: #1C1C1C;
+}
+
+.header-box {
+font-size: 30rpx;
+color: #5F57B4;
+}
+
+.header-box-text1 {
+  font-size: 22rpx;
+  color: #4a4a4a;
+  margin-left: 10rpx;
+}
+
+.header-box-text2 {
+  font-size: 22rpx;
+  color: #4777b1;
+  margin-left: 10rpx;
+}
+.span{
+  background: rgba(216,216,216,0.30);
+  border-radius: 18rpx;
+  font-size: 20rpx;
+  color: #8E8E8E;
+  padding: 5rpx 10rpx 5rpx 10rpx;
+}
+.footer{
+  display: flex;
+  flex-direction: column;
+  background: rgba(243,243,243,0.70);
+  padding: 50rpx 0rpx 20rpx 30rpx;
+  font-size: 24rpx;
+color: #4A4A4A;
+}
+.pay-item{
+  margin-top: 60rpx;
+}

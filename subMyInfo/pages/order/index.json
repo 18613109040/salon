@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "我的订单",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "component-orderitem": "/components/orderItem/index",
+    "component-line": "/components/Line/index"
+  }
+}

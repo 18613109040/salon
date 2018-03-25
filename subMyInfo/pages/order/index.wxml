@@ -1,0 +1,14 @@
+<view class='header_nav'>
+  <view class='nav_li {{index==navList.length-1?"":"border_no"}}' bindtap="clickNav" wx:key="{{index}}" wx:for="{{navList}}" data-index="{{index}}"  wx:if="{{index!=4}}" >
+    <text class="{{selectIndex == index?  'change' : 'nav_li_txt'}}">{{item}}</text>
+  </view>
+</view>
+<view class='content'>
+  <view class='nothing_box' wx:if="{{!commentData[selectIndex].data.length}}">
+    <image class='nothingimg' src='../../../images/nothing@2x.png'></image>
+    <view class='word_box'>您还没有任何订单~</view>
+  </view>
+  <view wx:for="{{commentData[selectIndex].data}}" wx:key="{{index}}"wx:if="{{commentData[selectIndex].data.length}}" >
+    <component-orderitem detail="{{item}}" />
+  </view>
+</view>

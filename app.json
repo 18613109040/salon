@@ -1,0 +1,106 @@
+{
+  "pages": [
+    "pages/home/index",
+    "pages/account/index",
+   
+    "pages/activity/index",
+    "pages/login/index",
+    "pages/accountEdit/index",
+    "pages/payWin/index",
+    "pages/payDefeated/index",
+    "pages/announcement/index"
+  ],
+  "subPackages": [
+    {
+      "root": "subMyInfo",
+      "pages": [
+        "pages/order/index",
+        "pages/collect/index",
+        "pages/reservation/index",
+        "pages/orderDetails/index"
+      ]
+    },
+    {
+      "root": "subShopInfo",
+      "pages": [
+        "pages/shopDetails/index",
+        "pages/qrCode/index"
+      ]
+    },
+    {
+      "root": "subreservation",
+      "pages": [
+        "pages/sample/index",
+        "pages/character/index",
+        "pages/judge/index",
+        "pages/bespoke/index",
+        "pages/reservationlist/index",
+        "pages/reservationdetails/index",
+        "pages/commentserve/index",
+        "pages/wantrefund/index",
+        "pages/payreservations/index",
+        "pages/evaluation/index"
+      ]
+    },
+    {
+      "root": "subHotPackage",
+      "pages": [
+        "pages/home/index",
+        "pages/search/index",
+        "pages/comboDetails/index",
+        "pages/affirmOrder/index",
+        "pages/affirmSubscribe/index",
+        "pages/indentDetails/index",
+        "pages/evaluation/index",
+        "pages/noReservation/index"
+      ]
+    },
+    {
+      "root": "subGroup",
+      "pages": [
+        "pages/FightGroups/index",
+        "pages/LookCollage/index",
+        "pages/consumed/index",
+        "pages/seckill/index",
+        "pages/home/index",
+        "pages/allcomment/index",
+        "pages/bargain/index",
+        "pages/Collagedetails/index",
+        "pages/Payment/index",
+        "pages/viewOrder/index",
+        "pages/mygroup/index",
+        "pages/beShared/index"
+      ]
+    }
+  ],
+  "tabBar": {
+    "color": "#9B9B9B",
+    "selectedColor": "#FD678F",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "text": "首页",
+        "iconPath": "images/home_gray.png",
+        "selectedIconPath": "images/home_prink.png"
+      },
+      {
+        "pagePath": "pages/activity/index",
+        "text": "活动",
+        "iconPath": "images/activity_gray.png",
+        "selectedIconPath": "images/activity_prink.png"
+      },
+      {
+        "pagePath": "pages/account/index",
+        "text": "我的",
+        "iconPath": "images/my_gray.png",
+        "selectedIconPath": "images/my_prink.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#ffffff",
+    "backgroundTextStyle": "black",
+    "navigationBarTitleText": "77秒",
+    "navigationBarTextStyle": "#333"
+  }
+}

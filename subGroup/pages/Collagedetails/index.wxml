@@ -1,0 +1,286 @@
+<!--subGroup/pages/21551/index.wxml-->
+<!-- 轮播图开始 -->
+
+<view class='box'>
+  <view class="lunbotu">
+    <swiper class="figure" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular='{{circular}}'>
+      <block wx:for="{{imgUrls}}" wx:key='index'>
+        <swiper-item class="figure-one">
+          <image class="slide-image" src="{{item}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+
+  <!-- 轮播图结束 -->
+
+  <!-- 滋润泡泡浴开始 -->
+  <view class='paopao'>
+    <view class='paopao-one'>{{detail.packageName}}</view>
+    <view class='paopao-two'>{{detail.packageName}}</view>
+  </view>
+  <!-- 滋润泡泡浴结束 -->
+
+  <!-- 时长开始 -->
+  <view class='time clearfix'>
+    <view class='time-left'>时长: 60分 类型: 泰式</view>
+    <view class='time-right'>
+      <text class='time-right-one'>¥{{detail.packagePrice}}</text>
+      <text class='time-right-two'>¥{{detail.groupPrice}}</text>
+    </view>
+  </view>
+  <!-- 时长结束-->
+
+  <!-- 已开34团开始 -->
+
+  <view class='Opengroup clearfix' wx:if="{{groupOrders.length}}">
+    <view class='Opengroup-left'>
+      <text class='Opengroup-left-one'>已开</text>
+      <text class='Opengroup-left-two'>{{groupOrders.length}}团</text>
+      <!-- <text class='Opengroup-left-three'>，共</text>
+      <text class='Opengroup-left-four'>213人</text>
+      <text class='Opengroup-left-five'>参加</text> -->
+    </view>
+    <view class='Opengroup-right'>
+      <text class='Opengroup-right-txt' bindtap='onShowOffered'>查看详情</text>
+      <view class='Opengroup-right-img'>
+        <image class='Opengroup-right-image' src='../../../images/list_orange@2x.png'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 已开34团结束-->
+
+  <!-- 开团详情开始 -->
+  <view class='open' wx:if="{{groupOrders.length}}" wx:for="{{groupOrders}}" wx:for-item="item" wx:key="index">
+    <view class="open-one">
+      <view class="open-a">
+      <image class='Opengroup-a-img' src='{{item.memberImgs[0]}}'></image>
+      </view>
+      <view class='open-b'>{{item.memberName}}</view>
+    </view>
+
+    <view class='open-c'>
+      <view class='open-c-one'>
+        <text class='open-c-one-txt1'>还差</text>
+        <text class='open-c-one-txt2'>{{item.groupMembers-item.joinMembers}}人</text>
+        <text class='open-c-one-txt3'>成团</text>
+      </view>
+      <view class='open-c-two'>剩余{{item.times}}</view>
+    </view>
+
+    <view class='open-d' data-item="{{item}}" bindtap='onShowsfirst'>{{item.hasJoin?'查看':'我要参团'}}</view>
+  </view>
+  <!-- 开团详情1结束 -->
+
+  <!-- <view class='kuai'></view> -->
+  <!-- 评价开始 -->
+  <!-- <view class='evaluate'>
+    <view class='evaluate-one'>
+      <view class='evaluate-one-left'>
+        <text class='evaluate-one-left-txt1'>累计评价</text>
+        <text class='evaluate-one-left-txt2'>56条</text>
+      </view>
+      <view class='evaluate-one-right' bindtap='ViewAll'>
+        查看全部
+      </view>
+    </view>
+
+    <view class='evaluate-two clearfix'>
+      <view class='evaluate-two-a'>
+        <image class='evaluate-two-a-img' src='../../../images/img_one.png'></image>
+      </view>
+      <view class='evaluate-two-b'>David</view>
+          <view class='stat_box'><component-commentitem class="start" /></view>
+      <view class='evaluate-two-d'>2018-01-01</view>
+    </view>
+
+    <view class='evaluate-three'>
+      第二次在店里买东西了，真的很方便，不用逛超市了直接选好自  己喜欢的东西，下单到家只要两天，快递员送货到家门口～
+    </view>
+  </view> -->
+  <!-- 评价结束 -->
+  <view class='kuai'></view>
+  <!-- 底部开始 -->
+  <view class='huli'>
+    <!--底部标题  -->
+    <view class='huli-one'>
+      <view class='huli-one-a'>
+        <label class="details_title_ico iconfont icon-wendan"></label> 
+        <!-- <image class='huli-one-a-img' src='../../../images/packages/comment.png'></image> -->
+      </view>
+      <view class='huli-one-b'>
+        60分钟护理
+      </view>
+    </view>
+    <view wx:for="{{content}}" wx:key="index" wx:for-item="item">
+      <view class='huli-two' wx:if="{{item.type=='text'}}">
+        {{item.content}}
+      </view>
+      <view class='huli-three' wx:if="{{item.type=='image'}}">
+        <image class='huli-three-img' src='{{item.content}}'></image>
+      </view>
+
+    </view>
+  </view>
+  <!-- 底部结束 -->
+
+  <!-- 固定定位开始 -->
+  <view class='bottom clearfix'>
+    <view class='bottom-one'>
+      <view class='bottom-one-a'>
+        <image class='bottom-one-a-img' src='../../../images/home_gray.png'></image>
+      </view>
+      <view class='bottom-one-b'>首页</view>
+    </view>
+
+    <view class='bottom-two'>
+      <view class='bottom-two-a'>
+        <image class='bottom-two-a-img' src='../../../images/customer service_gray@2x.png'></image>
+      </view>
+      <view class='bottom-two-b'>客服</view>
+    </view>
+
+    <view class='bottom-three'>
+      <view class='bottom-three-a'>
+        ¥{{detail.singlePrice}}
+      </view>
+      <view class='bottom-three-b' bindtap='buyer' data-id="{{0}}">单独购买</view>
+    </view>
+
+    <view class='bottom-four' bindtap='startTuan' data-type='add'>
+      <view class='bottom-four-a'>
+        ¥{{detail.groupPrice}}
+      </view>
+      <view class='bottom-four-b'>自己开团</view>
+    </view>
+  </view>
+  <!-- 固定定位结束 -->
+
+
+  <!-- 单独购买弹框 -->
+  <view class='Separatepurchase ' catchtouchmove="onTouchstart" wx:if='{{showSeparatepurchase}}'>
+    <view class='Separatepurchase-box' catchtouchmove="onTouchstart">
+      <view class='Separatepurchase-one clearfix'>
+        <view class='Separatepurchase-one-a'>
+          <image class='Separatepurchase-one-a-img' src='{{detail.packageImg}}'></image>
+        </view>
+        <view class='Separatepurchase-one-b'>
+          <view class='Separatepurchase-one-b-top'>
+            <text class='Separatepurchase-one-txt1'>{{detail.packageName}}</text>
+            <text class='Separatepurchase-one-txt2'>¥{{detail.groupPrice}}</text>
+          </view>
+          <view class='Separatepurchase-one-b-bottom'>请选择规格及数量</view>
+        </view>
+        <view class='Separatepurchase-one-c' bindtap='close'>
+          <image class='Separatepurchase-one-c-img' src='../../../images/close_black@2x.png'></image>
+        </view>
+      </view>
+      <view class='Separatepurchase-three clearfix' wx:for="{{combinationSku}}" wx:for-item="item" wx:key="index" wx:for-index="index">
+        <view class='Separatepurchase-three-top'>
+          {{item.title}}
+        </view>
+        <view class='Separatepurchase-three-center'>
+          <view class='btn {{subItem.select?"active":subItem.ishas?"sku-name":"sku-name-nohas"}}' bindtap='onChangeSku' wx:for="{{item.value}}" wx:key="idx" wx:for-index="idx" wx:for-item="subItem" data-id="{{index}}-{{idx}}" data-item="{{subItem}}">
+            <text>{{subItem.name}}</text>
+          </view>
+        </view>
+      </view>
+      <!-- <view class='number clearfix'>
+        <view class='number-one'>数量1</view>
+        <view  class='number-four' bindtap='onAdd'>+</view>
+        <input class='number-three' wx:if="{{Number>0}}" bindchange="bindManual" value="{{Number}}"></input>
+        <view class='number-two' bindtap='onMinus'>-</view>
+      </view> -->
+
+      <view class='Separatepurchase-four' bindtap="clickEnter">
+        确定购买
+      </view>
+      <!-- <view class='Separatepurchase-four' wx:if="{{id==1}}">
+        开团购买
+      </view> -->
+    </view>
+  </view>
+  <!-- 单独购买弹框结束 -->
+</view>
+
+<!--正在拼团中弹窗-->
+<view class='Allbox' wx:if="{{Offered==true}}">
+  <view>
+    <view class='CollageList'>
+      <view class='Collagedetail'></view>
+      <view class='CollageBox'>
+        <view class='collage-top'>
+          <view class='collage-tit'>正在拼团中
+            <text class='collage-xs'>(仅显示10个)</text>
+          </view>
+          <image bindtap='closeMaskAnimation' class='collage-icon' src='../../../images/close_black@2x.png'></image>
+        </view>
+        <view class='ListBox'>
+          <!--拼团列表小模块-->
+          <scroll-view style="height: 575px;" scroll-y>
+            <view class='ListDetail' wx:for="[1,2,3,4,5,6,7,8,9,10]" wx:key="{{index}}">
+              <view class='list-left'>
+                <image class='list_image' src='../../../images/my_gray.png'></image>
+                <view class='list_name'>Fiona</view>
+              </view>
+              <view class='list_renshu'>
+                <view>还差
+                  <text class='list_prople'>1人</text>成团</view>
+                <view class='list_time'>剩余23:30:23:09</view>
+              </view>
+              <view class='list_btn' bindtap='onShows'>我要参团</view>
+            </view>
+          </scroll-view>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+<!--参加jacky的拼团-->
+<view wx:if="{{sheetAction}}" catchtouchmove="onTouchstart">
+  <view class="drawer" catchtouchmove="onTouchstart" bindtap="closeMaskAnimation"></view>
+  <view class='cantuan' catchtouchmove="onTouchstart">
+    <view class='cantuan-tit'>参与{{tuanData.memberName}}的拼团</view>
+    <image bindtap="closeMaskAnimation" class='cantuan-icon' src='../../../images/close_black@2x.png'></image>
+    <view class='cantaun_box'>
+      <view class='imgBox'>
+        <image class='cantuan_img' src='{{detail.packageImg}}'></image>
+      </view>
+      <view class='cantaun_detail'>
+        <view class='title'>{{detail.packageName}}
+          <text style='color:rgb(252,122,157)'>￥{{detail.groupPrice}}</text>
+        </view>
+        <view class='chengtuan'>{{tuanData.groupMembers}}人成团，已有{{detail.groupOrderSize}}人参团</view>
+      </view>
+    </view>
+    <view>
+      <view class='cantuan_time'>剩余
+        <text style='color:#4A90E2'>{{tuanData.times}}</text>结束</view>
+      <view class='cantuan_minge'>仅剩
+        <text style='color:rgb(252,122,157)'>{{tuanData.subMember}}个</text>名额</view>
+    </view>
+    <view class='chengyuan'>
+      <view class="scroll-view_card">
+        <scroll-view scroll-x>
+          <view class='business_card'>
+            <view wx:for="{{tuanData.memberImgs}}" wx:key="index" wx:for-item="item">
+              <image class="{{index==0?'tuanzhu':'business_image'}}" src='{{item}}'></image>
+            </view>
+
+            <!-- <view class='business_card_item' wx:for="[1,2,3,4,5,6,7,8,9,7]" wx:key="{{index}}">
+                  <view class='business_image'>
+                    <image src='../../../images/avatar.png'></image>
+                  </view>
+                </view> -->
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+    <!-- wx:if="{{!tuanData.hasJoin}}" -->
+    <view class='cantaun_submit' bindtap='participate'>确定参团</view>
+    <!-- <button open-type='share' class='cantaun_submit' wx:if="{{tuanData.hasJoin}}">邀请好友</button> -->
+  </view>
+</view>
+
+<!--参团弹框结束-->

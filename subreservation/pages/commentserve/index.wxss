@@ -1,0 +1,105 @@
+.big_box {
+  border-top: 1px solid #ddd;
+  background: #fff;
+  padding: 25rpx 25rpx 0  25rpx;
+}
+
+.header {
+  display: flex;
+}
+
+.header_logo {
+  width: 102rpx;
+  height: 102rpx;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+}
+
+.header_cent {
+  font-size: 28rpx;
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+}
+.box_star{
+  display: flex;
+}
+.title, .star {
+  color: #000;
+}
+.box_start{
+  position: relative;
+}
+.padding{
+  position: absolute;
+  top: 8rpx;
+  left: 140rpx;
+  
+}
+
+.time {
+  color: #4a4a4a;
+}
+
+.inpt {
+  height: 200rpx;
+  border: 1px solid #eaeaea;
+  border-radius: 16rpx;
+  font-size: 28rpx;
+  padding: 20rpx;
+  width: 94%;
+}
+.imglist{
+  display: flex;
+  padding-top : 30rpx ;
+  padding-bottom: 40rpx;
+  justify-content: space-between;
+  align-items: center;
+}
+.img_box{
+  display: flex;
+  justify-content: flex-start;
+}
+.btn_box{
+  width: 200rpx;
+  font-size: 28rpx;
+  background-color: #877fd4;
+  text-align: center;
+  height: 60rpx;
+line-height: 60rpx;
+color: #fff;
+border-radius: 10rpx;
+}
+.li_one {
+  width: 80rpx;
+  height: 80rpx;
+  padding-right: 20rpx;
+}
+
+.li_tow {
+  width: 150rpx;
+  height: 150rpx;
+  padding-right: 20rpx;
+}
+.li_therr{
+   width: 80rpx;
+  height: 70rpx;
+}
+.teacher{
+    border-top: 1px solid #ddd;
+  background: #fff;
+  padding: 25rpx 25rpx 0 25rpx;
+}
+.teacher_logo{
+   width: 102rpx;
+  height: 102rpx;
+  margin-right: 20rpx;
+  margin-bottom: 20rpx;
+ border-radius:50%;
+}
+.teacher{
+  margin-top: 20rpx;
+}
+.title_tow{
+  padding-bottom: 26rpx;
+}

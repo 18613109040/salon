@@ -1,0 +1,16 @@
+<!--全部评论-->
+
+<view class='comment'>
+  <!--头部  -->
+  <view class='top'>
+    <view bindtap='onchange' wx:for="{{nav}}" data-id="{{index}}" wx:key="{{index}}" class="{{topid==index?'top_active':'top_item'}}">{{item}}
+      <!-- <text wx:if="{{index==0}}" >({{commentData[index].totalCount}})</text> -->
+    </view>
+  </view>
+
+  <view wx:for="{{commentData[topid].data}}" wx:key="{{index}}">
+    <component-evaluationitem commentItem="{{item}}" />
+  </view>
+
+
+</view>

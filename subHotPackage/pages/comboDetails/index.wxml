@@ -1,0 +1,108 @@
+<!--  列表 -->
+<view class="project">
+  <view class="project_list">
+    <image class="project_ico" src="../../../images/reservation_free.png" wx:if="{{packageDetail.subcribe==0}}"></image>
+    <image class="project_ico" src="../../../images/reservation.png" wx:else></image>
+      <view class='project_share'>
+        <button  open-type="share" >
+            <label class=" iconfont icon-shoucang"></label>
+        </button>
+      </view>
+    <label class="icon-hascollec iconfont project_collect" wx:if="{{hasCollect}}" bindtap='collect' data-collect='{{false}}'></label>
+    <label class="project_collect iconfont icon-fenxiang" wx:else bindtap='collect' data-collect='{{true}}' ></label>
+    <view class="">
+      <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="{{true}}">
+        <block wx:for="{{packageDetail.imgUrl}}" wx:key="{{index}}">
+          <swiper-item>
+            <image src="{{item.imgUrl}}" class="project_img" mode="aspectFill" />
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+
+    <view class="project_title">
+      <view class="project_left">
+        <view class="project_left_title">{{packageDetail.packageName}}</view>
+        <view class="project_right">已售
+          <text class='project_right_old'>{{packageDetail.packageSalenum}}</text>份
+        </view>
+      </view>
+      <view class="project_content">
+        <text>{{packageDetail.introduction}}</text>
+      </view>
+    </view>
+
+    <view class="project_bot">
+      <view class="project_xx">
+        <component-rate size="{{30}}" value="{{packageDetail.avgScore}}"/>
+      </view>
+      <view class="project_bot_title">好评率{{packageDetail.favourableComment}}</view>
+      <view class="project_bot_box">
+        <view class="project_bot_tiem">
+          <text class="project_bot_class" wx:if="{{packageDetail.skuValue}}">{{packageDetail.skuValue}}</text>
+        </view>
+        <view class="project_bot_price">
+          <text class="project_bot_old">￥{{packageDetail.marketPrice}}</text>
+          <text class="project_bot_new">￥{{packageDetail.price}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <component-shopmap shopInfo="{{shopInfo}}" type="2" />
+  <component-line/>
+</view>
+
+<!-- 累计评价  -->
+<view class="addup" wx:if="{{packageDetail.buyerImg}}">
+  <view class="addup_top addup_top_one">
+    <view class="addup_top_left">
+      <text class="addup_top_left_title">累计评价 </text>
+      <text class="addup_top_left_amount"> {{packageDetail.commentNum}}条</text>
+    </view>
+    <navigator url='/subHotPackage/pages/evaluation/index?packageId={{packageDetail.packageId}}' hover-class="none" class="addup_top_right">查看全部</navigator>
+  </view>
+  <view class="addup_bot">
+    <view class="addup_top">
+      <view class="addup_top_left">
+        <image class="addup_top_left_image" src="{{packageDetail.buyerImg}}"></image>
+        <text class="addup_top_left_name">{{packageDetail.buyerName}}</text>
+        <view class="project_xx">
+          <component-rate size="{{30}}" value="{{packageDetail.commentScore}}"/>
+        </view>
+      </view>
+      <view class="addup_top_right">
+        {{packageDetail.commentCreateDt}}
+      </view>
+    </view>
+    <view class="addup_bot_title">
+      {{packageDetail.commentText}}
+    </view>
+  </view>
+</view>
+
+<!-- 详情  -->
+<view class="details">
+  <view class="details_title">
+    <label class="details_title_ico iconfont icon-wendan"></label> 
+    <text class="details_title_text"> {{packageDetail.serviceTime}}分钟护理</text>
+  </view>
+  <view wx:for="{{packageDetail.detail}}" wx:key="{{index}}">
+  <image class="details_images" wx:if="{{item.type=='image'}}" src="{{item.content}}"></image>
+   <view class="details_conter" wx:else>{{item.content}}</view>
+  </view>
+</view>
+
+<!-- 底部  -->
+<view class="bottom">
+  <view class="bottom_home" bindtap='returnHome'>
+    <label class='icon-home iconfont'></label>
+    <view class="bottom_home_shouye">首页</view>
+  </view>
+  <button class="bottom_service" open-type="contact" hover-class="none">
+    <label class='icon-customer iconfont'></label>
+    <view class="bottom_kefu">客服</view>
+  </button>
+  <view class="bottom_yuyue" bindtap='gotobespoke' wx:if="{{packageDetail.subcribe==1}}">立即预约</view>
+  <view class='bottom_yuyue' bindtap='gotobeSpokeFree' wx:else>立即购买</view>
+</view>
+<component-skumodel showModel="{{showModel}}" wx:if="{{showModel}}" packageSku="{{packageSku}}" bindclickskumodel="clickSkuModer"/>

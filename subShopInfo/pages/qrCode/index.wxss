@@ -1,0 +1,10 @@
+.save{
+  background: #877FD4;
+  text-align: center;
+  padding: 25rpx 0rpx 25rpx 0rpx;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  width: 100%;
+  color: #fff;
+}

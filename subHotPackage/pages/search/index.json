@@ -1,0 +1,12 @@
+{
+ "navigationBarTitleText": "搜索",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "onReachBottomDistance": 50,
+  "usingComponents": {
+    "HotPackItem": "/components/HotPackItem/index"
+  }
+ 
+
+
+}

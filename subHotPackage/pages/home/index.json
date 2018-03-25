@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "热门套餐",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "onReachBottomDistance": 50,
+  "enablePullDownRefresh":true,
+  "usingComponents": {
+    "HotPackItem": "/components/HotPackItem/index"
+  }
+}

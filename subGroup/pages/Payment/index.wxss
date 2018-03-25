@@ -1,0 +1,219 @@
+/* subGroup/pages/Payment/index.wxss */
+.payment{
+   width: 100%;
+  background: white; 
+}
+.clearfix::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.address{
+   padding: 0 42rpx 0 46rpx; 
+  border-top: 2rpx solid #F3F3F3;
+   border-bottom: 2rpx solid #F3F3F3; 
+}
+.address-left{
+  float: left;
+}
+.address-left-one{
+
+}
+.address-left-one-txt1{
+  color: #000000;
+  font-size: 36rpx;
+  display: inline-block;
+  padding-top: 36rpx;
+  padding-right: 8rpx;
+}
+.address-left-one-txt2{
+  width: 80rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  color: #4A90E2;
+}
+.address-left-two{
+  color: #4A4A4A ;
+  font-size: 28rpx;
+   padding-bottom: 38rpx; 
+}
+.address-right{
+  float: right;
+}
+.address-right-one{
+  width: 54rpx;
+  height: 54rpx;
+  padding-top: 38rpx;
+  padding-bottom: 4rpx;
+  padding-left: 18rpx;
+}
+.address-right-one-img{
+  width: 100%;
+  height: 100%;
+}
+.address-right-two{
+  color: #5F57B4;
+  font-size: 22rpx;
+}
+
+/* 项目开始 */
+.project{
+  margin: 0 24rpx 0 26rpx;
+  border-bottom: 2rpx solid #F3F3F3;
+}
+.project-top-txt1{
+  display: inline-block;
+  color: #4A4A4A;
+  font-size: 28rpx;
+  padding: 30rpx 0 0 32rpx;
+}
+.project-top-txt2{
+  display: inline-block;
+  color: #4A90E2;
+  font-size: 28rpx;
+  padding-left: 16rpx;
+}
+.project-bottom-txt1{
+  display: inline-block;
+  color: #9B9B9B;
+  font-size: 24rpx;
+  padding-left: 32rpx;
+}
+.project-bottom-txt2{
+  display: inline-block;
+  color: #9B9B9B;
+  font-size: 24rpx;
+  padding-left: 50rpx;
+  padding-bottom: 20rpx;
+}
+
+
+/* 手机号码开始 */
+.phone{
+  margin: 0 24rpx 0 26rpx;
+  border-bottom: 2rpx solid #F3F3F3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 28rpx 0;
+}
+.phone-one{
+  color: #4A4A4A;
+  font-size: 28rpx;
+  padding-left: 30rpx;
+}
+.phone-two .input{
+  /*border:1px solid #ddd;*/
+  width: 80%;
+  padding:0 10rpx;
+}
+.phone-two{
+  flex: 1;
+  color: #9B9B9B;
+  font-size: 28rpx;
+  padding-left: 16rpx;
+  width: 240rpx;
+}
+.phone-three{
+  color: #4A90E2;
+  font-size: 24rpx;
+  /*padding-left: 286rpx;*/
+}
+
+/* 小计开始 */
+.ji{
+  margin: 0 24rpx 0 26rpx;
+  border-bottom: 2rpx solid #F3F3F3;
+  padding: 30rpx 0;
+}
+.ji-left{
+  color: #4A4A4A;
+  font-size: 28rpx;
+  float: left;
+  padding-left: 32rpx;
+}
+.ji-right{
+  float: right;
+  color: #f8b850;
+  font-size: 28rpx;
+  padding-right: 28rpx;
+}
+
+/* 数量开始 */
+.number{
+  margin: 0 24rpx 0 26rpx;
+  border-bottom: 2rpx solid #F3F3F3;
+   padding: 22rpx 0; 
+}
+.number-one{
+  float: left;
+  font-size: 28rpx;
+  color: #4A4A4A;
+  padding-left: 32rpx;
+  padding-top: 8rpx;
+}
+
+.number-two{
+  float: right;
+   
+
+}
+.number-three{
+  float: right;
+  color: #000000;
+  font-size: 28rpx;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border: 2rpx solid #F3F3F3;
+  margin: 0 26rpx;
+}
+.number-four{
+  float: right;
+  margin-right: 28rpx; 
+}
+
+/* 合计开始 */
+.Total{
+  /* margin: 20rpx 24rpx 0 26rpx; */
+  margin-top: 20rpx;
+  padding: 40rpx 0;
+  background: white;
+}
+.Total-left{
+  color: #4A4A4A;
+  font-size: 28rpx;
+  float: left;
+  padding-left: 58rpx;
+}
+.Total-right{
+  float: right;
+  color: #f8b850;
+  font-size: 28rpx;
+  padding-right: 52rpx;
+}
+
+
+/* 底部开始 */
+.bottom{
+  background: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  
+}
+.bottom-left{
+  float: left;
+  font-size: 28rpx;
+  color: #4A4A4A;
+  padding: 36rpx 0 36rpx 40rpx;
+}
+.bottom-right{
+  float: right;
+  color: white;
+  background: #01C000;
+  padding: 36rpx 160rpx 36rpx 164rpx;
+}

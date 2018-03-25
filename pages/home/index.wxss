@@ -1,0 +1,124 @@
+.home_container {
+  padding-bottom: 20rpx;
+}
+
+.swiper {
+  width: 100%;
+}
+
+.swiper_container {
+  width: 100%;
+  height: 300rpx;
+}
+
+.swiper_container_item {
+  width: 100%;
+  height: 300rpx;
+}
+
+.swiper_item_img {
+  width: 100%;
+  height: 300rpx;
+}
+
+.scroll-view_card {
+  width: 100%;
+}
+
+.business_card {
+  width: 100%;
+  display: flex;
+}
+
+.business_card_item {
+  width: 190rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 14rpx;
+  margin-left: 20rpx;
+  padding: 30rpx 0rpx 20rpx 0rpx;
+  box-shadow: 0rpx 2rpx 6rpx rgba(34, 25, 25, 0.2);
+  transform: rotate3d(3);
+}
+
+.business_image {
+  width: 190rpx;
+  transform: rotate3d(30deg);
+}
+
+.business_image image {
+  width: 149rpx;
+  height: 149rpx;
+  border-radius: 100%;
+  box-shadow: 3rpx 3rpx 1rpx #ddd;
+}
+
+.business_name {
+  margin-top: 15rpx;
+  color: #2b2b2b;
+  font-size: 28rpx;
+}
+
+.list {
+  margin-top: 20rpx;
+  display: flex;
+  align-items: center;
+  padding: 20rpx 10rpx 20rpx 30rpx;
+}
+
+.list-thumb {
+  flex: 1;
+}
+
+.list-line {
+  flex-basis: 120rpx;
+  color: #877fd4;
+  font-size: 26rpx;
+}
+
+.chinese-name {
+  font-size: 30rpx;
+  color: #2b2b2b;
+  font-weight: 600;
+}
+
+.englise-name {
+  margin-left: 10rpx;
+  font-size: 22rpx;
+  color: #6f6f6f;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 30rpx 0rpx 30rpx 0rpx;
+}
+
+.menu-item {
+  flex: 1;
+  text-align: center;
+}
+
+.border {
+  border-right: 1rpx solid #979797;
+}
+
+.menu-item .name {
+  font-size: 28rpx;
+  color: #1c1c1c;
+}
+
+.menu-item .ailas {
+  font-size: 24rpx;
+  color: #686868;
+}
+
+.menu-item .ailas{
+font-size: 24rpx;
+color: #686868;
+}
+.margin-package-item{
+  margin-top: 30rpx;
+}
+

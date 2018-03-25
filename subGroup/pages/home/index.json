@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "活动专区",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "component-activityitem": "/components/ActivityItem/index"
+  }
+}

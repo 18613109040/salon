@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "Jayson",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "component-rate": "/components/rate/index"
+  }
+}

@@ -1,0 +1,117 @@
+page{
+  background: #FFFFFF;
+}
+.beShared{
+  background: #FFFFFF;
+}
+.beShared_top{
+  width: 100%;
+  height: 280rpx;
+  background: #C6AAE1;
+  padding: 42rpx 28rpx;
+  display: flex;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+.imgBox{
+  width: 200rpx;
+  height: 200rpx;
+  overflow: hidden;
+}
+.beShared_top .top_img{
+  width: 100%;
+  height: 100%;
+}
+.textBox{
+  color: #FFFFFF;
+  margin-left: 22rpx;
+}
+.top_text{
+  font-family: PingFangHK-Regular;
+  font-size: 16px;
+  color: #FFFFFF;
+  letter-spacing: 0;
+  line-height: 22px;
+  display: flex;
+}
+.top_spirce{
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 28rpx;
+}
+.tuanyuan{
+  border-bottom: 1px solid #F3F3F3;
+  padding-bottom: 30rpx;
+}
+.scroll-view_card{
+  margin-left: 64rpx;
+  margin-top: 30rpx;
+}
+.business_card{
+    width: 100%;
+    display: flex;
+  }
+  .business_image{
+    transform: rotate3d(30deg)
+  }
+  .business_image image{
+    width: 100rpx;
+    height: 100rpx;
+    border-radius: 100%;
+    box-shadow: 3rpx 3rpx 1rpx #ddd;
+    margin-top: 10px;
+    margin-left: 10px;
+  }
+  .tuanzhu{
+    border-radius: 50%;
+    position: relative;
+  }
+  .tuanzhu::before{
+    position: absolute;
+    content: '团主';
+    bottom: 0;
+    left: 0;
+    width: 142rpx;
+    height: 28rpx;
+    font-size: 18rpx;
+    color: #FFFFFF;
+    text-align: center;
+    background: #F5A623;
+  }
+  .tuanzhu_text{
+    font-family: PingFangHK-Regular;
+    font-size: 16px;
+    color: #4A4A4A;
+    letter-spacing: 0;
+    line-height: 29px;
+    text-align: center;
+  }
+  .t_shared{
+   font-size: 14px;
+   text-align: center; 
+   color: rgb(99, 99, 99);
+  }
+  .xiadan{
+    font-family: PingFangHK-Regular;
+    font-size: 14px;
+    color: #9B9B9B;
+    letter-spacing: 0;
+    line-height: 29px;
+    padding: 16rpx 28rpx;
+    border-bottom: 1px solid #F3F3F3;
+  }
+  .btn{
+    width: 100%;
+    height: 55px;
+    background: #877FD4;
+    font-family: PingFangHK-Regular;
+    font-size: 17px;
+    color: #FFFFFF;
+    letter-spacing: 0;
+    text-align: center;
+    line-height: 55px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }

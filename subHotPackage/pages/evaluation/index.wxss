@@ -1,0 +1,37 @@
+
+.comment{
+  color: #333;
+}
+/*头部  */
+.top{
+  display: flex;
+  align-items: center;
+  padding: 30rpx 20rpx 30rpx 20rpx;
+  font-size: 28rpx;
+}
+.top_active{
+  flex: 1;
+  color: #877FD4;
+  text-decoration: underline;
+  text-align: center;
+}
+.top_item{
+   flex: 1;
+   text-align: center;
+}
+.comment-image{
+  margin-left: -30rpx;
+}
+
+/* 无内容加载图片 */
+.nothingimg{
+display: block;
+margin: 0 auto;
+width: 500rpx;
+height: 500rpx;
+}
+.word_box{
+  font-size: 34rpx;
+  color: #bababa;
+  text-align: center;
+}

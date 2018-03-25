@@ -1,0 +1,28 @@
+<view class="content-container">
+  
+  <view wx:for="{{appointmentTeacherLsit}}" bindtap='openman' wx:key="{{index}}" data-id='{{item.serverId}}'>
+    <view class='bg'>
+      <view class='teacher-image'>
+      </view>
+    </view>
+    <view class='teacher-car'>
+      <view class='header'>
+        <view class='teacher-image'>
+          <image src='{{item.imgUrl}}'></image>
+        </view>
+        <view class='content-header'>
+          <view class='name'>{{item.serverName}}</view>
+          <view class='des'>{{item.alias}}</view>
+          <view class='header-box'>
+            <component-rate value="{{item.avgCommentScore}}" size="{{24}}" />
+            <text class='header-box-text1'>好评率{{item.goodCommentRate}}%</text>
+            <text class='header-box-text2'>作品数:{{item.labels.length}}</text>
+          </view>
+        </view>
+      </view>
+      <view class='footer'>
+        <view class='span' wx:for="{{item.labels}}" wx:for-index="idx" wx:key="{{idx}}" wx:for-item="itemName">{{itemName}}</view>
+      </view>
+    </view>
+  </view>
+</view>

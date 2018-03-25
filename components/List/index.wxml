@@ -1,0 +1,12 @@
+<view class='list'>
+  <view class='list-body'>
+    <view class='list-thumb' wx:if="{{thumb}}">
+      <image src='{{thumb}}'></image>
+    </view>
+    <view class='list-line'>
+      <view class='list-content {{wrap?"list-line-wrap":""}}'>{{content}}</view>
+      <view class='list-extra' wx:if="{{extra}}">{{extra}} </view>
+      <view class='list-arrow  iconfont icon-{{arrow}}' wx:if="{{arrow}}"  ></view>
+    </view>
+  </view>
+</view>

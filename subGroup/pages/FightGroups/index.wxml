@@ -1,0 +1,24 @@
+<!--subGroup/pages/FightGroups/index.wxml-->
+<view class='FightGroup'>
+  <view class='FightGroup-top'>
+    <image class='fightImg' src='../../../images/grouppurchase.png'></image>
+  </view>
+  <!--拼团内容板块1-->
+  <view class='FightGroup-detail' wx:for="{{list}}" wx:for-item="item" wx:key="{{index}}" bindtap='goOffered' data-item="{{item}}">
+    <view class='Offered' wx:if="{{list.length}}">
+      <image class='Offered_img' src='{{item.packageImg}}'></image>
+      <view class='OfferedBox'>
+        <view>
+          <text class='Offered_title'>{{item.packageName}}</text>
+          <text class='Offered_price'>￥{{item.packagePrice}}</text>
+          <view class='Offered_canjia'>已有 <text class='Offered_pep'>{{item.packageSaleNum}}人</text>参加</view>
+        </view>
+        <view class='Offered_btn'>我要参团</view>
+      </view>
+    </view>
+  </view>
+  <view class='nothing_box' wx:if="{{!list.length}}">
+    <image class='nothingimg' src='../../../images/nothing@2x.png' ></image>
+    <view class='word_box'>您还没有任何拼团~</view>
+  </view>
+</view>

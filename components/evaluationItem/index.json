@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "component-rate": "/components/rate/index",
+    "component-prewimage": "/components/prewImage/index"
+  }
+}

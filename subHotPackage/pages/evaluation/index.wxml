@@ -1,0 +1,17 @@
+<view class='comment'>
+  <view class='top'>
+    <view bindtap='onchange' wx:for="{{nav}}" data-id="{{index}}" wx:key="{{index}}" class="{{topid==index?'top_active':'top_item'}}">{{item}}
+    </view>
+  </view>
+  <view wx:if="{{commentData[topid].data.length>0}}">
+    <view wx:for="{{commentData[topid].data}}" wx:key="{{index}}" >
+      <component-evaluationitem commentItem="{{item}}" />
+    </view>
+  </view>
+  <view wx:else>
+  <view class='nothing_box' wx:if="{{!commentData[selectIndex].data.length}}">
+      <image class='nothingimg' src='../../../images/nothing@2x.png'></image>
+      <view class='word_box'>没有评论~</view>
+    </view>
+  </view>
+  </view>

@@ -1,0 +1,48 @@
+page{
+  background-color: #f4f4f4;
+}
+.header_nav {
+  display: flex;
+  padding: 30rpx 0;
+  background: #fff;
+  align-items: center;
+  position: fixed;
+  top:0;
+  width: 100%;
+}
+.change{
+  border-bottom: 1px solid #877FD4 ;
+  color: #877FD4;
+}
+.nav_li_txt{
+   color: #4a4a4a;
+   border: none;
+}
+
+.nav_li {
+  font-size: 24rpx;
+  color: #4a4a4a;
+  flex: 1;
+  text-align: center;
+  box-sizing: border-box;
+ 
+}
+.border_no{
+ border-right: 1rpx solid #ddd;
+}
+.content{
+  margin-top: 120rpx;
+}
+
+/* 无内容加载图片 */
+.nothingimg{
+display: block;
+margin: 0 auto;
+width: 500rpx;
+height: 500rpx;
+}
+.word_box{
+  font-size: 34rpx;
+  color: #bababa;
+  text-align: center;
+}

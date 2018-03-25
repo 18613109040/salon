@@ -1,0 +1,14 @@
+.activity{
+  margin-top: 30rpx;
+}
+.activity-item{
+  margin-bottom: 30rpx;
+}
+.bottom{
+  width: 100%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #ccc;
+  margin-top: 20rpx;
+  padding-bottom: 40rpx;
+}

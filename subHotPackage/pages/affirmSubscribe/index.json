@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "确认预约",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "component-shopmap": "/components/ShopMap/index",
+    "component-line": "/components/Line/index"
+  }
+}

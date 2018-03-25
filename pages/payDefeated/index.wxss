@@ -1,0 +1,64 @@
+page {
+  background: #fff;
+  border-top: 1px solid #ccc;
+}
+
+.pay_win_img {
+  width: 200rpx;
+  height: 200rpx;
+}
+
+.pay_win {
+  text-align: center;
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: 20%;
+}
+
+.pay_win_title {
+  font-family: PingFangHK-Regular;
+  font-size: 20px;
+  color: #a7a7a7;
+  letter-spacing: 1px;
+  line-height: 30px;
+}
+
+.pay_bottom {
+  width: 100%;
+  text-align: center;
+}
+
+.pay_left, .pay_right {
+  box-sizing: border-box;
+  width: 40%;
+  display: inline-block;
+  border: 1px solid #ccc;
+  height: 84rpx;
+  line-height: 84rpx;
+  position: absolute;
+  top: 55%;
+  font-size: 16px;
+  color: #9b9b9b;
+  letter-spacing: 1px;
+  border-radius: 10rpx;
+}
+
+.pay_right {
+  right: 0rpx;
+  margin-right: 40rpx;
+}
+
+.pay_left {
+  left: 0rpx;
+  margin-left: 40rpx;
+}
+
+.pay_win_shibai {
+  width: 100%;
+  text-align: center;
+  font-size: 17px;
+  color: #ccc;
+  position: absolute;
+  top: 43%;
+}

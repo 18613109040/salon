@@ -1,0 +1,116 @@
+.my {
+  position: relative;
+}
+
+.my_images {
+  width: 100%;
+  height: 340rpx;
+}
+
+.my_outer {
+  width: 220rpx;
+  height: 210rpx;
+  background: #fff;
+  border-radius: 50%;
+  text-align: center;
+  padding-top: 10rpx;
+  opacity: 0.5;
+}
+.bg{
+  width: 100%;
+  height: 340rpx;
+  background:#eaeaea;
+}
+.my_outer_img {
+  width: 200rpx;
+  height: 200rpx;
+  border-radius: 100%;
+}
+
+.my_box_name {
+  font-size: 36rpx;
+  color: #fff;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.my_box_name1 {
+  font-size: 28rpx;
+  color: #fff;
+  width: 200rpx;
+  height: 54rpx;
+  background: #877fd4;
+  line-height: 54rpx;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  border-radius: 30rpx;
+  margin-top: 10rpx;
+}
+
+.my_mibox {
+  position: absolute;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 220rpx;
+  
+}
+
+.indent_img {
+  width: 50rpx;
+  height: 54rpx;
+}
+
+.indent {
+  display: flex;
+  text-align: center;
+  margin-top: 20rpx;
+  background: #fff;
+  padding-top: 25rpx;
+  padding-bottom: 25rpx;
+}
+
+.indent_list {
+  flex: 1;
+}
+
+.active_dd {
+  padding-right: 10rpx;
+}
+
+.indent_title {
+  font-size: 28rpx;
+  color: #4a4a4a;
+}
+
+.box_img {
+  width: 60rpx;
+  height: 50rpx;
+}
+
+.bot {
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+  align-items: center;
+  border-top: 1px solid #eee;
+  margin-top: 20rpx;
+}
+
+.bot_box {
+  background: #fff;
+  width: 25%;
+  height: 180rpx;
+  border-right: 1px solid #eee;
+  border-bottom: 1px solid #eee;
+  box-sizing: border-box;
+  padding-top: 5%;
+}
+
+.box_title {
+  font-size: 24rpx;
+  color: #9b9b9b;
+}

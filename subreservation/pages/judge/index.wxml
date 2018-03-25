@@ -1,0 +1,86 @@
+<view class='judge'>
+  <view class='nav'>
+    <view bindtap='onchange' data-id='{{0}}' class='{{showid==0? "nav-change":""}}'>全部(56条)</view>
+    <view bindtap='onchange' data-id='{{1}}' class='{{showid==1? "nav-change":""}}'>有图好评</view>
+    <view bindtap='onchange' data-id='{{2}}' class='{{showid==2? "nav-change":""}}'>低分评价</view>
+  </view>
+  <view class='content'>
+    <view class='content-center'>
+      <view class='content-header'>
+        <image class='img1' src='{{shopInfo.shopIcon}}'></image>
+        <view class='header-right'>
+          <view class='header-right-one'>
+            <view class='right-one-box'>
+              <text>David</text>
+              <component-rate value="{{4}}" size="{{24}}" />
+            </view>
+            <view>2018-01-01</view>
+          </view>
+          <view class='header-right-tow'>卷发养护套餐</view>
+        </view>
+      </view>
+      <view class='substance'>
+        <text class=" {{id==0?'subtance-none':'subtance-text'}}">第二次在店里买东西了，真的很方便，不用逛超市了直接选好自88888888888888888888888888888888888888888888888888888888888888888888888真的很方便，不用逛超市了直接选好自</text>
+        <view class="{{id==0?'close':'open'}}" bindtap='opentext' data-id="{{0}}">
+          <image class='img2' src='../../../images/next_gray@2x.png'></image>
+          <text>展开</text>
+        </view>
+      </view>
+      <view class='judge-pic'>
+        <scroll-view class='fff' scroll-x class='scroll-list'>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+        </scroll-view>
+      </view>
+      <view class='judge-end'>
+        <image class='img3' src='../../../images/write_gray@2x.png'></image>
+        <text>留言</text>
+      </view>
+    </view>
+    <view class='content-center'>
+      <view class='content-header'>
+        <image class='img1' src='{{shopInfo.shopIcon}}'></image>
+        <view class='header-right'>
+          <view class='header-right-one'>
+            <view class='right-one-box'>
+              <text>David</text>
+              <component-rate value="{{4}}" size="{{24}}" />
+            </view>
+            <view>2018-01-01</view>
+          </view>
+          <view class='header-right-tow'>卷发养护套餐</view>
+        </view>
+      </view>
+      <view class="substance">
+        <text class=" {{id==1?'subtance-none':'subtance-text'}}">第二次在店里买东西了，真的很方便，不用逛超市了直接选好自真的很方便，不用逛超市了直接选好自第二次在店里买东西了，真的很方便，不用逛超市了直接选好自真的很方便，不用逛超市了直接选好自第二次在店里买东西了，真的很方便，不用逛超市了直接选好自真的很方便，不用逛超市了直接选好自第二次在店里买东西了，真的很方便，不用逛超市了直接选好自真的很方便，不用逛超市了直接选好自
+        </text>
+        <view class="{{showid==1?'close':'open'}}"  bindtap='opentext'data-id="{{1}}">
+          <image class='img2' src='../../../images/next_gray@2x.png'></image>
+          <text>展开</text>
+        </view>
+      </view>
+      <view class='judge-pic'>
+        <scroll-view class='fff' scroll-x class='scroll-list'>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+          <image src='{{shopInfo.shopIcon}}'></image>
+        </scroll-view>
+      </view>
+      <view class='judge-end'>
+        <image class='img3' src='../../../images/write_gray@2x.png'></image>
+        <text>留言</text>
+      </view>
+    </view>
+  </view>
+</view>

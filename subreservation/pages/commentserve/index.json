@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "服务评论",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+   
+"usingComponents": {
+  "component-rate": "/components/rate/index"
+}
+}

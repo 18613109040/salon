@@ -1,0 +1,25 @@
+  <!--无内容时展示  -->
+<view class='nothing_box' wx:if="{{!collectData.length}}">
+  <image class='nothingimg' src='../../../images/nothing@2x.png' ></image>
+  <view class='word_box'>您还没有任何收藏，查看
+    <text style='color:#958dd8;border-bottom:2rpx solid #958dd8' bindtap='hotpice'>热门套餐</text>，挑选您喜欢的~
+  </view>
+</view>
+<view wx:if="{{collectData.length}}" wx:for="{{collectData}}" wx:key="{{index}}" class='top_header'>
+  <navigator class='hot-pack-item' url='/subHotPackage/pages/comboDetails/index?id={{item.packageId}}'>
+    <view class='hot-pack-image'>
+      <image src='{{item.imgUrl}}'></image>
+    </view>
+    <view class='hot-pack-footer'>
+      <view class='good-info'>
+        <view class='good-name'>{{item.title}}</view>
+        <view class='good-price'>¥{{item.price}}</view>
+      </view>
+      <view class='bott' >
+        <view class='description'>{{data.intro || ""}}</view>
+        <view class='delete iconfont icon-delete' catchtap='deletePage' data-goodsid='{{item.packageId}}'></view>
+      </view>
+    </view>
+  </navigator>
+</view>
+

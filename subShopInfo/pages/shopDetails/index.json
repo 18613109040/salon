@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "门店信息",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "component-rate": "/components/rate/index",
+    "component-line": "/components/Line/index",
+    "component-prewimage": "/components/prewImage/index"
+  }
+}

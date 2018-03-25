@@ -1,0 +1,161 @@
+@keyframes blinking{
+  0% {color: #000000}
+
+  100% {color:#FD678F}
+
+}
+.icon-erweima::after{
+  content: '\e655';
+  color:  #9B9B9B;
+  font-size: 35rpx;
+}
+.icon-horizontal::after{
+  content: '\e602';
+  color:  #4A90E2;
+  font-size: 35rpx;
+}
+.icon-speaker::after{
+  font-size: 30rpx;
+  content: '\e61b';
+  color: #000000;
+  animation:blinking 2s infinite;
+}
+.icon-time::after{
+  content: '\e725';
+  color: #9B9B9B;
+  font-size: 35rpx;
+}
+.icon-man::after{
+  content: '\e622';
+  color: #9B9B9B;
+  font-size: 35rpx;
+}
+.icon-phone::after{
+  content: '\e6fd';
+  color: #9B9B9B;
+  font-size: 35rpx;
+}
+.icon-address::after{
+  content: '\e641';
+  color: #9B9B9B;
+  font-size: 35rpx;
+}
+.shop-detail{
+
+}
+
+.shop-info-header{
+  display: flex;
+  align-items: flex-start;
+  padding: 30rpx;
+  background: #ECDEF8 ;
+}
+.shop-icon image{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 10rpx;
+}
+.shop-conten{
+  flex: 1;
+  margin-top: 10rpx;
+  margin-left: 20rpx;
+}
+.shop-name{
+ color: #000000;
+ font-size: 36rpx;
+}
+.shop-rate{
+  font-size: 22rpx;
+  display: flex;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.shop-rate .rate{
+  flex: 1;
+  display: flex;
+}
+.shop-rate .goods{
+  margin-left: 10rpx;
+  color: #4A4A4A; 
+}
+.shop-rate .look{
+  flex-basis: 200rpx;
+  text-align: end;
+  color: #877FD4;
+}
+.notice{
+  padding: 20rpx 30rpx 20rpx 30rpx;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+.notice .title{
+color: #000000;
+font-size: 28rpx;
+font-weight: 600;
+margin-left: 10rpx;
+}
+.notice .text{
+  color: #877FD4;
+  margin-left: 10rpx;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.shop-iamge{
+  width: 100%;
+  background: #fff;
+  padding: 20rpx;
+}
+.shop_card{
+  width: 100%;
+  display: flex;
+}
+.shop_card_item{
+  width: 150rpx;
+  margin-right: 25rpx;
+}
+.shop_item_image{
+  width: 150rpx;
+}
+.shop_item_image image{
+  width: 149rpx;
+  height: 149rpx;
+  border-radius: 1rpx;
+
+}
+.content{
+  background: #fff;
+  padding: 20rpx 20rpx 0rpx 20rpx;
+}
+.shop-detail .list{
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+  padding: 20rpx;
+}
+.shop-detail .list-tile{
+  margin-left: 10rpx;
+  color: #9B9B9B;
+  overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.shop-detail .list-content{
+  margin-left: 20rpx;
+  color: #000000;
+}
+.list-left{
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+.list .allow{
+  display: flex;
+  align-items: center;
+  color:  #4A90E2;
+  font-size: 24rpx;
+}
+.allow-text{
+ margin-top:-4rpx;
+}

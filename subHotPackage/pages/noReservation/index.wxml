@@ -1,0 +1,56 @@
+<form bindsubmit="formSubmit" report-submit="{{true}}">
+  <view class="view">
+    <component-shopmap shopInfo="{{shopInfo}}" type="2" />
+    <component-line/>
+    <view class="view_box">
+      <view class="xiangmu">
+        <view class="xiangmu1">
+          <text class="xiangmu1_title" decode="{{true}}" space="{{true}}">项目&nbsp;&nbsp;</text>
+          <text class="xiangmu2_text">{{packageDetail.packageName}}</text>
+        </view>
+        <view class="xiangmu2">
+          <text class="xiangmu2_tiem" decode="{{true}}" space="{{true}}">{{packageDetail.skuValue}}</text>
+        </view>
+      </view>
+
+      <view class="name">
+        <view class="name_title">您的称呼</view>
+        <input class="name_input" placeholder='请输入你的称呼' name="buyerNickName"></input>
+      </view>
+
+      <view class="name">
+        <view class="name_title">手机号码</view>
+        <input class="name_input" value='{{userInfo.phone||""}}' placeholder='请输入手机号码' name="buyerPhone" type='number'  bindblur="changeInput"></input>
+       
+      </view>
+
+      <view class="list">
+        <view class="list_title">小计</view>
+        <view class="list_conter">￥{{packageDetail.price}}</view>
+      </view>
+
+      <view class="list">
+        <view class="list_title">人数</view>
+        <view class="list_conter">
+          <label class='iconfont icon-desc' bindtap='desNum'></label>
+          <view class="list_conter_count list_color">{{number}}</view>
+          <label class='iconfont icon-add' bindtap='addNum'></label>
+        </view>
+      </view>
+      <view class="name">
+        <view class="name_title">备注留言</view>
+        <input class="name_input" placeholder='选填' name="buyerRemark"></input>
+      </view>
+    </view>
+  </view>
+
+  <view class="list active">
+    <view class="list_title">合计</view>
+    <view class="list_conter">￥{{money}}</view>
+  </view>
+<view class="view_bottom">
+  <view class="view_bottom_heji">合计:￥{{money}}</view>
+  <button class="view_bottom_wxzf"  formType="submit">微信支付</button>
+</view>
+</form>
+

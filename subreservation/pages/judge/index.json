@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "对Jayson的评价",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "component-rate": "/components/rate/index"
+  }
+}

@@ -1,0 +1,78 @@
+<!--subGroup/pages/Payment/index.wxml-->
+<view>
+<view class='payment'>
+  <!-- 地址开始 -->
+  <view class='address clearfix'>
+    <view class='address-left'>
+      <view class='address-left-one'>
+        <text class='address-left-one-txt1'>{{shopInfo.name}}</text>
+        <text class='address-left-one-txt2'>{{shopInfo.distance}}</text>
+      </view>
+      <view class='address-left-two'>{{shopInfo.city}}{{shopInfo.area}}{{shopInfo.shopAddress}}</view>
+    </view>
+    <view class='address-right' bindtap="goToShopByMap">
+      <view class='address-right-one'>
+        <image class='address-right-one-img' src='../../../images/map_purple1.png'></image>
+      </view>
+      <view class='address-right-two'>导航到店</view>
+    </view>
+  </view>
+  <!-- 地址结束 -->
+  
+<!-- 项目开始 -->
+  <view class='project'>
+    <view class='project-top'>
+      <text class='project-top-txt1'>项目</text>
+      <text class='project-top-txt2'>香薰SPA</text>
+    </view>
+    <view class='project-bottom'>
+      <text class='project-bottom-txt1'>时长: 60分钟</text>
+      <text class='project-bottom-txt2'>类型: 泰式</text>
+    </view>
+  </view>
+  <!-- 项目结束 -->
+
+  <!-- 手机号码开始 -->
+  <view class='phone flex'>
+    <view class='phone-one'>手机号码</view>
+    <view class='phone-two flex-1'>
+      <input type="text" class="input" bindinput="changeInput" placeholder='请输入联系电话'/>
+    </view>
+    <!-- <view class='phone-three'>修改</view> -->
+  </view>
+  <!-- 手机号码结束 -->
+
+  <!-- 小计开始 -->
+  <view class='ji clearfix'>
+    <view class='ji-left'>小计</view>
+    <view class='ji-right'>¥{{GroupCart.groupPrice}}</view>
+  </view>
+  <!-- 小计结束 -->
+
+  <!-- 数量开始 -->
+  <view class='number clearfix'>
+    <view class='number-one'>数量</view>
+    <view class='number-four' bindtap="onNumber" data-type="add">+</view>
+    <view class='number-three'>{{GroupCart.number}}</view>
+    <view class='number-two' bindtap="onNumber" data-type="sub" wx:if="{{GroupCart.number>1}}">-</view>
+  </view>
+  <!-- 数量结束 -->
+
+  
+</view>
+<!-- 合计开始 -->
+  <view class='Total clearfix'>
+    <view class='Total-left'>合计</view>
+    <view class='Total-right'>¥{{totalPrice}}</view>
+  </view>
+  <!-- 合计结束 -->
+
+  <!-- 底部 -->
+  <view class='bottom clearfix'>
+    <view class='bottom-left'>合计: ¥{{totalPrice}}</view>
+    <view class='bottom-right' bindtap='payMent'>微信支付</view>
+  </view>
+</view>
+
+
+

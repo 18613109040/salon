@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "美容美发",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "component-hotpackitem":"/components/HotPackItem/index",
+    "component-shopmap":"/components/ShopMap/index"
+  }
+}

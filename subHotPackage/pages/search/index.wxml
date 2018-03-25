@@ -1,0 +1,40 @@
+<view class='page'>
+  <view class='box'>
+    <view class='search'>
+      <image src='../../../images/search.png' class='search-icon'></image>
+      <input placeholder='搜索' class='search-input' confirm-type='search' value="{{keyWord}}" bindinput="searchList" adjust-position="{{false}}" />
+    </view>
+  </view>
+  <view wx:if="{{searchList.length>0&&code==true}}">
+    <view wx:for="{{searchList}}" wx:key="{{index}}" class='host-item'>
+      <HotPackItem data="{{item}}" />
+    </view>
+  </view>
+  <view wx:elif="{{searchList.length==0&&code==true}}" class="none">
+    <image class="non" src="../../../images/non@2x.png"></image>
+    <view class="non_text">
+      <label class="  iconfont icon-emailicon"></label>
+      <view class="non_title">搜索不到您找的结果，换个关键字试试哦~</view>
+    </view>
+  </view>
+  <view wx:else>
+    <view class='hot-search'>
+      <view class='search-title'>历史搜索</view>
+      <view class='search-content'>
+        <view class='button' wx:for="{{historyList}}" wx:key="{{index}}" bindtap='clickTab' data-name="{{item}}" >{{item}}</view>
+      </view>
+      <image class='trash' src="../../../images/packages/delete_black.png"></image>
+    </view>
+    <view class='hot-search'>
+      <view class='search-title'>热门搜索</view>
+      <view class='search-content'>
+        <view class='button'>香薰SPA</view>
+      </view>
+    </view>
+  </view>
+
+
+
+
+
+</view>

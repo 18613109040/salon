@@ -1,0 +1,4 @@
+<view>
+  <view></view>
+  <view class='save' bindtap='downLoad'>保存图片</view>
+</view>

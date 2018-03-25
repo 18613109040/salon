@@ -1,0 +1,124 @@
+
+.list {
+  padding: 0 28rpx;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+}
+
+.title {
+  display: flex;
+  justify-content: space-between;
+  font-size: 28rpx;
+  padding-top: 28rpx;
+  padding-bottom: 20rpx;
+}
+.text-li{
+  margin-left: 10rpx;
+}
+.time {
+  color: #000;
+}
+
+.time_num {
+  color: #4a4a4a;
+}
+
+.pay_state {
+  color: #d50c18;
+}
+
+.to-be-consumed{
+  color:#877FD4;
+}
+
+.finished{
+  color: #B1B1B1;
+}
+
+.to-be-comment{
+  color: #45B3B2;
+}
+
+.cancelled{
+  color: #FF86A6;
+}
+.pingjia{
+  color: #099b99;font-size: 
+  26rpx;
+}
+.refunding{
+  color: #F7AD11;
+}
+
+.comment_center {
+  display: flex;
+  align-items: center;
+  padding-bottom: 20rpx;
+}
+
+.logo {
+  width: 108rpx;
+  height: 108rpx;
+  padding-right: 20rpx;
+}
+
+.center_txt {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-between;
+  height: 110rpx;
+  
+}
+
+.time_style{
+  display: flex;
+  justify-content: space-between;
+  
+}
+.txt_noe{
+  font-size: 28rpx;
+  color: #000;
+}
+.txt_tow{
+color: #4A4A4A;
+  font-size: 28rpx;
+
+}
+
+.txt_therr {
+  font-size: 32rpx;
+  color: #f8b425;
+}
+
+.pay_style {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 30rpx;
+  align-items: baseline;
+}
+
+.pay_style_box {
+  background: #01c000;
+  border-radius: 10rpx;
+  width: 180rpx;
+  height: 54rpx;
+  font-size: 26rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 54rpx;
+}
+
+.look {
+  height: 40rpx;
+  font-size: 26rpx;
+  border-bottom: 1px solid #4a4a4a;
+  color: #4a4a4a;
+  line-height: 44rpx;
+}
+
+.txt_therr_box {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}

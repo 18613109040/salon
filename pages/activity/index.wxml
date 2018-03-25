@@ -1,0 +1,12 @@
+<view class='activity'>
+  <view wx:for="{{data}}" class='activity-item' wx:key="{{index}}">
+    <component-activityitem activeData="{{item}}"/>
+  </view>
+  
+</view>
+
+<view class='bottom'>
+  <text class='bottom_word' decode="{{true}}" space="{{true}}">
+    ——————&nbsp;&nbsp;更多精彩活动后续登陆&nbsp;&nbsp;———————
+  </text>
+</view>

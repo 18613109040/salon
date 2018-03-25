@@ -1,0 +1,15 @@
+  <view class='address{{type}}' bindtap='goToShopByMap' >
+    <view class='shop-info'>
+      <view >
+        <text class='shop-name'>{{shopInfo.name}}</text>
+        <text class='shop-distance'>{{shopInfo.distance}}</text>
+      </view>
+      <view class='shop-address'>
+        <text>{{shopInfo.shopAddress}}</text>
+      </view>
+    </view>
+    <view class='navmap{{type}}' data-type="{{type}}">
+      <image src='../../images/map_purple{{type}}.png'></image>
+      <view>导航到店</view>
+    </view>
+  </view>

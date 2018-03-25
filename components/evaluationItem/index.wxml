@@ -1,0 +1,35 @@
+<!--内容  -->
+<view class='content'>
+  <view class='content_top'>
+    <view class='cont_header'>
+      <image class='header_img' src='{{commentItem.buyerImg}}'></image>
+    </view>
+    <view class='right-cotent'>
+      <view class='cont_title'>
+        <view class='rate-name'>
+          <view class='name'>{{commentItem.buyerName}}</view>
+          <component-rate size="{{28}}" value="{{commentItem.score}}"/>
+        </view>
+        <view class='date'>{{commentItem.createDt}}</view>
+      </view>
+      <view class='money'>{{commentItem.packageName}}</view>
+    </view>
+  </view>
+  <!--文字评论  -->
+  <view class="{{(id==0)? 'com_change':'comment_word'}}">
+    {{commentItem.commentText}}
+  </view>
+  <!--展开  -->
+  <view class="{{id == 0?'cont_close':'cont_open'}}" bindtap='open' data-id="{{0}}" wx:if="{{commentItem.commentText&&commentItem.commentText.length>50}}">
+    <label class='iconfont icon-arrow-down'></label>
+    <view class='open_word'>展开</view>
+  </view>
+  <!--商家解释  -->
+  <view class='merchant' wx:if="{{commentItem.shopReply}}">
+    商家解释：{{commentItem.shopReply}}
+  </view>
+  <!--评论图片  -->
+  <view class='comment_img' wx:if="{{commentItem.imageList.length>0}}">
+    <component-prewimage imageList="{{commentItem.imageList}}" />
+  </view>
+</view>

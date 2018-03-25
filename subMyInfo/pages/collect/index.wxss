@@ -1,0 +1,103 @@
+.icon-delete::after{
+ content: '\e609';
+ font-size: 40rpx; 
+ color: #877FD4;
+}
+.top_header{
+  margin-top: 20rpx;
+}
+.hot-pack-item {
+ margin: 0rpx 20rpx;
+ background: #fff;
+ border-radius: 16rpx;
+}
+
+.lable {
+   width: 80rpx;
+   padding: 50rpx 0rpx 25rpx 8rpx; 
+  color: white;
+  font-size: 24rpx;
+  text-align: center;
+  position: absolute;
+  margin-left: -12rpx;
+  margin-top: -20rpx;
+  transform: rotate(-45deg);  
+}
+
+.lable::before {
+   content: '';
+  position: absolute;
+  background-image: linear-gradient(-160deg, #d5e7be, #8bd539);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  transform: perspective(100rpx) rotateX(66deg); 
+}
+.reservation{
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+}
+.reservation image{
+  width: 120rpx;
+  height: 120rpx;
+}
+.hot-pack-image image{
+  width: 100%;
+  height: 260rpx;
+  border-top-right-radius: 16rpx;
+  border-top-left-radius: 16rpx;
+}
+.hot-pack-footer{
+  padding: 10rpx 20rpx 25rpx 20rpx;
+}
+.good-info{
+  display: flex;
+  align-items: center;
+}
+.good-name{
+  font-size: 32rpx;
+  color: #4A90E2;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+}
+.good-price{
+  color: #FD678F ;
+  margin-left: 10rpx;
+}
+
+.bott{
+  display: flex;
+  align-items: center;
+
+}
+.description{
+  margin-top: 20rpx;
+  font-size: 24rpx;
+  color: #4A4A4A;
+  flex: 1;
+  padding-bottom: 20rpx;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+  overflow: hidden;
+}
+.delete{
+  flex-basis: 120rpx;
+  text-align: end;
+}
+/* 无内容加载图片 */
+.nothingimg{
+display: block;
+margin: 50rpx auto;
+padding-top: 30rpx;
+width: 570rpx;
+height: 550rpx;
+}
+.word_box{
+  font-size:30rpx;
+  padding:0 40rpx;
+  color:#a8a8a8;
+}

@@ -1,0 +1,48 @@
+<!--我的团购-->
+<view class="big_box">
+  <!-- 头部导航 -->
+  <view class='header_nav'>
+    <block>
+ 
+      <view class='nav_li' bindtap="tiemClick"  wx:key=" {{index}}" wx:for="{{navList}}" data-index="{{index}}" >
+        <text class="{{tiems== item.id?  'change' : 'nav_li_txt'}}" >{{item.name}}</text>
+      </view>
+    </block>
+  </view>
+  </view>
+  
+  <!--内容 拼团中  -->
+  <view class='content' data-id="{{id}}" wx:for="{{pickcard}}" wx:key="{{index}}">
+    <view class='cont_top'>
+        <view>拼团时间：<text class='one'>{{item.time}}</text></view>
+        <view class='two'>拼团中，还差<text>{{item.status}}</text>人</view>
+    </view>
+     <image class='hea_img' src='../../../images/zimg/header.png'></image>
+     <view class='cont_word'>
+      <view>{{item.bar}}<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;(<text>{{item.bartime}}</text>分钟)</text></view>
+      <view>数量：<text>{{item.nums}}</text></view>
+      <view class='cont_money'>￥<text>{{item.money}}</text></view>
+     </view>
+     <view class='btn'>
+        <view class='btn_word' bindtap='invitefriend'>邀请好友拼团</view>
+     </view>
+  </view>
+
+    <!--内容2拼团成功  -->
+  <view class='content'>
+    <view class='cont_top'>
+        <view>拼团时间：<text class='one'>2018-03-09</text></view>
+        <view class='two_suc'>拼团成功</view>
+    </view>
+     <image class='hea_img' src='../../../images/zimg/header.png'></image>
+     <view class='cont_word'>
+      <view>滋润泡泡浴<text decode="{{true}}" space="{{true}}">&nbsp;&nbsp;(60分钟)</text></view>
+      <view>数量：<text>3</text></view>
+      <view class='cont_money'>￥196</view>
+     </view>
+     <view class='btn_check'>
+     <view class="check" bindtap='checksuccess'>
+       查看
+     </view>
+     </view>
+  </view>

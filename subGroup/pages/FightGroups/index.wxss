@@ -1,0 +1,83 @@
+/* subGroup/pages/FightGroups/index.wxss */
+.FightGroup{
+  width: 100%;
+  background: #F3F3F3;
+}
+.FightGroup-top{
+  height: 260rpx;
+  overflow: hidden;
+}
+.fightImg{
+  width: 100%;
+  height: 260rpx;
+}
+.FightGroup-detail{
+  padding: 0 24rpx;
+}
+.Offered {
+  background: #fff;
+  margin-top: 30rpx; 
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  overflow: hidden;
+}
+.Offered  .OfferedBox{
+  display: flex;
+  justify-content: space-between;
+  padding: 22rpx 24rpx;
+}
+.Offered .Offered_img{
+  display: block;
+  width: 700rpx;
+  height: 260rpx;
+  margin: 0 auto;
+}
+.Offered .Offered_title{
+  font-family: PingFangHK-Regular;
+  font-size: 32rpx;
+  color: #4A90E2;
+  letter-spacing: 0;
+  line-height: 50rpx;
+  margin-right: 10rpx;
+}
+.Offered .Offered_price{
+  font-size: 32rpx;
+  color: rgb(250, 122, 157);
+}
+.Offered .Offered_canjia{
+  font-family: PingFangHK-Regular;
+  font-size: 12px;
+  color: #9B9B9B;
+  letter-spacing: 0;
+  line-height: 25px;
+}
+.Offered .Offered_canjia .Offered_pep{
+  font-size: 24rpx;
+  color: #4A90E2;
+}
+.Offered .Offered_btn{
+  width: 200rpx;
+  height: 60rpx;
+  background: #877FD4;
+  border-radius: 10rpx;
+  color: #fff;
+  font-family: PingFangHK-Regular;
+  font-size: 28rpx;
+  letter-spacing: 1px;
+  line-height: 60rpx;
+  text-align: center;
+  margin-top: 15rpx;
+}
+
+/* 无内容加载图片 */
+.nothingimg{
+display: block;
+margin: 0 auto;
+width: 500rpx;
+height: 500rpx;
+}
+.word_box{
+  font-size: 34rpx;
+  color: #bababa;
+  text-align: center;
+}

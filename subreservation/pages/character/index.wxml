@@ -1,0 +1,53 @@
+<view class='Character'>
+  <view class='header'>
+    <!-- <view class='top-left'>
+      <button  open-type="share">
+         <label class="top-left-pic2 iconfont icon-shoucang"></label>
+      </button>
+    </view> -->
+    <view class='content-center'>
+      <view class='Master'>
+        <image class='Master-img' src='{{appointmentTeacherdetail.imgUrl}}'></image>
+      </view>
+      <view class='content-header'>
+        <text class='header-tetx1'>{{appointmentTeacherdetail.serverName}}</text>
+        <text class='header-tetx2'>{{appointmentTeacherdetail.alias}}</text>
+        <view class='header-box'>
+          <component-rate value="{{appointmentTeacherdetail.avgCommentScore}}" size="{{28}}" />
+          <text class='header-box-text1'>好评率{{appointmentTeacherdetail.goodCommentRate}}%</text>
+        </view>
+      </view>
+    </view>
+    <view class='header-late'>
+      <view class='header-late-footer'>
+        <view class='footer-text' wx:for="{{appointmentTeacherdetail.labels}}" wx:key="{{index}}">{{item}}</view>
+      </view>
+      <view class='look' bindtap='gotojudge'>查看评价（{{appointmentTeacherdetail.commentNum}}）</view>
+    </view>
+  </view>
+  <view class='centent'>
+    <view class='centent-top'>名师故事</view>
+    <view class='centent-text'>
+      <text>{{appointmentTeacherdetail.intro}}</text>
+    </view>
+  </view>
+  <view class='centent'>
+    <view class='centent-top'>作品集</view>
+    <view class='centent-pic'>
+      <image class='centent-pic1' src='{{item}}' data-index="{{index}}" bindtap='lookImage' wx:for="{{appointmentTeacherdetail.opus}}" wx:key="{{index}}"></image>
+    </view>
+  </view>
+</view>
+<!-- 底部  -->
+<view class="bottom">
+  <navigator class="bottom_home" hover-class="none" url='/pages/home/index' open-type="switchTab">
+    <label class='icon-home iconfont'></label>
+    <view class="bottom_home_shouye">首页</view>
+  </navigator>
+  <button class="bottom_service" hover-class="none">
+    <label class='icon-customer iconfont'></label>
+    <view class="bottom_kefu">客服</view>
+  </button>
+  <view class="bottom_yuyue" bindtap='gotobespoke'>立即预约</view>
+</view>
+<!-- <canvas  canvas-id="canvas" hidden='{{hiddenCanvas}}' style="width: 100%; height: 400rpx;"></canvas> -->

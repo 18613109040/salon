@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "全部评论",
+  "navigationBarBackgroundColor": "white",
+  "navigationBarTextStyle": "black",
+  "onReachBottomDistance": 50,
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "component-evaluationitem": "/components/evaluationItem/index"
+  }
+}

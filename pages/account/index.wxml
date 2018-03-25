@@ -1,0 +1,60 @@
+<view class="my" wx:if="{{userInfo.code!=0}}">
+  <view class="my_box">
+    <view class='bg'></view>
+  </view>
+  <view class="my_mibox" bindtap='onUserInfo'>
+    <view class="my_outer">
+      <image class="my_outer_img" src="../../images/smile@2x.png"></image>
+    </view>
+    <view class="my_box_name1">马上登录</view>
+  </view>
+</view>
+<view class="my" wx:else>
+  <view class="my_box">
+    <image class="my_images" src="../../images/header.png"></image>
+  </view>
+  <view class="my_mibox" bindtap='onUserInfo'>
+    <view class="my_outer">
+      <image class="my_outer_img" src="{{userInfo.avatarUrl}}"></image>
+    </view>
+    <view class="my_box_name">{{userInfo.nickName}}</view>
+  </view>
+</view>
+<view class="indent">
+  <navigator class="indent_list" url='/subMyInfo/pages/order/index' hover-class="none" >
+    <image class="indent_img" src="../../images/order.png"></image>
+    <view class="indent_title" >我的订单</view>
+  </navigator>
+  <navigator class="indent_list" url='/subGroup/pages/mygroup/index' hover-class="none" >
+    <image class="indent_img" src="../../images/spellgroup.png"></image>
+    <view class="indent_title">我的团购</view>
+  </navigator>
+  <navigator class="indent_list"  url='/subMyInfo/pages/reservation/index' hover-class="none" >
+    <image class="indent_img" src="../../images/appointment.png"></image>
+    <view class="indent_title">我的预约</view>
+  </navigator>
+</view>
+
+
+<view class="bot">
+  <!-- <view class="bot_box">
+    <image class="box_img" src="../../images/info.png"></image>
+    <view class="box_title">账户信息</view>
+  </view> -->
+  <navigator class="bot_box" url='/subMyInfo/pages/collect/index' hover-class="none" >
+    <image class="box_img" src="../../images/start.png"></image>
+    <view class="box_title">我的收藏</view>
+  </navigator>
+  <view class="bot_box" >
+    <image class="box_img" src="../../images/contact.png"></image>
+    <view class="box_title">联系客服</view>
+  </view>
+  <view class="bot_box">
+    <image class="box_img" src="../../images/line.png"></image>
+    <view class="box_title">邀请好友</view>
+  </view>
+  <view class="bot_box" bindtap='exit'  wx:if="{{userInfo.code==0}}">
+    <image class="box_img" src="../../images/exit@2x.png"></image>
+    <view class="box_title">退出登录</view>
+  </view>
+</view>

@@ -1,0 +1,88 @@
+
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 32rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-horizontal::after{
+  content: '\e602';
+}
+.icon-up:after{
+ content: '\e695';
+}
+.icon-down:after{
+content: '\e692';
+}
+.list{
+    position: relative;
+    display: flex;
+    background-color: #fff;
+    vertical-align: middle;
+    overflow: hidden;
+    transition: background-color 200ms;
+    align-items: center;
+   
+}
+.list-body{
+  margin-left: 15rpx;
+  padding:15rpx 15rpx 15rpx 15rpx;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  overflow: hidden;
+  align-self: stretch;
+  
+}
+
+.list-thumb{
+  margin-right: 30rpx;
+}
+.list-thumb image{
+    width: 50rpx;
+    height:50rpx;
+    margin-top: 7rpx;
+}
+.list-line{
+  position: relative;
+  display: flex;
+  flex: 1;
+  align-self: stretch;
+  overflow: hidden;
+  align-items: center;
+}
+.list-content{
+    flex: 1;
+    color: #000;
+    font-size: 32rpx;
+    line-height: 1.5;
+    text-align: left;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.list-line-wrap{
+    white-space: normal;
+    word-break: break-all;
+
+}
+.list-extra{
+    flex-basis: 36%;
+    color: #888;
+    font-size: 30rpx;
+    line-height: 1.5;
+    text-align: right;
+    width: auto;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.list-arrow{
+  margin-top: 10rpx;   
+  color: #ddd;
+  font-size: 32rpx;
+}

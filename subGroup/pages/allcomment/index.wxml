@@ -1,0 +1,43 @@
+<!--全部评论-->
+
+<view class='comment'>
+<!--头部  -->
+<view class='top'>
+  <view bindtap='onchange' data-id="{{0}}" class="{{topid==0?'top_active':''}}">全部<text>(56条)</text></view>
+  <view bindtap='onchange' data-id="{{1}}" class="{{topid==1?'top_active':''}}">有图好评</view>
+  <view bindtap='onchange' data-id="{{2}}"class="{{topid==2?'top_active':''}}">低分评价</view>
+</view>
+
+<!--内容  -->
+<view class='content' wx:for="{{pickcard}}" wx:key="{{index}}" data-index="{{index}}">
+  <view class='content_top'>
+    <view class='cont_header'><image class='header_img' src='../../../images/zimg/header.png'></image></view>
+    <view class='conent'>
+
+            <view class='kepphir'>{{item.title}}</view>
+              <component-commentitem class="start" />
+      
+       <view class='money'>￥<text>{{item.money}}</text></view>
+    </view>
+    <view class='date'>{{item.date}}</view>
+</view>
+<!--文字评论  -->
+<view class="{{(id==index)? 'com_change':'comment_word'}}" >{{item.content}}</view>
+<!--展开  -->
+<view class="{{id == index?'cont_close':'cont_open'}}" bindtap='open_word' data-id="{{index}}" >
+  <image class='open_next' src='../../../images/zimg/next_gray@2x.png'></image>
+  <view class='open_word'>展开</view>
+</view>
+<!--商家解释  -->
+<view class='merchant'>
+  商家解释：<text>{{item.merchant}}</text>
+</view>
+<!--评论图片  -->
+  <view class='comment_img'>
+  <image class='com_img' wx:for="{{item.imgUrls}}" wx:key="{{index}}" src='{{item}}'></image>
+  </view>
+</view>
+</view>
+
+
+

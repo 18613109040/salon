@@ -1,0 +1,74 @@
+<view class='shop-detail'>
+  <view class='shop-info-header'>
+    <view class='shop-icon'>
+      <image src='{{shopInfo.shopIcon}}'></image>
+    </view>
+    <view class='shop-conten'>
+      <view class='shop-name'>
+        {{shopInfo.name}}
+      </view>
+      <view class='shop-rate'>
+        <view class='rate'>
+          <view><component-rate size="{{30}}" value="{{shopInfo.averageScore}}"/></view>
+          <view class='goods'>好评率90%</view>
+        </view>
+        <!-- <view class='look'>查看评价（475）</view> -->
+      </view>
+    </view>
+  </view>
+  <view class='notice'>
+    <label class='iconfont icon-speaker'></label>
+    <text class='title'>店铺公告</text>
+    <text class='text'>{{shopInfo.notice||""}}</text>
+  </view>
+  <view>
+    <component-prewimage imageList="{{shopFace}}"/>
+  </view>
+  <view class='content'>
+    <view class='list'>
+      <label class='iconfont icon-time'></label>
+      <view class='list-tile'>营业时间</view>
+      <view class='list-content'>{{shopInfo.openingTime}}-{{shopInfo.closingTime}}</view>
+    </view>
+    <component-line />
+    <view class='list'>
+      <label class='iconfont icon-man'></label>
+      <view class='list-tile'>联系人</view>
+      <view class='list-content'>黄</view>
+    </view>
+    <component-line />
+    <view class='list' bindtap='call'>
+      <view class='list-left'>
+        <label class='iconfont icon-phone'></label>
+        <view class='list-tile'>联系电话</view>
+        <view class='list-content'>{{shopInfo.shopPhone}}</view>
+      </view>
+      <view class='allow'>
+       <view class='allow-text'>联系商家 </view>
+       <label class='iconfont icon-horizontal'></label>
+      </view>
+    </view>
+    <component-line />
+    <view class='list' bindtap='goToShopByMap'>
+      <view class='list-left'>
+        <label class='iconfont icon-address'></label>
+        <view class='list-tile'>{{shopInfo.shopAddress}}</view>
+      </view>
+      <view class='allow'>
+       <view class='allow-text'>导航到店 </view>
+       <label class='iconfont icon-horizontal'></label>
+      </view>
+    </view>
+    <component-line />
+    <view class='list' bindtap='qrCode'>
+      <view class='list-left'>
+        <label class='iconfont icon-erweima'></label>
+        <view class='list-tile'>店铺二维码</view>
+      </view>
+      <view class='allow'>
+       <view class='allow-text'>查看</view>
+       <label class='iconfont icon-horizontal'></label>
+      </view>
+    </view>
+  </view>
+</view>

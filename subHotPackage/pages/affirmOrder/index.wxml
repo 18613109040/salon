@@ -1,0 +1,163 @@
+<view class="view">
+  <component-shopmap shopInfo="{{shopInfo}}" type="2" />
+  <component-line/>
+  <view class="view_xiangmu">
+    <view class="view_xiangmu_top">
+      <text class="view_xiangmu_top_title">项目 </text>
+      <text class="view_xiangmu_top_text"> 丝滑SPA</text>
+    </view>
+    <view class="view_xiangmu_bot">
+      <text class="view_xiangmu_bot_tiem" decode="{{true}}" space="{{true}}">时长: 60分钟&nbsp;&nbsp;&nbsp;&nbsp;</text>
+      <text class="view_xiangmu_bot_tiem">类型: 泰式</text>
+    </view>
+  </view>
+
+  <view class="view_list">
+    <view class="view_list_left">
+      <text class="view_list_title" decode="{{true}}" space="{{true}}">手机号码&nbsp;&nbsp;&nbsp;&nbsp;</text>
+      <text class="view_list_conter">13588888888</text>
+    </view>
+    <view class="view_list_tight">修改</view>
+  </view>
+
+  <view class="view_list">
+    <view class="view_list_left">
+      <text class="view_list_title">小伙</text>
+    </view>
+    <view class="view_list_tight view_list_color">￥288</view>
+  </view>
+  <view class="view_list">
+    <view class="view_list_left">
+      <text class="view_list_title">优惠</text>
+    </view>
+    <view class="view_list_tight view_list_color">-￥20</view>
+  </view>
+
+  <view class="view_list">
+    <view class="view_list_left">
+      <text class="view_list_title">服务人员</text>
+    </view>
+    <view class="view_list_tight black-color" bindtap="showDesigner">请选择</view>
+    <label class=" iconfont icon-arrow-r"></label>
+  </view>
+
+  <view class="view_list">
+    <view class="view_list_left">
+      <text class="view_list_title">预约时间</text>
+    </view>
+    <view class="view_list_tight black-color" bindtap="showTime">请选择</view>
+    <label class=" iconfont icon-arrow-r"></label>
+  </view>
+
+
+
+  <view class="view_list active">
+    <view class="view_list_left">
+      <text class="view_list_title">数量</text>
+    </view>
+    <view class="view_list_from ">
+      <label class='iconfont icon-desc view_list_jia'></label>
+      <view class="view_list_gezi">2</view>
+      <label class='iconfont icon-add view_list_same'></label>
+    </view>
+  </view>
+</view>
+<view class="view_list view_list_youhui">
+  <view class="view_list_left">
+    <text class="view_list_title">合计</text>
+  </view>
+  <view class="view_list_from view_list_color">
+    ￥556
+  </view>
+</view>
+
+<view class="view_bottom">
+  <view class="view_bottom_heji">合计:￥556</view>
+  <view class="view_bottom_wxzf">微信支付</view>
+</view>
+
+
+
+<view wx:if="{{showDesigner}}">
+  <view class="drawer"></view>
+  <view class='drawer_box'>
+    <view class='drawer_box-header'>选择服务人员</view>
+    <view class='close-drawer' bindtap='closedrawer'>
+      <image src='../../../images/close_black@2x.png'></image>
+    </view>
+    <view class='drawer_box-box'>
+      <scroll-view scroll-y class='scroll-list'>
+        <block wx:for='{{designers}}'>
+          <view class='item'>
+            <image class='avatar' src='{{item[0]}}'></image>
+            <view class='nickname'>{{item[1]}} </view>
+            <view class="radio {{selectedIndex == index ? 'selected': ''}}" data-index='{{index}}' bindtap='selected'></view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view class='ok' bindtap='closedrawer'>确定</view>
+  </view>
+  
+</view>
+
+
+<view wx:if="{{showTime}}">
+  <view class="drawer"></view>
+  <view class='drawer_box'>
+    <view class='drawer_box-header'>选择到店时间</view>
+    <view class='close-drawer' bindtap='closeTime'>
+      <image src='../../../images/close_black@2x.png'></image>
+    </view>
+    <view class='bigbox'>
+      <view class='box-left'>
+        <view class='box-left-box boxchange'>
+          <text>3月12日</text>
+          <text class='str'>[今天]</text>
+        </view>
+        <view class='box-left-box'>
+          <text>3月13日</text>
+          <text class='str'>[星期二]</text>
+        </view>
+        <view class='box-left-box'>
+          <text>3月14日</text>
+          <text class='str'>[星期三]</text>
+        </view>
+        <view class='box-left-box'>
+          <text>3月15日</text>
+          <text class='str'>[星期四]</text>
+        </view>
+        <view class='box-left-box'>
+          <text>3月16日</text>
+          <text class='str'>[星期五]</text>
+        </view>
+        <view class='box-left-box'>
+          <text>3月17日</text>
+          <text class='str'>[星期六]</text>
+        </view>
+        <view class='box-left-box'>
+          <text>3月18日</text>
+          <text class='str'>[星期日]</text>
+        </view>
+      </view>
+      <view class='box-right'>
+        <scroll-view scroll-y style='height:930rpx'>
+          <view class='time'>09:00</view>
+          <view class='time time-change'>09:30</view>
+          <view class='time'>10:00</view>
+          <view class='time'>10:30</view>
+          <view class='time'>11:00</view>
+          <view class='time'>11:30</view>
+          <view class='time'>12:00</view>
+          <view class='time'>12:30</view>
+          <view class='time'>13:00</view>
+          <view class='time'>13:30</view>
+          <view class='time'>14:00</view>
+          <view class='time'>14:30</view>
+          <view class='time'>15:00</view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+  <view class='ok' bindtap='closeTime'>确定</view>
+</view>

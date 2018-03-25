@@ -1,0 +1,5 @@
+.DS_Store
+actions/node_modules
+actions/package-lock.json
+project.config.json
+ext.json

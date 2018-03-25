@@ -1,0 +1,294 @@
+.title {
+  display: flex;
+  height: 100rpx;
+}
+
+.title_other {
+  padding: 28rpx;
+  font-size: 32rpx;
+  color: #5f57b4;
+  background: #ddd;
+}
+
+.right {
+  font-size: 28rpx;
+  background: #f3f3f3;
+  padding-left: 20rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.title_one {
+  padding: 28rpx;
+  font-size: 32rpx;
+  color: #d0021b;
+  background: #ddd;
+  display: flex;
+}
+
+.title_tow {
+  font-size: 28rpx;
+  background: #f3f3f3;
+  line-height: 100rpx;
+  padding-left: 20rpx;
+}
+
+.title_remove {
+  padding: 28rpx;
+  font-size: 32rpx;
+  color: #5f57b4;
+  background: #ddd;
+  display: flex;
+}
+
+.title_success {
+  font-size: 32rpx;
+  color: #9b9b9b;
+  padding-top: 28rpx;
+  padding-left: 28rpx;
+}
+
+.title_top {
+  font-size: 24rpx;
+  color: #d0021b;
+}
+
+.title_bottom {
+  font-size: 12px;
+  color: #a4a4a4;
+}
+
+.bule {
+  color: #5697e4;
+}
+
+.gray {
+  color: #9b9b9b;
+}
+
+.bottom {
+  padding: 20rpx 28rpx 0 28rpx;
+  background: #fff;
+}
+
+.simt {
+  width: 100%;
+  background: #877fd4;
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
+}
+
+.simt_son {
+  color: #fff;
+  font-size: 34rpx;
+}
+
+.time {
+  display: flex;
+  font-size: 28rpx;
+  padding-bottom: 16rpx;
+  align-items: baseline;
+}
+
+.time_tie {
+  color: #9b9b9b;
+  margin-right: 20rpx;
+  width: 140rpx;
+}
+
+.week_day {
+  color: #4a4a4a;
+  margin-right: 20rpx;
+}
+
+.lineheight {
+  line-height: 58rpx;
+}
+
+.beizhu {
+  color: #4a4a4a;
+  flex: 1;
+  line-height: 50rpx;
+}
+
+.change_time {
+  color: #d0021b;
+  border-bottom: 1px solid #d0021b;
+}
+
+.erwm_box {
+  background: #fff;
+  margin-top: 20rpx;
+}
+
+.yuerwm {
+  font-size: 28rpx;
+  color: #9b9b9b;
+  padding: 20rpx 104rpx 0 28rpx;
+}
+
+.erwm {
+  width: 320rpx;
+  height: 320rpx;
+}
+
+.erwm_img {
+  padding-top: 40rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 30rpx;
+}
+
+.num {
+  color: #d0021b;
+  font-size: 48rpx;
+}
+
+.btn_list {
+  display: flex;
+  text-align: center;
+  line-height: 110rpx;
+  width: 100%;
+}
+
+.call {
+  width: 30rpx;
+  height: 30rpx;
+  padding-right: 10rpx;
+}
+
+.btn_noe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+  color: #fff;
+  background: #c6aae1;
+  height: 110rpx;
+  width: 50%;
+}
+
+.btn_son {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 34rpx;
+  color: #fff;
+  background: #c6aae1;
+  height: 110rpx;
+  width: 100%;
+}
+
+.btn_tow {
+  background: #877fd4;
+  font-size: 34rpx;
+  width: 50%;
+  color: #fff;
+}
+
+.box {
+  background: #fff;
+}
+
+.btn_box {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999;
+}
+
+.btn_farher {
+  border-top: 1px solid #ddd;
+  background: #fff;
+}
+
+.one_box {
+  font-size: 34rpx;
+  color: #4a4a4a;
+  width: 33.33%;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.tow_box {
+  width: 33.33%;
+  background: #c6aae1;
+  font-size: 34rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+}
+
+.tree_box {
+  width: 33.33%;
+  background: #877fd4;
+  font-size: 34rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 100rpx;
+}
+.indent_nav_content {
+  font-size: 28rpx;
+  color: #9b9b9b;
+}
+.linhei{
+  line-height: 100rpx;
+}
+
+.indent_nav_content_tiem {
+  color: #afcbeb;
+  font-size: 24rpx;
+}
+.right_title_noe {
+  display: block;
+  color: #d0021b;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+
+.right_title_tow {
+  display: block;
+  height: 50rpx;
+  line-height: 50rpx;
+}
+.btn_jujue{
+  display: flex;
+  flex-direction: column;
+  line-height: 55rpx;
+}
+.txt{
+  height: 55rpx;
+}
+.texone{
+  font-size: 40rpx;
+}
+/* 弹窗 */
+.mask{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    z-index: 9000;
+    opacity: 0.7;
+}
+
+.modalDlg{
+    width: 580rpx;
+    height: 620rpx;
+    position: fixed;
+    top: 50%;
+    left: 0;
+    z-index: 9999;
+    margin: -370rpx 85rpx;
+    background-color: #fff;
+    border-radius: 36rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}

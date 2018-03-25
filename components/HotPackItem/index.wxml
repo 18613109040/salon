@@ -1,0 +1,24 @@
+<navigator class='hot-pack-item' url='/subHotPackage/pages/comboDetails/index?id={{data.packageId}}'>
+  <!-- <view class='lable'>
+    免预约
+  </view> -->
+  <view class='reservation'>
+    <image wx:if="{{data.subcribe==0}}" src='../../images/reservation_free.png'></image>
+    <image wx:else  src='../../images/reservation.png'></image>
+  </view>
+  <view class='hot-pack-image'>
+    <image src='{{data.mainImgUrl}}'></image>
+  </view>
+  <view class='hot-pack-footer'>
+    <view class='good-info'>
+      <view class='good-name'>{{data.packageName}}</view>
+      <view class='good-price'>
+        <text class='original-price'>¥{{data.marketPrice}}</text>
+        <text class='price'>¥{{data.price}}</text>
+      </view>
+    </view>
+    <view class='description' >
+       {{data.introduction || ""}}
+    </view>
+  </view>
+</navigator>

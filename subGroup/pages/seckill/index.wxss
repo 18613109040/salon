@@ -1,0 +1,17 @@
+.kill_one{
+  width: 100%;
+  height: 260rpx;
+}
+.word_box{
+  padding-top: 190rpx;
+  padding-left: 210rpx;
+}
+.kill_two{
+  width: 260rpx;
+  height: 214rpx;
+}
+.word{
+  color:#9B9B9B;
+  font-size: 34rpx;
+  letter-spacing:4rpx
+}

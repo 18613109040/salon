@@ -1,0 +1,106 @@
+.page {
+  background: #fff;
+  width: 100%;
+}
+.icon-emailicon::after{
+  color: #ccc;
+  font-size: 50rpx;
+  content: '\e61f';
+  
+}
+.box{
+  padding: 20rpx;
+}
+.search{
+  border-radius: 16rpx;
+  border: 2rpx solid #DDDDDD;
+  display: flex;
+  width: 100%;
+  align-items: center;
+}
+
+.search-icon {
+  width: 28rpx;
+  height: 28rpx;
+  margin: 20rpx;
+}
+
+.search-input {
+  font-size: 26rpx;
+  letter-spacing: -0.38px;
+  color: #9B9B9B;
+  flex: 1;
+  
+}
+
+.cancel{
+  flex-basis: 120rpx;
+  color: #9B9B9B;
+  font-size: 26rpx;
+  text-align: center;
+  
+  
+}
+
+.hot-search, .history-search {
+  margin-top: 40rpx;
+  position: relative;
+  
+}
+
+.search-title{
+  width: 100%;
+  font-size: 26rpx;
+  color: #4A4A4A;
+  font-weight: bold;
+  margin-left: 30rpx;
+}
+.search-content{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10rpx 20rpx 20rpx 20rpx ;
+}
+.button {
+  border: 1px solid #DDDDDD;
+  padding: 4rpx 28rpx;
+  font-size: 22rpx;
+  color: #9B9B9B;
+  margin: 10rpx;
+}
+
+.trash{
+  position: absolute;
+  right: 30rpx;
+  bottom: 34rpx;
+  width: 36rpx;
+  height: 36rpx;
+}
+
+
+.host-item{
+  margin-bottom: 30rpx;
+}
+.non{
+  width: 360rpx;
+  height: 360rpx;
+  position: absolute;
+  top: 13%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.non_title{
+  font-size: 28rpx;
+  margin-left:10rpx;
+}
+.non_text{
+  margin-left: 20rpx;
+    position: absolute;
+   bottom: 0;  
+   display: flex;
+   align-items: center;
+}
+.none{
+  position: relative;
+  height: 500rpx;
+}

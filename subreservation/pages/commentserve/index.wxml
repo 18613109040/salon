@@ -1,0 +1,56 @@
+<view class="big_box">
+  <view class='header'>
+    <view>
+      <image class='header_logo' src='{{evaluate.packageImgUrl}}'></image>
+    </view>
+    <view class='header_cent'>
+      <text class='title'>{{evaluate.packageName}}</text>
+      <text space="true" decode="true" class='time'>{{}}</text>
+      <view class='box_start'>
+        <text class='star'>描述相符：</text>
+        <view class='padding'>
+          <component-rate value="{{evaluate.packageScore||0}}" size="{{40}}"  disabled="{{evaluate.packageScore!=null?false:true}}" bindrateclick="clickRate"/>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='txt_input'>
+    <textarea class='inpt' type="text" maxlength="200" bindinput="packageChange"  value='{{packageCommentText}}' placeholder='您对该项目有什么感想与意见，请输入反馈，字数限'></textarea>
+  </view>
+  <view class='imglist'>
+    <view class='img_box'>
+      <view  wx:for="{{packImage}}" wx:key="{{index}}" >
+        <image  class='{{item.sock==true?"li_tow":"li_one"}}'  src='{{item.url}}' data-index='{{index}}' bindtap='packageEvaluation' ></image>
+      </view>
+    </view>
+    <view class='btn_box'  wx:if="{{evaluate.packageScore==null}}" bindtap='submitpackageComment'><text>提交评论</text></view>
+  </view>
+</view>
+<view class='teacher'>
+
+  <view class='header'>
+    <view>
+      <image class='teacher_logo' src='{{evaluate.serverImgUrl}}'></image>
+    </view>
+    <view class='header_cent'>
+      <text class='title_tow' space="true" decode="true">技师：&nbsp;{{evaluate.serverName}}&nbsp;（{{evaluate.alias}}）</text>
+      <view class='box_start'>
+        <text class='star'>评分服务：</text>
+        <view class='padding'>
+          <component-rate value="{{evaluate.serverScore||0}}" bindrateclick="clickServerRate" size="{{40}}"  disabled="{{evaluate.serverScore!=null?false:true}}" />
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class='txt_input'>
+    <textarea class='inpt' type="text"  bindinput="serverChange"  value='{{serverCommentText}}' maxlength="200" placeholder='您对该项目有什么感想与意见，请输入反馈，字数限'></textarea>
+  </view>
+  <view class='imglist'>
+    <view class='img_box'>
+      <view  wx:for="{{teacherImage}}" wx:key="{{index}}" >
+        <image  class='{{item.sock==true?"li_tow":"li_one"}}'  src='{{item.url}}' data-index='{{index}}' bindtap='manEvaluation' ></image>
+      </view>
+    </view>
+    <view class='btn_box' wx:if="{{evaluate.serverScore==null}}" bindtap='submitServerComment'><text>提交评论</text></view>
+  </view>
+</view>

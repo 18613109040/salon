@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "确认订单",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "component-shopmap": "/components/ShopMap/index",
+    "component-line": "/components/Line/index"
+  }
+}

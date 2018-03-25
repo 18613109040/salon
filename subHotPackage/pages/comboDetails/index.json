@@ -1,0 +1,11 @@
+{
+  "navigationBarTitleText": "套餐详情",
+  "navigationBarBackgroundColor": "#ffffff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "component-shopmap": "/components/ShopMap/index",
+    "component-line": "/components/Line/index",
+    "component-rate": "/components/rate/index",
+    "component-skumodel": "/components/skuModel/index"
+  }
+}
