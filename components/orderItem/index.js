@@ -11,6 +11,9 @@ Component({
       type:Object,
       value:{}
     },
+    /**
+     * 判断订单类型 1订单 2预约
+     */
     type:{
       type:Number,
       value:1
@@ -30,11 +33,12 @@ Component({
   methods: {
     gotoDetail(){
       
-      app.store.dispatch(getReservationOrderDetail({
-        orderId: this.data.detail.orderId
-      }))
+      // app.store.dispatch(getReservationOrderDetail({
+      //   orderId: this.data.detail.orderId
+      // }))
+      let { orderId } = this.data.detail;
       wx.navigateTo({
-        url: this.data.type == 1 ? `/subMyInfo/pages/orderDetails/index` :`/subreservation/pages/reservationdetails/index`,
+        url: this.data.type == 1 ? `/subMyInfo/pages/orderDetails/index?id=${orderId}` : `/subreservation/pages/reservationdetails/index?id=${orderId}`,
       })
     },
     /**
@@ -66,7 +70,7 @@ Component({
           'paySign': resd.result.paySign,
           'success': (resd) => {
             wx.redirectTo({
-              url: '/subHotPackage/pages/payWin/index'
+              url: `/pages/payWin/index?orderId=${detail.orderId}`
             })
           },
           'fail': (resd) => {

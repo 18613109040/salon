@@ -1,0 +1,17 @@
+.kill_one{
+  width: 100%;
+  height: 260rpx;
+}
+
+/* 无内容加载图片 */
+.nothingimg{
+display: block;
+margin: 40rpx auto;
+width: 500rpx;
+height: 500rpx;
+}
+.word_box{
+  font-size: 34rpx;
+  color: #bababa;
+  text-align: center;
+}

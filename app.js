@@ -1,16 +1,15 @@
 const { Provider } = require('./libs/wechat-weapp-redux.js');
 const configureStore = require('./store/configureStore.js');
 import { getLocation } from './utils/util.js'
-import { getShopInfo, getShopSet } from './actions/shop.js'
+import { getShopInfo } from './actions/shop.js'
 App(Provider(configureStore())({
   onLaunch() {
-    // wx.removeStorageSync('cart');
+
     //初始入口获取店铺信息
     wx.getExtConfig({
       success: (res) => {
         let { shopId } = res.extConfig
         this.getShopDetail(shopId)
-        // this.store.dispatch(getShopSet(shopId))
       }
     })
   },

@@ -1,7 +1,7 @@
 // pages/affirmSubscribe/index.js
 const { connect } = require('../../../libs/wechat-weapp-redux.js')
 import { postOrder, getSubscribeTimeList, getCanSubscribeList, wxPay} from '../../../actions/order.js'
-
+import {  getReservationOrderDetail } from '../../../actions/order.js'
 const pageConfig = {
 
   /**
@@ -18,7 +18,8 @@ const pageConfig = {
     selectedIndex:-1,
     money:0,
     name:"",
-    appointmentTeacherLsit:[]
+    appointmentTeacherLsit:[],
+    payDisabled: false
   },
   // 点击服务员
   selectWaiter: function (e) {
@@ -152,6 +153,10 @@ const pageConfig = {
       })
       return;
     }
+    
+    this.setData({
+      payDisabled: true
+    })
     postOrder({
       shopId: shopInfo.id,
       payType: 1,
@@ -174,6 +179,7 @@ const pageConfig = {
           openId: openId,
           shopId:shopInfo.id
         },(resd)=>{
+        
           wx.requestPayment({
             'timeStamp': resd.result.timeStamp.toString(),
             'nonceStr': resd.result.nonceStr,
@@ -181,16 +187,27 @@ const pageConfig = {
             'signType': resd.result.signType,
             'paySign': resd.result.paySign,
             'success': (resd) => {
-              wx.redirectTo({
-                url: '/subHotPackage/pages/payWin/index'
+              this.setData({
+                payDisabled: false
               })
+              wx.redirectTo({
+                url: `/pages/payWin/index?orderId=${res.result.orderId}&type=2`
+              })
+              
             },
             'fail': (resd) => {
-              // wx.redirectTo({
-              //   url: `/pages/orderDetail/index?orderId=${res.result[0]}`
-              // })
+              this.setData({
+                payDisabled: false
+              })
+              wx.redirectTo({
+                url: `/subreservation/pages/reservationdetails/index?id=${res.result.orderId}`
+              })
             }
           })
+        })
+      } else {
+        this.setData({
+          payDisabled: false
         })
       }
       

@@ -1,6 +1,6 @@
 <view class="pay">
   <view class="pay_win">
-    <image class="pay_win_img" src="../../../images/OK_green@2x.png"></image>
+    <image class="pay_win_img" src="../../images/ok.png"></image> 
     <view class="pay_win_title">订单支付成功</view>
   </view>
   <view class="pay_bottom">

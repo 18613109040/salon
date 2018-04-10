@@ -19,7 +19,7 @@
   font-size: 28rpx;
   flex-direction: column;
   display: flex;
-  align-items: flex-start;
+ justify-content: flex-start;
 }
 .box_star{
   display: flex;
@@ -32,7 +32,7 @@
 }
 .padding{
   position: absolute;
-  top: 8rpx;
+  top: -4rpx;
   left: 140rpx;
   
 }

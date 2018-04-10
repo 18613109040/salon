@@ -1,0 +1,95 @@
+<!-- <component-groupitem/> -->
+<view class='fight-group'>
+  <view class='bg'>
+
+    <swiper autoplay="{{true}}" class='swiper'>
+      <block wx:for='{{getPackageDetail.imgUrls}}' wx:key='index'>
+        <swiper-item class="swiper-item">
+          <image class="slide-image" src="{{item}}" />
+        </swiper-item>
+      </block>
+    </swiper>
+
+    <view class='pack-name'>
+      {{getPackageDetail.packageName}}
+    </view>
+    <view class='pack-des'>
+      丰富泡沫滋润皮肤、芳香沁心、舒缓疲劳、释放压力，使身 心轻盈愉悦，给身体充电，有充沛的活力应对生活
+    </view>
+    <view class='goods-info'>
+      <view class='sku'>
+        时长：60分 类型：泰式
+      </view>
+      <view class='price'>
+        <text class='packagePrice'>¥{{getPackageDetail.groupPrice}}</text>
+        <text class='groupPrice'>¥{{getPackageDetail.packagePrice}}</text>
+      </view>
+    </view>
+    <view >
+      <component-line />
+      <view class='list' bindtap='clickMoreGroup'>
+        <view class='list-line'>
+          <text>已开</text>
+          <text class='nunber-color'>34团</text>
+          <text>,共</text>
+          <text class='nunber-color'>213人</text>
+          <text>参加</text>
+        </view>
+        <view class='list-arrow'>
+          <text>查看详情</text>
+          <label class='iconfont icon-horizontal arrow'></label>
+        </view>
+      </view>
+      <component-line />
+      <view class='group-active'>
+        <component-groupitem bind:joinclick="joinGroup"/>
+        <component-groupitem/>
+      </view>
+    </view>
+
+  </view>
+  <view class='evalue'>
+    <view class='list'>
+      <view class='list-line'>
+        <text>累计评价</text>
+        <text class='nunber-color'>34条</text>
+      </view>
+      <view class='list-arrow'>
+        <text>查看全部</text>
+        <label class='iconfont icon-horizontal arrow'></label>
+      </view>
+    </view>
+    <component-line />
+    <view>
+      <view class='buyer'>
+        <view class='buyer-left'>
+          <image class='buyer-image' src='http://img.shop.sibumbg.cn/472b9502c1294c4992e292b74a422814.jpg'></image>
+          <view class='buyer-name'>David</view>
+          <component-rate value="{{4}}" size="{{25}}" />
+        </view>
+        <view class='time'>
+          2018-01-01
+        </view>
+      </view>
+      <view class='evalue-content'>
+        第二次在店里买东西了，真的很方便，不用逛超市了直接选好自己喜欢的东西，下单到家只要两天，快递员送货到家门口～
+      </view>
+    </view>
+  </view>
+
+  <view class='detail'>
+    <view class='title'>
+      <label class='iconfont icon-wendan'></label>
+      <text>套餐介绍</text>
+    </view>
+    <view wx:for="{{getPackageDetail.detail}}" class='text'>
+      <view wx:if="{{item.type=='text'}}">{{item.content}}</view>
+      <image wx:if="{{item.type=='image'}}">{{item.content}}></image>
+    </view>
+  </view>
+
+</view>
+
+
+<component-joingroup showJoin="{{showJoin}}"/>
+<component-groupmodel showModel="{{showModel}}" />

@@ -1,5 +1,6 @@
 const { connect } = require('../../../libs/wechat-weapp-redux.js')
 import { searchHotPackage } from '../../../actions/hotPackage.js'
+import { confirm} from '../../../utils/util.js'
 const pageConfig = {
 
   /**
@@ -34,7 +35,7 @@ const pageConfig = {
   onShow: function () {
  
     this.setData({
-      historyList: (wx.getStorageSync("history") || []).length>8?wx.getStorageSync("history").slice(0, 8):wx.getStorageSync("history")||[]
+      historyList: (wx.getStorageSync("history") || []).length>5?wx.getStorageSync("history").slice(0,4):wx.getStorageSync("history")||[]
     })
   },
 
@@ -101,6 +102,17 @@ const pageConfig = {
     
     
   },
+  // onBuiurInput(e){
+  //   let { shopInfo, pageSize, historyList } = this.data;
+  //   if (e.detail.value){
+  //     historyList.unshift(e.detail.value)
+  //     wx.setStorage({
+  //       key: 'history',
+  //       data: historyList
+  //     })
+  //   }
+    
+  // },
   searchList(e){
     let { shopInfo, pageSize, historyList} = this.data;
     if (e.detail.value){
@@ -121,7 +133,7 @@ const pageConfig = {
           searchList: res.result.data || [],
           code: true,
           load: (res.result.data || []).length < res.result.totalCount?true:false,
-          historyList: historyList.length > 8 ? historyList.slice(0, 8) : historyList
+          historyList: historyList.length > 5 ? historyList.slice(0, 4) : historyList
         })
       })
     }else{
@@ -130,6 +142,17 @@ const pageConfig = {
         code: false
       })
     }
+  },
+  clearHistory(){
+    confirm({
+      content:"确定清空历史记录",
+      ok:(res)=>{
+        this.setData({
+          historyList:[]
+        })
+        wx.setStorageSync("history", [])
+      }
+    })
     
   }
 }

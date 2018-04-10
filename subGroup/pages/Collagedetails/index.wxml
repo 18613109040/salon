@@ -23,7 +23,7 @@
 
   <!-- 时长开始 -->
   <view class='time clearfix'>
-    <view class='time-left'>时长: 60分 类型: 泰式</view>
+    <!-- <view class='time-left'>{{detail.}}</view> -->
     <view class='time-right'>
       <text class='time-right-one'>¥{{detail.packagePrice}}</text>
       <text class='time-right-two'>¥{{detail.groupPrice}}</text>
@@ -54,7 +54,7 @@
   <view class='open' wx:if="{{groupOrders.length}}" wx:for="{{groupOrders}}" wx:for-item="item" wx:key="index">
     <view class="open-one">
       <view class="open-a">
-      <image class='Opengroup-a-img' src='{{item.memberImgs[0]}}'></image>
+        <image class='Opengroup-a-img' src='{{item.memberImgs[0]}}'></image>
       </view>
       <view class='open-b'>{{item.memberName}}</view>
     </view>
@@ -105,7 +105,7 @@
     <!--底部标题  -->
     <view class='huli-one'>
       <view class='huli-one-a'>
-        <label class="details_title_ico iconfont icon-wendan"></label> 
+        <label class="details_title_ico iconfont icon-wendan"></label>
         <!-- <image class='huli-one-a-img' src='../../../images/packages/comment.png'></image> -->
       </view>
       <view class='huli-one-b'>
@@ -144,7 +144,7 @@
       <view class='bottom-three-a'>
         ¥{{detail.singlePrice}}
       </view>
-      <view class='bottom-three-b' bindtap='buyer' data-id="{{0}}">单独购买</view>
+      <view class='bottom-three-b' bindtap='buyer' data-id="{{detail.packageId}}">单独购买</view>
     </view>
 
     <view class='bottom-four' bindtap='startTuan' data-type='add'>
@@ -169,7 +169,7 @@
             <text class='Separatepurchase-one-txt1'>{{detail.packageName}}</text>
             <text class='Separatepurchase-one-txt2'>¥{{detail.groupPrice}}</text>
           </view>
-          <view class='Separatepurchase-one-b-bottom'>请选择规格及数量</view>
+          <view class='Separatepurchase-one-b-bottom'>请选择规格</view>
         </view>
         <view class='Separatepurchase-one-c' bindtap='close'>
           <image class='Separatepurchase-one-c-img' src='../../../images/close_black@2x.png'></image>
@@ -185,24 +185,14 @@
           </view>
         </view>
       </view>
-      <!-- <view class='number clearfix'>
-        <view class='number-one'>数量1</view>
-        <view  class='number-four' bindtap='onAdd'>+</view>
-        <input class='number-three' wx:if="{{Number>0}}" bindchange="bindManual" value="{{Number}}"></input>
-        <view class='number-two' bindtap='onMinus'>-</view>
-      </view> -->
-
       <view class='Separatepurchase-four' bindtap="clickEnter">
         确定购买
       </view>
-      <!-- <view class='Separatepurchase-four' wx:if="{{id==1}}">
-        开团购买
-      </view> -->
     </view>
   </view>
-  <!-- 单独购买弹框结束 -->
-</view>
 
+</view>
+<component-skumodel showModel="{{showModel}}" wx:if="{{showModel}}" packageSku="{{packageSku}}" bindclickskumodel="clickSkuModer" />
 <!--正在拼团中弹窗-->
 <view class='Allbox' wx:if="{{Offered==true}}">
   <view>
@@ -211,24 +201,27 @@
       <view class='CollageBox'>
         <view class='collage-top'>
           <view class='collage-tit'>正在拼团中
-            <text class='collage-xs'>(仅显示10个)</text>
+            <text class='collage-xs'>(仅显示{{activityList.totalCount}}个)</text>
           </view>
           <image bindtap='closeMaskAnimation' class='collage-icon' src='../../../images/close_black@2x.png'></image>
         </view>
         <view class='ListBox'>
           <!--拼团列表小模块-->
           <scroll-view style="height: 575px;" scroll-y>
-            <view class='ListDetail' wx:for="[1,2,3,4,5,6,7,8,9,10]" wx:key="{{index}}">
-              <view class='list-left'>
-                <image class='list_image' src='../../../images/my_gray.png'></image>
-                <view class='list_name'>Fiona</view>
+            <view class='open open_active' wx:for="{{activityList.data}}" wx:key="{{index}}">
+              <view class='open-one open-one-active'>
+                <image class='Opengroup-a-img Opengroup-a-images' src='{{item.memberImgs[0]}}'></image>
+                <view class='open-b'>{{item.memberName}}</view>
               </view>
-              <view class='list_renshu'>
-                <view>还差
-                  <text class='list_prople'>1人</text>成团</view>
-                <view class='list_time'>剩余23:30:23:09</view>
+              <view class='open-c'>
+                <view class='open-c-one'>
+                  <text class='open-c-one-txt1'>还差</text>
+                  <text class='open-c-one-txt2'>{{item.groupMembers-item.joinMembers}}人</text>
+                  <text class='open-c-one-txt3'>成团</text>
+                </view>
+                <view class='open-c-two'>剩余{{item.time}}</view>
               </view>
-              <view class='list_btn' bindtap='onShows'>我要参团</view>
+              <view class='open-d open-d-active' bindtap='onShows' data-item="{{item}}">我要参团</view>
             </view>
           </scroll-view>
         </view>
@@ -241,7 +234,7 @@
 <view wx:if="{{sheetAction}}" catchtouchmove="onTouchstart">
   <view class="drawer" catchtouchmove="onTouchstart" bindtap="closeMaskAnimation"></view>
   <view class='cantuan' catchtouchmove="onTouchstart">
-    <view class='cantuan-tit'>参与{{tuanData.memberName}}的拼团</view>
+    <view class='cantuan-tit'><view class="cantuan-tit-title">参与{{tuanData.memberName}}的拼团</view></view>
     <image bindtap="closeMaskAnimation" class='cantuan-icon' src='../../../images/close_black@2x.png'></image>
     <view class='cantaun_box'>
       <view class='imgBox'>
@@ -254,7 +247,7 @@
         <view class='chengtuan'>{{tuanData.groupMembers}}人成团，已有{{detail.groupOrderSize}}人参团</view>
       </view>
     </view>
-    <view>
+    <view class="cantuan_box">
       <view class='cantuan_time'>剩余
         <text style='color:#4A90E2'>{{tuanData.times}}</text>结束</view>
       <view class='cantuan_minge'>仅剩
@@ -264,7 +257,7 @@
       <view class="scroll-view_card">
         <scroll-view scroll-x>
           <view class='business_card'>
-            <view wx:for="{{tuanData.memberImgs}}" wx:key="index" wx:for-item="item">
+            <view wx:for="{{tuanData.memberImgs}}" wx:key="index" wx:for-item="item" class="memberImgs">
               <image class="{{index==0?'tuanzhu':'business_image'}}" src='{{item}}'></image>
             </view>
 

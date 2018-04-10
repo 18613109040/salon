@@ -1,5 +1,5 @@
 const { connect } = require('../../../libs/wechat-weapp-redux.js')
-import { getRefundPickCode, getRefundReasonList, appRefundOrder, getReservationOrderDetail } from '../../../actions/order.js'
+import { getRefundPickCode, getRefundReasonList, appRefundOrder } from '../../../actions/order.js'
 const pageConfig = {
    /*
     页面的初始数据
@@ -43,6 +43,7 @@ const pageConfig = {
     getRefundReasonList({
 
     },(res)=>{
+      console.dir(res)
       if (res.errorCode == 0){
         this.setData({
           refundList: res.result         
@@ -65,14 +66,7 @@ const pageConfig = {
       })
     }, 300)
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onShowCall() {
-    this.setData({
-      sheetAction: !this.data.sheetAction
-    })
-  },
+
   util: function (currentStatu) {
     /* 动画部分 */
     // 第1步：创建动画实例
@@ -157,7 +151,6 @@ const pageConfig = {
       }
     })
   },
-
   clickTab(e){
     let { index } = e.currentTarget.dataset;
     let { refundData, money} = this.data;
@@ -187,16 +180,14 @@ const pageConfig = {
     appRefundOrder({
       orderId: orderId,
       refundReason: refundList[chooseIndex].key,
-      refundExplain: refundExplain,
+      refundExplain: refundExplain||"",
       pickCodes: pickCodes.toString()
     },(res)=>{
       if (res.errorCode == 0){
         wx.showToast({
           title: '申请成功',
         })
-        this.dispatch(getReservationOrderDetail({
-          orderId: orderId
-        }))
+       
         wx.navigateBack()
       }
     })

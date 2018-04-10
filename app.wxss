@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'iconfont';  /* project id 593123 */
-  src: url('//at.alicdn.com/t/font_593123_aicit4fo4leg66r.eot');
-  src: url('//at.alicdn.com/t/font_593123_aicit4fo4leg66r.eot?#iefix') format('embedded-opentype'),
-  url('//at.alicdn.com/t/font_593123_aicit4fo4leg66r.woff') format('woff'),
-  url('//at.alicdn.com/t/font_593123_aicit4fo4leg66r.ttf') format('truetype'),
-  url('//at.alicdn.com/t/font_593123_aicit4fo4leg66r.svg#iconfont') format('svg');
+  src: url('//at.alicdn.com/t/font_593123_r1xhjk4kfx647vi.eot');
+  src: url('//at.alicdn.com/t/font_593123_r1xhjk4kfx647vi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_593123_r1xhjk4kfx647vi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_593123_r1xhjk4kfx647vi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_593123_r1xhjk4kfx647vi.svg#iconfont') format('svg');
 }
 .iconfont{
     font-family:"iconfont" !important;
@@ -15,7 +15,7 @@
 }
 page {
   background:#f0f0f0;
-  font-family: PingFangHK-Thin;
+  font-family: PingFangHK-Regular;
   overflow-x:hidden;
 }
 

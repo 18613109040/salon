@@ -1,3 +1,7 @@
+.icon-sucess::after{
+  content: '\e6a9';
+  font-size: 50rpx;
+}
 page{
   background: #fff;
   border-top: 1px solid #ccc;

@@ -1,7 +1,7 @@
 <view class="big_box">
   <view class='title'>
     <view class='why'>
-      <text>退款原因 </text>
+      <text>退款原因</text>
     </view>
     <view class='box_min' bindtap="onShowCall">
       <text class='why_txt'>{{refundName||"请选择退款原因"}}</text>
@@ -34,16 +34,16 @@
   <view class='apply'>
     <text>申请说明</text>
   </view>
-  
-  
+
+
   <view>
     <textarea class='txt_inpt' maxlength="100" value='{{refundExplain}}' bindinput='clikInput' placeholder='请你详细填写申请说明，字数限制100字以内'></textarea>
   </view>
-  <view class='call'>
+  <!-- <view class='call'>
     <text>联系电话 13588888888</text>
-  </view>
+  </view> -->
 </view>
-<view class='btn' bindtap='postData' wx:if="{{money>0&&refundName!=''}}" >
+<view class='btn' bindtap='postData' wx:if="{{money>0&&refundName!=''}}">
   <text>提交</text>
 </view>
 <view class='btn-no' wx:else>
@@ -52,20 +52,20 @@
 <!-- <view wx:if="{{sheetAction==true}}" >
   <view class="drawer "bindtap="closeMaskAnimation" ></view>
   <view class='drawer_box'animation="{{animationData}}" > -->
-  <view wx:if="{{sheetAction==true}}" bindtap="closeMaskAnimation"> 
+<view wx:if="{{sheetAction==true}}" bindtap="closeMaskAnimation">
   <view class="drawer"></view>
   <view class='drawer_box' animation="{{animationData}}">
-    <view bindtap='selectRedio' >
+    <view bindtap='selectRedio'>
       <view class='drawer-tetx' wx:for='{{refundList}}' wx:key="{{index}}" data-index='{{index}}' bindtap='clickchange'>
         <view class="drawer-title">
           <text class="drawer-top">{{item.value}}</text>
         </view>
         <!-- 勾选  -->
-        <view class="drawer-img" >
-           <label class="">
+        <view class="drawer-img">
+          <label class="">
             <icon wx:if="{{chooseIndex==index}}" type="success" size="20" color="#FF7920" />
             <icon wx:else type="circle" size="20" />
-          </label> 
+          </label>
         </view>
       </view>
     </view>

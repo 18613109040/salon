@@ -40,6 +40,7 @@
 .content-header .name{
   font-size: 36rpx;
   color: #1C1C1C;
+  
 }
 .content-header .des{
   font-size: 24rpx;

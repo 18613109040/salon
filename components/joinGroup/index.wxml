@@ -1,0 +1,41 @@
+<view wx:if="{{showJoin}}">
+  <view class='mask' bindtap='coloseModel'></view>
+  <view class='model-content'>
+    <view class='header'>
+        <view class='title'>
+          <text class='name'>参与</text>
+          <text class='des'>Jacky</text>
+          <text class='name'>的拼团</text> 
+        </view>
+        <view class='close-btn' bindtap='coloseModel'>
+          <label class='iconfont icon-colose'></label>
+        </view>
+    </view>
+    <component-line/>
+    <view class='content'>
+      <view class='group-info'>
+        <view class='group-left'>
+          <image src='http://img.shop.sibumbg.cn/472b9502c1294c4992e292b74a422814.jpg'></image>
+        </view>
+        <view class='group-right'>
+          <view class='name'>
+            <view class='pack-name'>滋润泡泡浴飒飒ss飒飒飒飒飒飒飒飒飒飒飒飒飒飒</view>
+            <view class='price'>¥196</view> 
+          </view>
+          <view class='info'>
+            50人成团，已有49人参团
+          </view>
+        </view>
+      </view>
+      <component-line/>
+      <view class='over-content'>
+        <view class='end-time'>剩余 <text class='time-color'>23：30：12：09 </text> 结束</view>
+        <view class='remaining'>仅剩<text class='number'>2个</text>名额</view>
+        <view class='lord-image'>
+          <image wx:key="{{index}}" wx:for="{{['http://img.shop.sibumbg.cn/472b9502c1294c4992e292b74a422814.jpg','http://img.shop.sibumbg.cn/472b9502c1294c4992e292b74a422814.jpg','http://img.shop.sibumbg.cn/472b9502c1294c4992e292b74a422814.jpg','http://img.shop.sibumbg.cn/472b9502c1294c4992e292b74a422814.jpg','http://img.shop.sibumbg.cn/472b9502c1294c4992e292b74a422814.jpg']}}" src='{{item}}' class='{{index==0?"lord":index==4?"gradi":"crew-member"}}' ></image>
+        </view>
+      </view>
+    </view>
+    <view class='btn'>确认参团</view>
+  </view>
+</view>

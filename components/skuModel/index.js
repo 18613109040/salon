@@ -27,7 +27,6 @@ Component({
   },
   ready(){
     let { packageDetail } = app.store.getState();
-    console.dir(packageDetail.toJS())
     this.setData({
       image: packageDetail.toJS().mainImgUrl,
       price: packageDetail.toJS().price,
@@ -63,7 +62,8 @@ Component({
         if (selectShop){
           app.store.dispatch(updataPackDetail({
             skuId: selectShop.id,
-            skuValue: selectLable
+            skuValue: selectLable,
+            price: selectShop.price
           }))
         }
       }
@@ -71,13 +71,16 @@ Component({
     },
     clickEnter(){
       this.setData({
-        showModel:false
+        showModel:false,
+        selectShop:false
+        
       })
       this.triggerEvent('clickskumodel', {})
     },
     onTouchstart(){
       this.setData({
-        showModel: false
+        showModel: false,
+        selectShop: false
       })
     }
   }

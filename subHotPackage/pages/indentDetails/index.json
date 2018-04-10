@@ -1,8 +1,0 @@
-{
-  "navigationBarTitleText": "订单详情",
-  "navigationBarBackgroundColor": "#ffffff",
-  "navigationBarTextStyle": "black",
-  "usingComponents": {
-    "component-shopmap": "/components/ShopMap/index"
-  }
-}

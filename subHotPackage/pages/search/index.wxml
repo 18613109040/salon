@@ -2,7 +2,7 @@
   <view class='box'>
     <view class='search'>
       <image src='../../../images/search.png' class='search-icon'></image>
-      <input placeholder='搜索' class='search-input' confirm-type='search' value="{{keyWord}}" bindinput="searchList" adjust-position="{{false}}" />
+      <input placeholder='搜索' class='search-input' confirm-type='search' bindconfirm="searchList" adjust-position="{{false}}" />
     </view>
   </view>
   <view wx:if="{{searchList.length>0&&code==true}}">
@@ -18,19 +18,19 @@
     </view>
   </view>
   <view wx:else>
-    <view class='hot-search'>
+    <view class='hot-search' wx:if="{{historyList.length}}">
       <view class='search-title'>历史搜索</view>
       <view class='search-content'>
         <view class='button' wx:for="{{historyList}}" wx:key="{{index}}" bindtap='clickTab' data-name="{{item}}" >{{item}}</view>
       </view>
-      <image class='trash' src="../../../images/packages/delete_black.png"></image>
+      <image class='trash' src="../../../images/delete_black.png" bindtap='clearHistory'></image>
     </view>
-    <view class='hot-search'>
+    <!-- <view class='hot-search'>
       <view class='search-title'>热门搜索</view>
       <view class='search-content'>
         <view class='button'>香薰SPA</view>
       </view>
-    </view>
+    </view> -->
   </view>
 
 

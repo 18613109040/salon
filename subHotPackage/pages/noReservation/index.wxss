@@ -149,7 +149,7 @@
   font-size: 17px;
   color: #fff;
   letter-spacing: 0;
-  border-radius: 0rpx;
+  line-height: 100rpx;
 }
 
 .view_list_chenghu {

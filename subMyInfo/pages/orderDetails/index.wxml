@@ -1,33 +1,34 @@
 <view class="indent">
   <view class="indent_nav">
-    <view class="indent_nav_title">{{reservationOrderDetail.orderStatusText}}</view>
-    <view class="indent_nav_content linheight" wx:if="{{reservationOrderDetail.orderStatus==21}}">
+    <view class="indent_nav_title">{{orderDetail.orderStatusText}}</view>
+    <view class="indent_nav_content linhei" wx:if="{{orderDetail.orderStatus==21}}">
       请在下单后
       <text class="indent_nav_content_tiem">{{time}}</text> 分钟内付款，超时自动取消
     </view>
-    <!-- <view class="indent_nav_content wellcome" wx:if="{{reservationOrderDetail.orderStatus==22}}">
-      <text class='right_title_noe'>商家恭候您的莅临</text>
-      <text class='right_title_tow'>请在项目完成后支付商家费用</text>
-    </view> -->
-    <view class="indent_nav_content wellcome" wx:if="{{reservationOrderDetail.orderStatus==29}}">
-      <text class='right_title_noe'>订单时间已过期</text>
-      <text class='right_title_tow'>订单将自动取消，金额原路返回用户</text>
-    </view>
 
-    <view class="indent_nav_content linheight" wx:if="{{reservationOrderDetail.orderStatus==22}}">
-      券码有效期至
-      <text class="indent_nav_content_tiem">{{reservationOrderDetail.couponExpireDt}}</text>
+    <view class="indent_nav_content wellcome" wx:if="{{orderDetail.orderStatus==29&&orderDetail.expireCanRefund==1}}">
+      <text class='right_title_noe'>订单时间已过期</text>
+      <text class='right_title_tow'>请在7天内申请退款</text>
     </view>
-    <view class="indent_nav_content linheight" wx:if="{{reservationOrderDetail.orderStatus==23}}">
+    <view class="indent_nav_content wellcome" wx:if="{{orderDetail.orderStatus==29&&orderDetail.expireCanRefund!=1}}">
+      <text class='right_title_noe'>订单时间已过期</text>
+      <text class='right_title_tow'>超过退款时间，请联系商家！</text>
+    </view>
+    <view class="indent_nav_content linhei" wx:if="{{orderDetail.orderStatus==22}}">
+      券码有效期至{{orderDetail.subscribeDt}}
+      <!-- <text class="indent_nav_content_tiem">{{reservationOrderDetail.couponExpireDt}}</text> -->
+    </view>
+    <view class="indent_nav_content linhei" wx:if="{{orderDetail.orderStatus==23}}">
       <text class="indent_nav_content_tiem">卷码已使用</text>
     </view>
-    <view class="indent_nav_content linheight" wx:if="{{reservationOrderDetail.orderStatus==25}}">
-      客户已申请退款，等待商家处理
+    <view class="indent_nav_content linhei" wx:if="{{orderDetail.orderStatus==25}}">
+      <text wx:if="{{orderDetail.refundType==0}}">客户已申请退款，等待商家处理</text>
+      <text wx:if="{{orderDetail.refundType==1}}">订单超时，系统自动退款处理</text>
     </view>
-    <view class="indent_nav_content linheight" wx:if="{{reservationOrderDetail.orderStatus==27}}">
+    <view class="indent_nav_content linhei" wx:if="{{orderDetail.orderStatus==27}}">
       退款将在7个工作日内到账
     </view>
-    <view class="indent_nav_content linheight" wx:if="{{reservationOrderDetail.orderStatus==31}}">
+    <view class="indent_nav_content linhei" wx:if="{{orderDetail.orderStatus==31}}">
       用户已取消
     </view>
   </view>
@@ -57,100 +58,157 @@
 
   <component-shopmap shopInfo="{{shopInfo}}" type="2" />
   <component-line/>
-  <view class="indent_content">
+  <view class="indent_content" bindtap='gotoGoods'>
     <view class="indent_content_img">
-      <image class="indent_content_images" src="{{reservationOrderDetail.packageImgUrl}}"></image>
+      <image class="indent_content_images" src="{{orderDetail.packageImgUrl}}"></image>
     </view>
 
     <view class="indent_content_left">
-      <view class="indent_content_font">{{reservationOrderDetail.packageName}}</view>
-      <view class="indent_content_font" wx:if="{{reservationOrderDetail.skuValue}}">{{reservationOrderDetail.skuValue}}</view>
-      <view class="indent_content_font">￥{{reservationOrderDetail.totalMoney}}</view>
+      <view class="indent_content_font">{{orderDetail.packageName}}</view>
+      <view class="indent_content_font" wx:if="{{orderDetail.skuValue}}">{{orderDetail.skuValue}}</view>
+      <view class="indent_content_font">￥{{orderDetail.totalMoney}}</view>
     </view>
 
     <view class="indent_content_right">
-      <text class="indent_content_right_title">x{{reservationOrderDetail.personNum}}</text>
+      <text class="indent_content_right_title">x{{orderDetail.packageQuantity}}</text>
       <label class="iconfont icon-arrow-r"></label>
     </view>
   </view>
 
-  <view class="indent_list">
-    <view class="indent_list_left">
-      <view class="indent_list_left_title">订单编号</view>
-      <view class="indent_list_left_title">下单时间</view>
-      <view class="indent_list_left_title">实付金额</view>
+
+
+  <view class='bottom'>
+    <view class='time'>
+      <text class='time_tie'>订单编号</text>
+      <text class='week_day' space="true" decode="true">{{orderDetail.orderCode}} </text>
     </view>
-    <view class="indent_list_right">
-      <view class="indent_list_right_title">{{reservationOrderDetail.orderCode}}</view>
-      <view class="indent_list_right_title">{{reservationOrderDetail.createDt}}</view>
-      <view class="indent_list_right_title active">￥{{reservationOrderDetail.totalMoney}}</view>
+    <view class='time'>
+      <text class='time_tie'>下单时间</text>
+      <text class='week_day'>{{orderDetail.createDt}}</text>
+    </view>
+    <view class='time'>
+      <text class='time_tie'>实付金额</text>
+      <text class='week_day active'>￥{{orderDetail.totalMoney}}</text>
+    </view>
+
+    <view class='time'>
+      <text class='time_tie '>备注留言</text>
+      <text class='beizhu'>{{orderDetail.remark}}</text>
     </view>
   </view>
-
-  <!-- 二维码  -->
-
-  <view class="ewm">
+  <!-- <view class="ewm" >
     <view class="ewm_left">
       <text class="ewm_left_title">预约码</text>
     </view>
-    <view class='erwm_img' wx:for="{{reservationOrderDetail.pickCode}}" wx:key="{{index}}">
-      <view style='margin:0px auto;text-align: center;'>
-        <canvas style="width:300rpx;height:300rpx;" canvas-id="mycanvas{{index}}" />
+   
+    <canvas class='cavs' style="width:200px;height:{{220*orderDetail.pickCode.length}}px" canvas-id="mycanvas" />
+    <image src='{{image}}'  class='save-image' style='height:{{220*orderDetail.pickCode.length}}px'></image> 
+  
+  </view> -->
+  <view class='canvas-control'>
+    <view class="left-line" wx:if="{{orderDetail.pickCode.length>1}}"></view>
+    <view class='flex-1 flex'>
+      <view class='erwm'>
+        <view class='icon_' bindtap="onShowCode" data-type="prev">
+          <image src='../../../images/left.png' wx:if="{{selectIndex>0}}"></image>
+        </view>
+        <view class='_canvas'>
+          <canvas canvas-id="mycanvas" style="width:150px;height:150px;position: absolute;left: -500px;" ></canvas>
+          <image src='{{image}}' style="width:150px;height:150px;"  ></image>
+        </view>
+        <view class='icon_' bindtap="onShowCode" data-type="next">
+          <image src='../../../images/right.png' wx:if="{{selectIndex<orderDetail.pickCode.length-1}}"></image>
+        </view>
       </view>
-      <text class='num'>{{item.pickCode}}</text>
-
-    </view>
-  </view>
-
-  <!-- 底部  -->
-  <view class="view_bottom" wx:if="{{reservationOrderDetail.orderStatus==21}}">
-    <view class="view_bottom_heji">合计:￥{{reservationOrderDetail.totalMoney}}</view>
-    <view class="view_bottom_qxdd" bindtap='clickCancelOrder'>取消订单</view>
-    <view class="view_bottom_wxzf" bindtap='payImmediately'>微信支付</view>
-  </view>
-  <view class='btn_box' wx:if="{{reservationOrderDetail.orderStatus==23&&reservationOrderDetail.evaluateStatus!=2}}">
-    <view class='btn_list'>
-      <view class='btn_son' bindtap='evaluation'>
-        <image class='call' src='/images/phone_gray@2x.png'></image>
-        <text>立即评价</text>
-      </view>
-    </view>
-  </view>
-  <view class='btn_box' wx:if="{{reservationOrderDetail.orderStatus==23&&reservationOrderDetail.evaluateStatus==2}}">
-    <view class='btn_list'>
-      <view class='btn_son' bindtap='evaluation'>
-        <image class='call' src='/images/phone_gray@2x.png'></image>
-        <text>查看评价</text>
+      <view class='consume_father' bindtap='refund'>
+        <view class='consume'>
+          <text class='consume_text'>消费码</text>
+          <text class='consume_num'>{{pickCodeData.pickCode||''}}</text>
+        </view>
+        <text class='wait'>{{useStatusText[pickCodeData.useStatus]}}</text>
       </view>
     </view>
-  </view>
-  <!-- 申请退款  -->
-  <view class="btn_box" wx:if="{{reservationOrderDetail.orderStatus==22}}">
-    <view class='btn_list'>
-      <view class='btn_noe'>
-        <label class="icon-lianxidianhua iconfont"></label>
-        联系商家</view>
-      <view class="btn_tow">申请退款</view>
-    </view>
+    <view class="left-line" wx:if="{{orderDetail.pickCode.length>1}}"></view>
   </view>
 
-  <!-- 退款 -->
-  <view class="view_bottom shangjia" wx:if="{{reservationOrderDetail.orderStatus==25&&reservationOrderDetail.orderStatus==28}}">
-    <view class="view_bottom_heji view_bottom_lxsj">
-      <label class="icon-lianxidianhua iconfont "></label>
+</view>
+
+<!-- 底部  -->
+<view class="view_bottom" wx:if="{{orderDetail.orderStatus==21}}">
+  <view class="view_bottom_heji">合计:￥{{orderDetail.totalMoney}}</view>
+  <view class="view_bottom_qxdd" bindtap='clickCancelOrder'>取消订单</view>
+  <view class="view_bottom_wxzf" bindtap='payImmediately'>微信支付</view>
+</view>
+
+
+<view class='btn_box' wx:if="{{orderDetail.orderStatus==23&&orderDetail.evaluateStatus!=1}}">
+  <view class='btn_list'>
+    <view class='btn_son' bindtap='evaluation'>
+      <text>立即评价</text>
+    </view>
+  </view>
+</view>
+<view class='btn_box' wx:if="{{orderDetail.orderStatus==23&&orderDetail.evaluateStatus==1}}">
+  <view class='btn_list'>
+    <view class='btn_son' bindtap='evaluation'>
+      <text>查看评价</text>
+    </view>
+  </view>
+</view>
+
+<view class='btn_box' wx:if="{{orderDetail.orderStatus==22&&orderDetail.orderType==1}}">
+  <view class='btn_list'>
+    <view class='btn_noe' bindtap='phonecallevent'>
+      <text>联系商家</text>
+    </view>
+    <view class='btn_tow' bindtap='cancelReservation'>
+      <text>取消预约</text>
+    </view>
+  </view>
+</view>
+
+<!-- 申请退款  -->
+<view class="btn_box" wx:if="{{orderDetail.orderStatus==22&&orderDetail.orderType!=1}}">
+  <view class='btn_list'>
+    <view class='btn_noe' bindtap='phonecallevent'>
       联系商家</view>
+    <view class="btn_tow" bindtap='requestRefund'>申请退款</view>
   </view>
+</view>
 
-  <view class='btn_box' wx:if="{{reservationOrderDetail.orderStatus==26}}">
-    <view class='btn_list'>
-      <view class='btn_noe' bindtap='phonecallevent'>
-        <image class='call' src='/images/phone_gray@2x.png'></image>
-        <text>联系商家</text>
-      </view>
-      <view class='btn_tow btn_jujue' bindtap="submit">
-        <text class='txt'>商家拒绝退款</text>
-        <text class='txt texone'> 查看原因</text>
-      </view>
+<view class="btn_box" wx:if="{{orderDetail.orderStatus==29&&orderDetail.expireCanRefund==1}}">
+  <view class='btn_list'>
+    <view class='btn_noe' bindtap='phonecallevent'>
+      联系商家</view>
+    <view class="btn_tow" bindtap='requestRefund'>申请退款</view>
+  </view>
+</view>
+<view class="view_bottom shangjia" wx:if="{{orderDetail.orderStatus==29&&orderDetail.expireCanRefund!=1}}">
+  <view class=" view_bottom_lxsj" bindtap='phonecallevent'>
+    联系商家
+  </view>
+</view>
+<view class="btn_box" wx:if="{{orderDetail.orderStatus==24&&orderDetail.payType==1}}">
+  <view class='btn_list'>
+    <view class='btn_noe' bindtap='phonecallevent'>
+      联系商家</view>
+    <view class="btn_tow" bindtap='requestRefund'>申请退款</view>
+  </view>
+</view>
+<!-- 退款 -->
+<view class="view_bottom shangjia" wx:if="{{orderDetail.orderStatus==25&&orderDetail.orderStatus==28}}">
+  <view class=" view_bottom_lxsj" bindtap='phonecallevent'>
+    联系商家</view>
+</view>
+
+<view class='btn_box' wx:if="{{orderDetail.orderStatus==26}}">
+  <view class='btn_list'>
+    <view class='btn_noe' bindtap='phonecallevent'>
+      <text>联系商家</text>
+    </view>
+    <view class='btn_tow btn_jujue' bindtap="submit">
+      <text class='txt'>商家拒绝退款</text>
+      <text class='txt texone'> 查看原因</text>
     </view>
   </view>
 </view>

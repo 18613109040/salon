@@ -748,7 +748,7 @@
       return out;
     },
 
-    draw: function (str, canvas, cavW, cavH,statusName, ecc) {
+    draw: function (str, canvas, cavW, cavH, cb=()=>{}, ecc) {
       var that = this;
       ecclevel = ecc || ecclevel;
       canvas = canvas || _canvas;
@@ -756,21 +756,87 @@
         console.warn('No canvas provided to draw QR code in!')
         return;
       }
+     
+      // var ctx = wx.createCanvasContext(canvas);
+      // ctx.clearRect(0, 0, cavW, 220 * array.length);
+      // var useStatusText = ['未使用', '已使用', '退款中', '已退款', '拒绝退款','拒绝退款']
+      
+      // for (let k=0 ; k < array.length; k++) {
+      //   var size = Math.min(cavW, cavH);
+      //   var str = that.utf16to8(array[k].pickCode);//增加中文显示
+      //   var frame = that.getFrame(str);
+      //   ctx.save();
+      //   var px = Math.round(size / (width + 8));
+      //   var roundedSize = px * (width + 8);
+      //   var offset = Math.floor((size - roundedSize) / 2);
+      //   size = roundedSize;
+      //   ctx.setFillStyle('#ffffff');
+      //   if (array[k].useStatus != 0) {
+      //     ctx.setGlobalAlpha(0.2);
+      //   }
+      //   ctx.fillRect(0, 220 * k, cavW, 220);
+      //   ctx.setFillStyle('#000000');
+      //   var offsetheight = 220 * k
+      //   for (var i = 0; i < width; i++) {
+      //     for (var j = 0; j < width; j++) {
+      //       if (frame[j * width + i]) {
+      //         ctx.fillRect(px * (4 + i) + offset, px * (4 + j) + offset + offsetheight, px, px);
+      //       }
+      //     }
+      //   }
+      //   ctx.restore()
+      //   let padding = px * 4 + offset
+      //   if (array[k].useStatus!=0){
+      //     ctx.setGlobalAlpha(0.6);
+      //     ctx.setFillStyle('rgba(0, 0, 0, 0.3)');
+      //     ctx.fillRect(padding, 220 * k + padding, 200 - 2 * padding, 200 - 2 * padding)
+      //     ctx.restore()
+      //     ctx.setGlobalAlpha(1);
+      //     ctx.setFontSize(20)
+      //     ctx.setFillStyle('#d0021b')
+      //     ctx.font ="bold" 
+      //     ctx.setTextAlign('center', 0, 200 *(k+1))
+      //     ctx.setTextBaseline('middle')
+      //     ctx.fillText(useStatusText[array[k].useStatus], cavW / 2, cavW / 2 + offsetheight)
+      //     ctx.restore()
+      //  }
+      //   ctx.save() 
+      //  ctx.setFillStyle('#D0021B')
+      //   ctx.setFontSize(18);
+      //   ctx.setTextAlign('center',0, 210 * (k + 1))
+      //   ctx.setTextBaseline('middle')
+      //   ctx.fillText(array[k].pickCode, 200/2 , 220 * (k+1)-10)
+      //   ctx.restore()
+      // }
 
+      // ctx.draw();
+      // let num = 0;
+      // this.imageDrw = setInterval(()=>{
+      //   num++
+      //   if(num>2){
+      //     clearInterval(this.imageDrw)
+      //   }else{
+      //     wx.canvasToTempFilePath({
+      //       canvasId: canvas,
+      //       success: (res) => {
+      //         console.log(res)
+      //         cb(res);
+      //       }
+      //     })
+      //   }
+        
+      // },500)
       var size = Math.min(cavW, cavH);
       str = that.utf16to8(str);//增加中文显示
-
       var frame = that.getFrame(str),
         ctx = wx.createCanvasContext(canvas),
         px = Math.round(size / (width + 8));
       var roundedSize = px * (width + 8),
         offset = Math.floor((size - roundedSize) / 2);
       size = roundedSize;
-      //ctx.clearRect(0, 0, cavW, cavW);
-      if (statusName && statusName!=""){
-        ctx.setGlobalAlpha(0.2);
-      }
-        
+      ctx.clearRect(0, 0, cavW, cavH);
+     
+
       ctx.setFillStyle('#ffffff');
       ctx.fillRect(0, 0, cavW, cavH);
       ctx.setFillStyle('#000000');
@@ -781,23 +847,18 @@
           }
         }
       }
+      
 
-      if (statusName && statusName != "") {
-        ctx.setGlobalAlpha(0.6);
-        ctx.setFillStyle('rgba(0, 0, 0, 0.3)');
-        ctx.fillRect(0, 0, cavW, cavH)
-        ctx.restore()
-        ctx.setGlobalAlpha(1);
-        ctx.setFontSize(20)
-        ctx.setFillStyle('#d0021b')
-        ctx.font ="bold" 
-        ctx.setTextAlign('center', cavW, cavH)
-        ctx.setTextBaseline('middle')
-        ctx.fillText(statusName, cavW/2, cavH/2)
-        ctx.restore()
-      }
-
-      ctx.draw();
+      ctx.draw(); 
+      setTimeout(()=>{
+        wx.canvasToTempFilePath({
+          canvasId: canvas,
+          success: (res) => {
+            cb(res);
+          }
+        })
+      },500)
+      
     }
   }
   module.exports = { api }

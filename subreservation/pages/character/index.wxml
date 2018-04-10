@@ -1,10 +1,10 @@
 <view class='Character'>
   <view class='header'>
-    <!-- <view class='top-left'>
+    <view class='top-left'>
       <button  open-type="share">
          <label class="top-left-pic2 iconfont icon-shoucang"></label>
       </button>
-    </view> -->
+    </view> 
     <view class='content-center'>
       <view class='Master'>
         <image class='Master-img' src='{{appointmentTeacherdetail.imgUrl}}'></image>
@@ -14,7 +14,7 @@
         <text class='header-tetx2'>{{appointmentTeacherdetail.alias}}</text>
         <view class='header-box'>
           <component-rate value="{{appointmentTeacherdetail.avgCommentScore}}" size="{{28}}" />
-          <text class='header-box-text1'>好评率{{appointmentTeacherdetail.goodCommentRate}}%</text>
+          <text class='header-box-text1'>好评率{{appointmentTeacherdetail.goodCommentRate}}</text>
         </view>
       </view>
     </view>
@@ -44,7 +44,7 @@
     <label class='icon-home iconfont'></label>
     <view class="bottom_home_shouye">首页</view>
   </navigator>
-  <button class="bottom_service" hover-class="none">
+  <button class="bottom_service" hover-class="none" open-type="contact">
     <label class='icon-customer iconfont'></label>
     <view class="bottom_kefu">客服</view>
   </button>

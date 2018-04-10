@@ -4,10 +4,10 @@ import { shopInfo} from './shop.js'
 import { userInfo} from './account.js'
 import { hotRecommendPackage } from './home.js'
 import { appointmentTeacher, appointmentTeacherdetail, appointmentTeacherLsit} from './beautician.js'
-
+import { getPackageDetail} from './fightGroups.js'
 import { hotPackageList, packageDetail, packageSku, skuList} from './hotPackage.js'
 import { packageComment, barberPackageComment} from './evaluation.js'
-import { orderList, reservationOrderDetail} from './order.js'
+import { orderList, reservationOrderDetail, groupListMemberOrder} from './order.js'
 import * as group from './group'
 const todoApp = combineReducers({
   shopInfo,
@@ -25,6 +25,8 @@ const todoApp = combineReducers({
   packageComment,
   barberPackageComment,
   orderList,
-  reservationOrderDetail
+  reservationOrderDetail,
+  groupListMemberOrder,
+  getPackageDetail
 })
 module.exports = todoApp

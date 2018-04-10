@@ -1,0 +1,12 @@
+{"navigationBarTitleText": "拼团详情",
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "component-groupitem": "/components/fightGroupsItem/index",
+    "component-groupmodel": "/components/groupModel/index",
+    "component-line": "/components/Line/index",
+    "component-rate": "/components/rate/index",
+    "component-joingroup": "/components/joinGroup/index"
+  }
+
+}

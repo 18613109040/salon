@@ -52,11 +52,11 @@ const pageConfig = {
   },
   openman(e) {
     let { id } = e.currentTarget.dataset;
-    this.dispatch(getAppointmentTeacherDetail({
-      id: id
-    }))
+    // this.dispatch(getAppointmentTeacherDetail({
+    //   id: id
+    // }))
     wx.navigateTo({
-      url: '/subreservation/pages/character/index',
+      url: `/subreservation/pages/character/index?id=${id}`,
     })
   }
 }

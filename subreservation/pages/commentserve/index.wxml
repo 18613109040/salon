@@ -9,13 +9,13 @@
       <view class='box_start'>
         <text class='star'>描述相符：</text>
         <view class='padding'>
-          <component-rate value="{{evaluate.packageScore||0}}" size="{{40}}"  disabled="{{evaluate.packageScore!=null?false:true}}" bindrateclick="clickRate"/>
+          <component-rate value="{{packageScore}}" size="{{40}}"  disabled="{{evaluate.packageScore!=null?false:true}}" bindrateclick="clickRate"/>
         </view>
       </view>
     </view>
   </view>
   <view class='txt_input'>
-    <textarea class='inpt' type="text" maxlength="200" bindinput="packageChange"  value='{{packageCommentText}}' placeholder='您对该项目有什么感想与意见，请输入反馈，字数限'></textarea>
+    <textarea class='inpt' type="text" disabled='{{evaluate.packageScore!=null?true:false}}' maxlength="200" bindinput="packageChange"  value='{{packageCommentText||""}}' placeholder='您对该项目有什么感想与意见，请输入反馈，字数限'></textarea>
   </view>
   <view class='imglist'>
     <view class='img_box'>
@@ -26,8 +26,9 @@
     <view class='btn_box'  wx:if="{{evaluate.packageScore==null}}" bindtap='submitpackageComment'><text>提交评论</text></view>
   </view>
 </view>
-<view class='teacher'>
 
+
+<view class='teacher' wx:if="{{evaluate.orderType!=0}}">
   <view class='header'>
     <view>
       <image class='teacher_logo' src='{{evaluate.serverImgUrl}}'></image>
@@ -37,13 +38,13 @@
       <view class='box_start'>
         <text class='star'>评分服务：</text>
         <view class='padding'>
-          <component-rate value="{{evaluate.serverScore||0}}" bindrateclick="clickServerRate" size="{{40}}"  disabled="{{evaluate.serverScore!=null?false:true}}" />
+          <component-rate value="{{serverScore}}" bindrateclick="clickServerRate" size="{{40}}"  disabled="{{evaluate.serverScore!=null?false:true}}" />
         </view>
       </view>
     </view>
   </view>
   <view class='txt_input'>
-    <textarea class='inpt' type="text"  bindinput="serverChange"  value='{{serverCommentText}}' maxlength="200" placeholder='您对该项目有什么感想与意见，请输入反馈，字数限'></textarea>
+    <textarea class='inpt' type="text"  disabled='{{evaluate.serverScore!=null?true:false}}' bindinput="serverChange"  value='{{serverCommentText||""}}' maxlength="200" placeholder='您对该项目有什么感想与意见，请输入反馈，字数限'></textarea>
   </view>
   <view class='imglist'>
     <view class='img_box'>

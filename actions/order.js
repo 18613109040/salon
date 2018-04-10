@@ -2,6 +2,8 @@ import { wxRequest } from 'fetch'
 export const  GET_ORDER_LIST = "GET_ORDER_LIST";
 export const GET_RESERVATION_ORDER_DETAIL = "GET_RESERVATION_ORDER_DETAIL";
 export const EMPTY_ORDER_LIST = "EMPTY_ORDER_LIST";
+export const GET_LIST_GROUP_MEMBER_ORDER = "GET_LIST_GROUP_MEMBER_ORDER";
+export const EMPTY_GROUP_MEMBER_ORDER = "EMPTY_GROUP_MEMBER_ORDER";
 
 //提交订单
 export function postOrder(option,cb=()=>{}) {
@@ -77,6 +79,7 @@ export function getReservationOrderDetail(option, cb = () => { }){
       url: `api/beauty/order/detail`,
       data: option,
     }).then((json) => {
+      cb(json)
       return dispatch({
         type: GET_RESERVATION_ORDER_DETAIL,
         json
@@ -198,4 +201,38 @@ export function appRefundOrder(option, cb = () => { }) {
     cb(json)
   })
 
+}
+//清空团订单列表
+export function emptyGroupMemberOrder(json) {
+  return {
+    type: EMPTY_GROUP_MEMBER_ORDER,
+    json
+  }
+}
+//获取团订单列表
+export function getListGroupMemberOrder(option, cb = () => { }) {
+  return dispatch => {
+    wxRequest({
+      url: `api/beauty/groupOrder/listGroupMemberOrder`,
+      data: option,
+    }).then((json) => {
+      cb()
+      return dispatch({
+        type: GET_LIST_GROUP_MEMBER_ORDER,
+        json: {
+          data: json.result,
+          status: option.status
+        }
+      })
+    })
+  }
+}
+
+//获取退款理由
+export function getRefuseMsg(option, cb = () => { }){
+  wxRequest({
+    url: `/api/beauty/refund/getRefuseMsg/${option.id}`
+  }).then((json) => {
+    cb(json)
+  })
 }

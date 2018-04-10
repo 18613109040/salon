@@ -23,12 +23,10 @@
         <input class="name_input" value='{{userInfo.phone||""}}' placeholder='请输入手机号码' name="buyerPhone" type='number'  bindblur="changeInput"></input>
        
       </view>
-
       <view class="list">
         <view class="list_title">小计</view>
         <view class="list_conter">￥{{packageDetail.price}}</view>
       </view>
-
       <view class="list">
         <view class="list_title">人数</view>
         <view class="list_conter">
@@ -50,7 +48,10 @@
   </view>
 <view class="view_bottom">
   <view class="view_bottom_heji">合计:￥{{money}}</view>
-  <button class="view_bottom_wxzf"  formType="submit">微信支付</button>
+
+  <button class="view_bottom_wxzf"    wx:if="{{payDisabled}}">微信支付</button>
+  <button class="view_bottom_wxzf"  formType="submit"  wx:else>微信支付</button>
+ 
 </view>
 </form>
 

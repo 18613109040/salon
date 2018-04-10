@@ -1,14 +1,14 @@
 const { connect } = require('../../../libs/wechat-weapp-redux.js')
 import { chooseImage } from '../../../utils/wxApi.js'
-import { getOrderCommentDetail, addPackageComment,addServerComment} from '../../../actions/order.js'
+import { getOrderCommentDetail, addPackageComment, addServerComment} from '../../../actions/order.js'
 const pageConfig = {
 
   /**
    * 页面的初始数据
    */
   data: {
-    packageScore: 0,
-    serverScore:0,
+    packageScore: null,
+    serverScore:null,
     evaluate:{},
     packImage: [{
       url: '../../../images/li_tow.png',
@@ -42,6 +42,60 @@ const pageConfig = {
     this.setData({
       orderId: options.id
     })
+    let { packImage, teacherImage } = this.data
+    getOrderCommentDetail({
+      orderId: options.id
+    }, (res) => {
+      if (res.errorCode == 0) {
+        let arrayTemp = [];
+        if (res.result.packageCommentImg1) {
+          packImage[0] = {
+            url: res.result.packageCommentImg1,
+            sock: true
+          }
+        }
+        if (res.result.packageCommentImg2) {
+          packImage[1] = {
+            url: res.result.packageCommentImg2,
+            sock: true
+          }
+        }
+        if (res.result.packageCommentImg3) {
+          packImage[2] = {
+            url: res.result.packageCommentImg3,
+            sock: true
+          }
+        }
+        if (res.result.serverCommentImg1) {
+          teacherImage[0] = {
+            url: res.result.serverCommentImg1,
+            sock: true
+          }
+        }
+        if (res.result.serverCommentImg2) {
+          teacherImage[1] = {
+            url: res.result.serverCommentImg2,
+            sock: true
+          }
+        }
+        if (res.result.serverCommentImg3) {
+          teacherImage[2] = {
+            url: res.result.serverCommentImg3,
+            sock: true
+          }
+        }
+        this.setData({
+          evaluate: res.result,
+          packageScore: res.result.packageScore,
+          serverScore: res.result.serverScore,
+          packImage: packImage,
+          teacherImage: teacherImage,
+          packageCommentText: res.result.packageCommentText,
+          serverCommentText: res.result.serverCommentText
+        })
+      }
+
+    })
   },
 
   /**
@@ -55,56 +109,8 @@ const pageConfig = {
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    let { packImage, teacherImage} = this.data
-    getOrderCommentDetail({
-      orderId: this.data.orderId
-    },(res)=>{
-      if (res.errorCode ==0){
-        let arrayTemp =  [];
-        if (res.result.packageCommentImg1){
-          packImage[0] = {
-            url: res.result.packageCommentImg1,
-            sock:true
-          }         
-        }
-        if (res.result.packageCommentImg2){
-          packImage[1] = {
-            url: res.result.packageCommentImg2,
-            sock: true
-          }    
-        }
-        if (res.result.packageCommentImg3) {
-          packImage[2] = {
-            url: res.result.packageCommentImg3,
-            sock: true
-          }    
-        }
-        if (res.result.serverCommentImg1){
-          teacherImage[0]={
-            url: res.result.serverCommentImg1,
-            sock: true
-          }
-        }
-        if (res.result.serverCommentImg2) {
-          teacherImage[0] = {
-            url: res.result.serverCommentImg2,
-            sock: true
-          }
-        }
-        if (res.result.serverCommentImg3) {
-          teacherImage[0] = {
-            url: res.result.serverCommentImg3,
-            sock: true
-          }
-        }
-        this.setData({
-          evaluate: res.result,
-          packImage: packImage,
-          teacherImage: teacherImage
-        })
-      }
-     
-    })
+
+
   },
 
   /**
@@ -117,24 +123,22 @@ const pageConfig = {
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload() {
 
+    
   },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
 
   },
-
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
 
   },
-
   /**
    * 用户点击右上角分享
    */
@@ -156,8 +160,11 @@ const pageConfig = {
   },
   packageEvaluation(e) {
     let { index } = e.currentTarget.dataset;
+    const { evaluate} = this.data;
+    if (evaluate.packageScore){
+      return ;
+    }
     chooseImage("album", (res) => {
-      console.dir(res)
       let image = this.data.packImage;
       image[index].url = res;
       image[index].sock = true;
@@ -168,7 +175,10 @@ const pageConfig = {
   },
   manEvaluation(e) {
     let { index } = e.currentTarget.dataset;
-
+    const { evaluate } = this.data;
+    if (evaluate.serverScore) {
+      return;
+    }
     chooseImage("album", (res) => {
       console.dir(res)
       let image = this.data.teacherImage;
@@ -197,7 +207,7 @@ const pageConfig = {
         orderId: orderId,
         packageId: evaluate.packageId,
         sorce: packageScore,
-        commentText: packageCommentText,
+        commentText: packageCommentText||"",
         commentImg1: img[0] ? img[0].url : "",
         commentImg2: img[1] ? img[1].url : "",
         commentImg3: img[2] ? img[2].url : ""
@@ -229,7 +239,7 @@ const pageConfig = {
         orderId: orderId,
         sorce: serverScore,
         serverId: evaluate.serverId,
-        commentText: serverCommentText,
+        commentText: serverCommentText||"",
         commentImg1: img[0] ? img[0].url : "",
         commentImg2: img[1] ? img[1].url : "",
         commentImg3: img[2] ? img[2].url : ""

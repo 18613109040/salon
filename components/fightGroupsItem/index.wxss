@@ -1,0 +1,49 @@
+.fight-groups-item{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+  background: white;
+}
+.fight-groups-item .image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 100%;
+}
+.fight-groups-item  .name{
+  font-size: 28rpx;
+  color: #4A4A4A;
+  margin-left: 20rpx;
+  max-width: 200rpx;
+ overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.fight-groups-item  .time{
+  text-align: end;
+  flex: 1;
+  margin-right: 20rpx;
+  min-width: 280rpx;
+}
+.fight-groups-item  .time .text-info{
+  font-size: 28rpx;
+  color: #000000;
+} 
+.fight-groups-item  .time .text-info .color{
+  color: #fea3bc;
+}
+.fight-groups-item  .time .text-number{
+  font-size: 24rpx;
+  color: #4A4A4A;
+}
+.fight-groups-item .btn{
+  background: #877FD4;
+  border-radius: 10rpx;
+  padding: 15rpx;
+  font-size: 24rpx;
+  color: #FFFFFF;
+  flex-basis: 120rpx;
+  text-align: center;
+  font-family: PingFangHK-Regular;
+  letter-spacing: 2rpx;
+
+}

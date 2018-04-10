@@ -2,6 +2,7 @@ import {
   groupOrderAdd,
   groupOrderMemberAdd
 } from '../../../actions/group'
+import { wxPay, getReservationOrderDetail} from '../../../actions/order.js'
 const { connect } = require('../../../libs/wechat-weapp-redux.js')
 const pageConfig = {
 
@@ -69,23 +70,46 @@ const pageConfig = {
     }
 
     if(GroupCart.joinGroupType=='join'){
-      groupOrderMemberAdd(data,this.wxPay)
+      groupOrderMemberAdd(data,this.wxPayToDo)
     }else if(GroupCart.joinGroupType=='add'){
-      groupOrderAdd(data,this.wxPay)
+      groupOrderAdd(data, this.wxPayToDo)
     }
   },
-  wxPay(res){
+  wxPayToDo(res){
     wx.showToast({
       title: "成功",
       icon: 'none',
       duration: 1000
     })
-    
-    setTimeout(()=>{
-      wx.redirectTo({
-        url: `/pages/payWin/index?orderId=${res}&type=1`,
+    console.dir(res)
+    let { shopInfo} = this.data;
+    let openId = wx.getStorageSync("openid")
+    wxPay({
+      orderId: res.result,
+      openId: openId,
+      shopId: shopInfo.id
+    }, (resd) => {
+      wx.requestPayment({
+        'timeStamp': resd.result.timeStamp.toString(),
+        'nonceStr': resd.result.nonceStr,
+        'package': resd.result.prepayId,
+        'signType': resd.result.signType,
+        'paySign': resd.result.paySign,
+        'success': (resd) => {
+          wx.redirectTo({
+            url: `/pages/payWin/index?orderId=${res.result}&type=1`,
+          })
+        },
+        'fail': (resd) => {
+          this.dispatch(getReservationOrderDetail({
+            orderId: res.result
+          }))
+          wx.redirectTo({
+            url: `/subMyInfo/pages/orderDetails/index`
+          })
+        }
       })
-    },1000)
+    })
   },
   goToShopByMap() {
     let { shopInfo } = this.data

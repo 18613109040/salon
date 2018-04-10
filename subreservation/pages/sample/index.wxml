@@ -15,7 +15,7 @@
           <view class='des'>{{item.alias}}</view>
           <view class='header-box'>
             <component-rate value="{{item.avgCommentScore}}" size="{{24}}" />
-            <text class='header-box-text1'>好评率{{item.goodCommentRate}}%</text>
+            <text class='header-box-text1'>好评率{{item.goodCommentRate}}</text>
             <text class='header-box-text2'>作品数:{{item.labels.length}}</text>
           </view>
         </view>

@@ -9,8 +9,8 @@
           <text class="xiangmu2_text">{{packageDetail.packageName}}</text>
         </view>
         <view class="xiangmu2">
-          <text class="xiangmu2_tiem" decode="{{true}}" space="{{true}}">时长:{{packageDetail.serviceTime}}分钟&nbsp;&nbsp;</text>
-          <text class="xiangmu2_leixing">类型:{{packageDetail.style}}</text>
+          <text class="xiangmu2_tiem" decode="{{true}}" space="{{true}}">{{packageDetail.skuValue}}</text>
+
         </view>
       </view>
 
@@ -46,7 +46,7 @@
           <label class='iconfont icon-arrow-r'></label>
         </view>
         <view class="list_conter list_active_1" wx:else>
-          <view>{{subscribeDate}}</view>
+          <view class="list_conter_tiem">{{subscribeDate}}</view>
           <label class='iconfont icon-arrow-r'></label>
         </view>
       </view>
@@ -54,8 +54,8 @@
       <view class="list" bindtap='waiterClick'>
         <view class="list_title">预约人员</view>
         <view class="list_conter list_active">
-          <view class="list_xz" wx:if="{{name==''}}">请选择</view>
-          <view class="list_xz" wx:else>{{name}}</view>
+          <view class="list_xz " wx:if="{{name==''}}">请选择</view>
+          <view class="list_xz list_xz_active" wx:else>{{name}}</view>
           <label class='iconfont icon-arrow-r'></label>
         </view>
       </view>
@@ -73,7 +73,8 @@
   </view>
 <view class="view_bottom">
   <view class="view_bottom_heji">合计:￥{{money}}</view>
-  <button class="view_bottom_wxzf"  formType="submit">微信支付</button>
+  <button class="view_bottom_wxzf"    wx:if="{{payDisabled}}">微信支付</button>
+  <button class="view_bottom_wxzf"  formType="submit"  wx:else>微信支付</button>
 </view>
 </form>
 <!-- 预约时间  -->

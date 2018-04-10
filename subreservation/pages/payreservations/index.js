@@ -47,8 +47,9 @@ const pageConfig = {
     })
   },
   details: function () {
+    let { reservationOrderDetail} = this.data;
     wx.redirectTo({
-      url: '/subreservation/pages/reservationdetails/index',
+      url: `/subreservation/pages/reservationdetails/index?id=${reservationOrderDetail.orderId}`,
     })
   }
 }

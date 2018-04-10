@@ -78,8 +78,15 @@ export function leftTimer(time) {
     hours = checkTime(hours);
     minutes = checkTime(minutes);
     seconds = checkTime(seconds);
-    if (leftTime>0)
-      return `${minutes}分${seconds}秒`
+    if (leftTime>0){
+      if (days>0){
+        return `${days}天${hours}时${minutes}分${seconds}秒`
+      } else if (hours>0){
+        return `${hours}时${minutes}分${seconds}秒`
+      } else{
+        return `${minutes}分${seconds}秒`
+      }
+    }
     else
       return ""
 }

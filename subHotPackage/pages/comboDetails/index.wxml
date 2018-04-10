@@ -14,7 +14,7 @@
       <swiper class="swiper" indicator-dots="true" autoplay="true" interval="5000" duration="1000" circular="{{true}}">
         <block wx:for="{{packageDetail.imgUrl}}" wx:key="{{index}}">
           <swiper-item>
-            <image src="{{item.imgUrl}}" class="project_img" mode="aspectFill" />
+            <image src="{{item}}" class="project_img" mode="aspectFill" />
           </swiper-item>
         </block>
       </swiper>
@@ -39,7 +39,8 @@
       <view class="project_bot_title">好评率{{packageDetail.favourableComment}}</view>
       <view class="project_bot_box">
         <view class="project_bot_tiem">
-          <text class="project_bot_class" wx:if="{{packageDetail.skuValue}}">{{packageDetail.skuValue}}</text>
+          <text class="project_bot_class" wx:if="{{packageDetail.serviceTime}}">{{packageDetail.serviceTime}}</text>
+          <text class="project_bot_class" wx:if="{{packageDetail.style}}">{{packageDetail.style}}</text>
         </view>
         <view class="project_bot_price">
           <text class="project_bot_old">￥{{packageDetail.marketPrice}}</text>
@@ -82,10 +83,11 @@
 
 <!-- 详情  -->
 <view class="details">
-  <view class="details_title">
+  <!-- <view class="details_title">
     <label class="details_title_ico iconfont icon-wendan"></label> 
-    <text class="details_title_text"> {{packageDetail.serviceTime}}分钟护理</text>
-  </view>
+    <text class="details_title_text" wx:if="{{packageDetail.serviceTime}}">{{packageDetail.serviceTime}}</text> 
+    <text class="details_title_text" wx:if="{{packageDetail.style}}">  {{packageDetail.style}}</text>
+  </view> -->
   <view wx:for="{{packageDetail.detail}}" wx:key="{{index}}">
   <image class="details_images" wx:if="{{item.type=='image'}}" src="{{item.content}}"></image>
    <view class="details_conter" wx:else>{{item.content}}</view>
@@ -102,7 +104,8 @@
     <label class='icon-customer iconfont'></label>
     <view class="bottom_kefu">客服</view>
   </button>
-  <view class="bottom_yuyue" bindtap='gotobespoke' wx:if="{{packageDetail.subcribe==1}}">立即预约</view>
+  <view wx:if="{{packageDetail.canBuyer==false}}"class='bottom_yuyue' >商品已下架</view>
+  <view class="bottom_yuyue" bindtap='gotobespoke' wx:elif="{{packageDetail.subcribe==1}}">立即预约</view>
   <view class='bottom_yuyue' bindtap='gotobeSpokeFree' wx:else>立即购买</view>
 </view>
 <component-skumodel showModel="{{showModel}}" wx:if="{{showModel}}" packageSku="{{packageSku}}" bindclickskumodel="clickSkuModer"/>

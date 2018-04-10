@@ -1,8 +1,0 @@
-<!--秒杀空白页-->
-<view class='seckill'>
-    <image class='kill_one' src='../../../images/zimg/header.png'></image>
-<view class='word_box'>
-    <image class='kill_two' src='../../../images/zimg/butterfly_gray@3x.png'></image>
-    <view class='word'>目前没有秒杀活动</view>
-</view>
-</view>

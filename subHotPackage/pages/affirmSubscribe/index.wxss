@@ -109,13 +109,14 @@
   color: #4a4a4a;
 }
 .list_active_1{
-  flex-basis: 320rpx;
   color: #4a4a4a;
 }
-.list_xz {
-  margin-right: 5rpx;
+ /* .list_xz {
+  margin-right: 28rpx;
+}  */
+.list_xz_active{
+  margin-right: 28rpx;
 }
-
 .active {
   background: #fff;
   padding-top: 10rpx;
@@ -141,6 +142,7 @@
   padding-right: 40rpx;
   color: #4a4a4a;
   letter-spacing: 0;
+  flex-basis: 190rpx;
 }
 
 .view_bottom_wxzf {
@@ -379,4 +381,9 @@ margin-left: 10rpx;
   z-index: 1000;
   width: 100%;
   color: #fff;
+}
+.list_conter_tiem {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }

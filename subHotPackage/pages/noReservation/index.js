@@ -10,6 +10,7 @@ const pageConfig = {
   data: {
     number: 1,
     money: 0,
+    payDisabled:false
   },
 
   /**
@@ -102,7 +103,9 @@ const pageConfig = {
       })
       return;
     }
-    
+    this.setData({
+      payDisabled:true
+    })
     postOrder({
       shopId: shopInfo.id,
       payType: 1,
@@ -119,6 +122,7 @@ const pageConfig = {
       openId: openId,
       formId: e.detail.formId
     }, (res) => {
+      
       if (res.errorCode == 0) {
           wx.requestPayment({
             'timeStamp': res.result.timeStamp.toString(),
@@ -127,20 +131,26 @@ const pageConfig = {
             'signType': res.result.signType,
             'paySign': res.result.paySign,
             'success': (resd) => {
-
+              this.setData({
+                payDisabled: false
+              })
               wx.redirectTo({
                 url: `/pages/payWin/index?orderId=${res.result.orderId}`
               })
             },
             'fail': (resd) => {
-              this.dispatch(getReservationOrderDetail({
-                orderId: res.result.orderId
-              }))
+              this.setData({
+                payDisabled: false
+              })
               wx.redirectTo({
-                url: `/subMyInfo/pages/orderDetails/index`
+                url: `/subMyInfo/pages/orderDetails/index?id=${res.result.orderId}`
               })
             }
           })
+      }else{
+        this.setData({
+          payDisabled: false
+        })
       }
 
     })

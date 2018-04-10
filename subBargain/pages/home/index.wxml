@@ -1,0 +1,9 @@
+<!--砍价空白页-->
+<view class='seckill'>
+  <image class='kill_one' src='../../../images/bargain.png'></image>
+ 
+  <view class='nothing_box' wx:if="{{!list.length}}">
+    <image class='nothingimg' src='../../../images/nothing@2x.png' ></image>
+    <view class='word_box'>目前还没有砍价活动</view>
+  </view>
+</view>

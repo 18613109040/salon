@@ -3,6 +3,7 @@
   "navigationBarBackgroundColor": "#FFFFFF",
   "navigationBarTextStyle": "black",
   "usingComponents": {
-    "component-commentitem": "/components/rate/index"
+    "component-commentitem": "/components/rate/index",
+    "component-skumodel": "/components/skuModel/index"
   }
 }

@@ -1,6 +1,6 @@
 <view class='home_container'>
   <view class="swiper">
-    <swiper class='swiper_container' autoplay="{{true}}" indicator-active-color="#FD678F" circular='{{true}}' indicator-dots="{{true}}">
+    <swiper class='swiper_container' autoplay="{{true}}" indicator-active-color="#FD678F" circular='{{false}}' indicator-dots="{{true}}">
       <block wx:for="{{shopInfo.shopImage}}" wx:key='index'>
         <swiper-item class="swiper_container_item">
           <image class='swiper_item_img' bindtap='photo_album' src="{{item.imgUrl}}" />
@@ -30,7 +30,7 @@
   <view class="scroll-view_card">
     <scroll-view scroll-x>
       <view class='business_card'>
-        <view class='business_card_item'  bindtap='openman'  data-id='{{item.serverId}}' wx:for="{{appointmentTeacher}}" wx:key="{{index}}">
+        <view class='business_card_item' bindtap='openman' data-id='{{item.serverId}}' wx:for="{{appointmentTeacher}}" wx:key="{{index}}">
           <view class='business_image'>
             <image src="{{item.imgUrl}}"></image>
           </view>

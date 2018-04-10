@@ -1,11 +1,14 @@
 /* subGroup/pages/21551/index.wxss */
+
 .icon-wendan::after {
   content: "\e67c";
 }
+
 .details_title_ico {
   font-size: 30rpx;
   color: #877fd4;
 }
+
 page {
   background: #fff;
 }
@@ -171,7 +174,7 @@ page {
 }
 
 .open-c {
-  flex-basis: 210rpx;
+  flex-basis: 215rpx;
 }
 
 .Opengroup-a-img {
@@ -186,7 +189,7 @@ page {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
-  margin-left: 30rpx;
+  margin-left: 20rpx;
 }
 
 .open-d {
@@ -195,7 +198,7 @@ page {
   border-radius: 5px;
   font-size: 28rpx;
   color: white;
-  flex-basis: 200rpx;
+  flex-basis: 190rpx;
   height: 60rpx;
   line-height: 60rpx;
   margin-right: 20rpx;
@@ -351,7 +354,7 @@ page {
 }
 
 .huli-two {
-  color: ##b1b1b1;
+  color: #b1b1b1;
   font-size: 26rpx;
   height: 50rpx;
   line-height: 50rpx;
@@ -765,10 +768,13 @@ line-height: 50rpx;
 }
 
 .Separatepurchase-four {
-  padding: 34rpx 304rpx 34rpx 310rpx;
+  width: 100%;
+  height: 110rpx;
+  line-height: 110rpx;
   background: #877fd4;
   font-size: 34rpx;
   color: white;
+  text-align: center;
 }
 
 /*参团弹框开始*/
@@ -782,23 +788,23 @@ line-height: 50rpx;
 
 .CollageBox {
   width: 90%;
-  height: 575px;
+  height: 1000rpx;
   background: #fff;
-  padding: 13px 20px;
+  padding: 0px 20rpx 0 20rpx;
   overflow: hidden;
   position: fixed;
-  top: 20rpx;
+  top: 40rpx;
   left: 5%;
   z-index: 5555;
   box-sizing: border-box;
 }
 
 .collage-top {
-  width: 350px;
-  height: 45px;
+  height: 100rpx;
   border-bottom: 1px solid #f3f3f3;
   position: relative;
   margin-bottom: 10px;
+  line-height: 100rpx;
 }
 
 .collage-top .collage-tit {
@@ -823,7 +829,7 @@ line-height: 50rpx;
   width: 17px;
   height: 17px;
   position: absolute;
-  top: 10rpx;
+  top: 30rpx;
   right: 10px;
 }
 
@@ -831,65 +837,6 @@ line-height: 50rpx;
   display: flex;
   justify-content: space-between;
   margin-bottom: 28rpx;
-}
-
-.list-left {
-  display: flex;
-  justify-content: space-between;
-}
-
-.ListDetail .list_image {
-  display: block;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  overflow: hidden;
-  float: left;
-  margin-right: 10rpx;
-}
-
-.ListDetail .list_name {
-  font-family: PingFangHK-Regular;
-  font-size: 14px;
-  color: #4a4a4a;
-  letter-spacing: 0;
-  line-height: 40px;
-}
-
-.list-right {
-  display: flex;
-  justify-content: space-between;
-}
-
-.ListDetail .list_renshu {
-  font-family: PingFangHK-Regular;
-  font-size: 13px;
-  color: #4a4a4a;
-  letter-spacing: 0;
-  text-align: right;
-}
-
-.list_renshu .list_prople {
-  color: rgb(250, 122, 157);
-}
-
-.list_renshu .list_time {
-  color: rgb(183, 183, 183);
-}
-
-.list_btn {
-  width: 90px;
-  height: 27px;
-  background: #877fd4;
-  border-radius: 4.5px;
-  font-family: PingFangHK-Regular;
-  font-size: 13px;
-  color: #fff;
-  letter-spacing: 0;
-  text-align: center;
-  line-height: 27px;
-  margin-left: 24rpx;
-  margin-top: 8rpx;
 }
 
 /*参与拼团**/
@@ -907,7 +854,7 @@ line-height: 50rpx;
 .cantuan {
   overflow: hidden;
   position: fixed;
-  top: 25px;
+  top: 80rpx;
   width: 90%;
   /*height: 577px;*/
   background: #fff;
@@ -915,7 +862,7 @@ line-height: 50rpx;
   box-sizing: border-box;
   left: 36rpx;
   height: 1000rpx;
-  margin: 20rpx;
+  /* margin: 20rpx; */
 }
 
 .drawer {
@@ -951,7 +898,16 @@ line-height: 50rpx;
 .cantuan-tit {
   line-height: 45px; /* display: inline-block; */
   text-align: center;
-  border-bottom: 1px solid #eee;
+  width: 50%;
+  overflow: hidden;
+  white-space: nowrap;
+  margin: 0 auto;
+}
+
+.cantuan-tit-title {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 .cantuan-icon {
@@ -959,15 +915,16 @@ line-height: 50rpx;
   width: 17px;
   height: 17px;
   position: absolute;
-  right: 20px;
-  top: 15px;
+  right: 20rpx;
+  top: 30rpx;
 }
 
 .cantaun_box {
-  padding: 15px 15px;
+  padding: 30rpx 30rpx;
   display: flex;
   flex-direction: row;
   border-bottom: 1px solid #f3f3f3;
+  border-top: 1px solid #f3f3f3;
 }
 
 .cantaun_detail {
@@ -998,7 +955,15 @@ line-height: 50rpx;
   font-size: 18px;
   color: #9b9b9b;
   text-align: center;
-  margin: 100px 0 100px 0;
+}
+
+.cantuan_box {
+  margin-top: 100rpx;
+}
+
+.memberImgs {
+  margin-left: 20rpx;
+  padding-top: 10rpx;
 }
 
 .cantuan_minge {
@@ -1007,6 +972,7 @@ line-height: 50rpx;
   letter-spacing: 1px;
   line-height: 25px;
   text-align: center;
+  margin-top: 100rpx;
 }
 
 .business_card {
@@ -1014,12 +980,6 @@ line-height: 50rpx;
   display: flex;
 }
 
-/*.business_image {
-  transform: rotate3d(30deg)
-}*/
-.chengyuan{
-  margin-top: 80rpx;
-}
 .business_image {
   width: 100rpx;
   height: 100rpx;
@@ -1030,8 +990,8 @@ line-height: 50rpx;
 }
 
 .tuanzhu {
-  width: 71px;
-  height: 71px;
+  width: 140rpx;
+  height: 140rpx;
   border-radius: 50%;
   position: relative;
 }
@@ -1073,3 +1033,19 @@ line-height: 50rpx;
 }
 
 /*参团弹框结束*/
+
+.open_active {
+  padding: 0;
+}
+
+.Opengroup-a-images {
+  width: 250rpx;
+}
+
+.open-d-active {
+  margin-right: 0;
+}
+
+.open-one-active {
+  padding-left: 0;
+}

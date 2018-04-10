@@ -38,7 +38,7 @@
           <label class='iconfont icon-arrow-r'></label>
         </view>
         <view class="list_conter list_active_1" wx:else>
-          <view>{{subscribeDate}}</view>
+          <view class="list_conter_tiem">{{subscribeDate}}</view>
           <label class='iconfont icon-arrow-r'></label>
         </view>
       </view>

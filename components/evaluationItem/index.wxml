@@ -16,8 +16,8 @@
     </view>
   </view>
   <!--文字评论  -->
-  <view class="{{(id==0)? 'com_change':'comment_word'}}">
-    {{commentItem.commentText}}
+  <view class="{{(id==0)? 'com_change':'comment_word'}}" wx:if="{{commentItem.commentText}}">
+    {{commentItem.commentText||""}}
   </view>
   <!--展开  -->
   <view class="{{id == 0?'cont_close':'cont_open'}}" bindtap='open' data-id="{{0}}" wx:if="{{commentItem.commentText&&commentItem.commentText.length>50}}">

@@ -3,8 +3,8 @@
     <image class="pay_win_img" src="../../../images/wait_purple@2x.png"></image>
     <view class="pay_win_title">预约成功</view>
   </view>
-  <view class='pay-tip'>商家会为您预留30分钟，过时订单将作废</view>
-  <view class='pay-tip_1'>出示订单即可享受优质服务与优惠</view>
+  <!-- <view class='pay-tip'>商家会为您预留30分钟，过时订单将作废</view>
+  <view class='pay-tip_1'>出示订单即可享受优质服务与优惠</view> -->
   <view class='pay-item'>
     <view class='bg'>
       <view class='teacher-image'>
@@ -24,8 +24,8 @@
         </view>
       </view>
       <view class='footer'>
-      <view>项目：{{reservationOrderDetail.packageName}}</view>
-      <view>技师：{{reservationOrderDetail.serverName}}（{{reservationOrderDetail.serverAlias}}）</view>
+      <view class='footer_son'>项目：{{reservationOrderDetail.packageName}}</view>
+      <view class='footer_son'>技师：{{reservationOrderDetail.serverName}}（{{reservationOrderDetail.serverAlias}}）</view>
       </view>
     </view>
   </view>

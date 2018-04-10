@@ -36,12 +36,13 @@ export function getAppointmentTeacherList(option) {
 }
 
 //获取名师详情
-export function getAppointmentTeacherDetail(option) {
+export function getAppointmentTeacherDetail(option,cb=()=>{}) {
   return dispatch => {
     wxRequest({
       url: `beauty/server/detail/${option.id}`,
       data: option,
     }).then((json) => {
+      cb(json)
       return dispatch({
         type: GET_APPOINTMENT_TEACHER_DETAIL,
         json

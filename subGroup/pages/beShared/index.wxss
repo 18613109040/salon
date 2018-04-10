@@ -66,6 +66,14 @@ page{
   .tuanzhu{
     border-radius: 50%;
     position: relative;
+    width: 142rpx;
+    height: 142rpx;
+  }
+  .images-item{
+    border-radius: 100%;
+    position: relative;
+    width: 100rpx;
+    height: 100rpx;
   }
   .tuanzhu::before{
     position: absolute;
@@ -114,4 +122,5 @@ page{
     position: fixed;
     bottom: 0;
     left: 0;
+    border-radius: 0rpx;
   }

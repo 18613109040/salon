@@ -1,6 +1,7 @@
 import {
   GET_SHOP_INFO, 
-  GET_SHOP_IMAGES
+  GET_SHOP_IMAGES,
+  GET_CREATE_WX_AQRCODE
 } from '../actions/shop.js';
 
 import { getFlatternDistance } from '../utils/util.js'
@@ -33,6 +34,11 @@ export function shopInfo(state = inintShopInfo, action) {
       temState.shopImage = json.result||[];
       wx.setStorageSync("shopInfo", temState)
       return fromJS(temState)
+    case GET_CREATE_WX_AQRCODE:
+      let temState2 = state.toJS();
+      temState2.qrcode = json.result
+      wx.setStorageSync("shopInfo", temState2)
+      return fromJS(temState2)
     default:
       return fromJS(state);
      

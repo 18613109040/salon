@@ -1,0 +1,11 @@
+<view class='fight-groups-item' >
+  <image class='image' src='https://img.sibumbg.cn/G1/M00/B5/12/CixGgVmlNN2AB9YPAAAkApRB83s267.png'></image>
+  <view class='name'>来自火星</view>
+  <view class='time'>
+    <view class='text-info'>还差<text class='color'>2人</text>成团</view>
+    <view class='text-number'>剩余1天23小时00分00秒</view>
+  </view>
+  <view class='btn' bindtap='clickJoin' data-item="">
+    我要参团
+  </view>
+</view>

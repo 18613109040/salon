@@ -14,11 +14,14 @@ Page({
       }, {
         image: "/images/bargain.png",
         name: "砍价",
-        number: 123
+        number: 123,
+        url: "/subBargain/pages/home/index"
       }, {
         image: "/images/seckill.png",
         name: "秒杀",
-        number: 123
+        number: 123,
+        url: "/subSpike/pages/home/index"
+       
       }
     ],
     

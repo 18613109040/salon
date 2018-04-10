@@ -1,7 +1,4 @@
 <navigator class='hot-pack-item' url='/subHotPackage/pages/comboDetails/index?id={{data.packageId}}'>
-  <!-- <view class='lable'>
-    免预约
-  </view> -->
   <view class='reservation'>
     <image wx:if="{{data.subcribe==0}}" src='../../images/reservation_free.png'></image>
     <image wx:else  src='../../images/reservation.png'></image>

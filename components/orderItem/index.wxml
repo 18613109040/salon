@@ -36,7 +36,7 @@
     <view class='center_txt'>
       <text class='txt_noe'>{{detail.packageName}}</text>
     
-        <text class='txt_tow' space="true" decode="true" wx:if="{{detail.packageSkuValue}}" class='text-li'>{{detail.packageSkuValue}}</text>
+        <text  space="true" decode="true" wx:if="{{detail.packageSkuValue}}" class='text-li'>{{detail.packageSkuValue}}</text>
         
     
       <text class='txt_therr'>¥{{detail.totalMoney}}</text>
@@ -49,8 +49,9 @@
     <view class='pay_style_box' bindtap='payImmediately' wx:if="{{detail.orderStatus==21}}">
       <text>微信支付</text>
     </view>
-    <text wx:elif="{{detail.orderStatus==23&&detail.evaluateStatus!=2}}" bindtap='evaluation' class='pingjia'>待评价</text>
-    <text wx:else class='look'>查看详情</text>
+    <text wx:elif="{{detail.orderStatus==23&&detail.evaluateStatus==0}}" bindtap='evaluation' class='pingjia'>待评价</text>
+    <text wx:elif="{{detail.orderStatus==23&&detail.evaluateStatus!=2&&type==2}}" bindtap='evaluation' class='pingjia'>待评价</text>
+    <text wx:else class='look' bindtap='gotoDetail'>查看详情</text>
   </view>
 
 </view>

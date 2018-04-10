@@ -7,6 +7,7 @@ import {
   saveSkuGoodsData,
   groupMemberOrder
 } from '../../../actions/group'
+import { getPackageDetail, getPackageSkuList } from '../../../actions/hotPackage.js'
 const {leftTimer} = require("../../../utils/util")
 const { connect } = require('../../../libs/wechat-weapp-redux.js')
 const pageConfig = {
@@ -22,7 +23,7 @@ const pageConfig = {
     selectSku:{},         // 选中的商品sku详情数据，用于提交
     tuanData:{},          // 参加拼团信息
     imgUrls: [], // 滚动图
-    ActivityList:[],// 正在拼团中的列表
+    activityList:[],// 正在拼团中的列表
     groupOrders : [],//
     specification:[
       " 规格一", "规格二", " 规格三", " 规格四", " 规格五", " 规格六", " 规格七"
@@ -30,6 +31,7 @@ const pageConfig = {
     property:[
       "属性一", "属性二", "属性三"
     ],
+    packageId: "",    
     autoplay: true,
     interval: 2000,
     duration: 1000,
@@ -43,6 +45,7 @@ const pageConfig = {
     id:"",
     choose:-1,//属性值
     size:-1,//规格
+    showModel: false
   },
 
   onAdd(){   //点击加号
@@ -75,6 +78,31 @@ const pageConfig = {
     this.setData({
       Offered: !this.data.Offered
     })
+    groupActivityOrder({
+      activityId: this.data.packageId,
+      'page.currentPage': 1
+    }, res => {
+      res.data.map(item => {
+        item.time = leftTimer(item.groupSuccessTime)
+      })
+      setInterval(()=>{
+        let { activityList} = this.data;
+        activityList.data.map(item => {
+          item.time = leftTimer(item.groupSuccessTime)
+        })
+        this.setData({
+          activityList: activityList
+        })
+      },1000)
+      this.setData({
+        activityList: {
+          data:res.data||[],
+          totalCount: res.totalCount
+
+        }
+      })
+    })
+
   },
   // 点击选择属性
   chooseprop(e){
@@ -94,10 +122,12 @@ const pageConfig = {
       size:size
     })
   },
-  onShows() {
+  onShows(e) {
     this.setData({
-      sheetAction: !this.data.sheetAction
+      sheetAction: !this.data.sheetAction,
+      Offered: false
     })
+    this.onShowsfirst(e)
   },
   // 查看别人的开团详情
   onShowsfirst(e){
@@ -128,18 +158,40 @@ const pageConfig = {
       Offered: false
     })
   },
-  buyer: function (e) {
+  //单独购买
+  buyer (e) {
     let id = e.currentTarget.dataset.id
-    console.log(id)
-    this.setData({
-      showSeparatepurchase: !this.data.showSeparatepurchase,
-      id: id
-    })
+    let { userInfo } = this.data;
+    this.dispatch(getPackageDetail({
+      packageId: id,
+      memberId: userInfo.id || ""
+    },(res)=>{
+      console.dir(res)
+      let { result} = res;
+  
+      if (result.multiKinds != 0) {
+        this.setData({
+          showModel: true
+        })
+        this.dispatch(getPackageSkuList({
+          id: result.packageId
+        }))
+      } else {
+        wx.navigateTo({
+          url: '/subHotPackage/pages/noReservation/index'
+        })
+      }
+    }))
+    
   },
   close: function () {
     this.setData({
-      showSeparatepurchase: !this.data.showSeparatepurchase
+      showModel: false,
+      showSeparatepurchase:false
     })
+    // this.setData({
+    //   showSeparatepurchase: !this.data.showSeparatepurchase
+    // })
   },
   ViewAll(){ //查看全部评价
     wx.navigateTo({
@@ -148,6 +200,9 @@ const pageConfig = {
   },
   // 参与他人发起的拼团
   participate(){
+    this.setData({
+      sheetAction: false
+    })
     const { detail,tuanData } = this.data;
     this.hideTuanData()
     console.log(detail)
@@ -194,9 +249,13 @@ const pageConfig = {
       joinGroupType:joinGroupType
     }
     this.dispatch(saveSkuGoodsData(data))
+    this.setData({
+      showSeparatepurchase:false
+    })
     wx.navigateTo({
       url:'/subGroup/pages/Payment/index'
     })
+
   },
 
   // 计算选中的sku值
@@ -218,9 +277,11 @@ const pageConfig = {
       showSeparatepurchase:false
     })
   },
+  //自己开团
   startTuan(e){
     let {type} = e.currentTarget.dataset
     let {detail} = this.data
+    console.dir(detail)
     groupPackageSku(detail.id,(res)=>{
       let selectSku = this.getSelectSku(res.combinationSku,res.goodsSku)
       this.setData({
@@ -255,21 +316,16 @@ const pageConfig = {
         content: detail?JSON.parse(detail)||[]:[]
       })
     })
-    groupActivityOrder({
-      activityId:id,
-      'page.currentPage':1
-    },res=>{
-      console.log(res)
-      this.setData({
-        ActivityList:res.data
-      })
-    })
+    
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getDetail(options.id)
+    this.getDetail(options.id);
+    this.setData({
+      packageId: options.id
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -298,6 +354,12 @@ const pageConfig = {
   onUnload: function () {
 
   },
+  //单独购买跳转路由地址
+  clickSkuModer() {
+    wx.navigateTo({
+      url: '/subHotPackage/pages/noReservation/index' 
+    })
+  },
   onShareAppMessage(res) {
     let { detail } = this.data;
     if (res.from === 'button') {
@@ -317,13 +379,16 @@ const pageConfig = {
     }
   },
   onTouchstart(){
-    console.log('onTouchstart')
+  
   }
 }
 
 function mapStateToProps(state) {
   return {
     shopInfo: state.shopInfo.toJS(),
+    packageDetail: state.packageDetail.toJS(),
+    userInfo: state.userInfo.toJS(),
+    packageSku: state.packageSku.toJS()
   }
 }
 Page(connect(mapStateToProps)(pageConfig))

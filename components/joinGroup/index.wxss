@@ -1,0 +1,173 @@
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 32rpx;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-colose:after{
+  content: '\e666';
+  font-size: 40rpx;
+}
+.mask{
+   position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 19;
+  background: rgba(0, 0, 0, 0.3);
+}
+.model-content{
+  position: fixed;
+  z-index: 20;
+  width:94%;
+  max-height: 96%;
+  min-height: 50%;
+  background: white;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  
+}
+.model-content .header{
+  display: flex;
+  align-items: center;
+  padding: 30rpx;
+}
+.model-content .header .title{
+  flex: 1;
+  text-align: center;
+}
+.model-content .header .close-btn{
+  flex-basis: 40rpx;
+}
+.model-content .header .title .name{
+  font-size: 32rpx;
+  color: #000000;
+}
+.model-content .header .title .des{
+  font-weight: 600;
+}
+.content{
+  margin-bottom: 100rpx;
+}
+.content .group-info{
+  display: flex;
+  align-items: center;
+  padding: 20rpx;
+}
+.content .group-info .group-left{
+  width: 100rpx;
+  height: 100rpx;
+}
+.content .group-info .group-left image{
+   width: 100rpx;
+  height: 100rpx;
+}
+.content .group-info  .group-right{
+  flex: 1;
+  margin-left: 10rpx;
+}
+.content .group-info  .group-right .name{
+  font-size: 32rpx;
+   display: flex;
+  align-items: center;
+}
+.content .group-info  .group-right .pack-name{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 400rpx;
+ 
+}
+.content .group-info  .group-right .price{
+  color: #fea3bc;
+  margin-left: 10rpx;
+}
+.content .group-info  .group-right .info{
+  color: #9B9B9B;
+  font-size: 26rpx;
+  margin-top: 10rpx;
+}
+.content .end-time{
+  font-size: 36rpx;
+  color: #9B9B9B;
+}
+.over-content{
+  padding:100rpx 20rpx 100rpx 20rpx;
+  text-align: center;
+}
+.content .over-content .time-color{
+  color: #4A90E2;
+}
+.content .over-content .end-time{
+  font-size: 36rpx;
+  color: #9B9B9B;
+}
+.content .over-content .remaining{
+  font-size: 40rpx;
+  color: #000000;
+  margin-top: 40rpx;
+  margin-bottom: 20rpx;
+}
+.content .over-content .remaining .number{
+  color: #fea3bc;
+
+}
+.lord-image{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lord{
+  width: 140rpx;
+  height: 140rpx;
+  border-radius: 100%;
+  position: relative;
+}
+.crew-member{
+   width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  margin-left: 10rpx;
+}
+.lord::after{
+  position: absolute;
+  content: '团主';
+  bottom: 0;
+  left: 0;
+  width: 142rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 22rpx;
+  color: #fff;
+  text-align: center;
+  background: #f5a623;
+}
+.gradi{
+   width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+  margin-left: 10rpx;
+  position: relative;
+}
+.gradi::before{
+  position: absolute;
+  content: "";
+  width: 100rpx;
+  height: 100rpx;
+  background-image: linear-gradient(-90deg, rgba(255,255,255,0) 30%, #FFFFFF 90%)
+}
+.btn{
+  background: #877FD4;
+  color: #fff;
+  height: 100rpx;
+  line-height: 100rpx;
+  position: fixed;
+  bottom: 0rpx;
+  width: 100%;
+  text-align: center;
+  font-size: 34rpx;
+}

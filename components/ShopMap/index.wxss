@@ -1,12 +1,12 @@
 .address1{
   background: #ECDEF8 ;
-  padding: 40rpx;
+  padding: 20rpx 20rpx 20rpx 40rpx;
   display: flex;
   align-items: center;
 }
 .address2{
   background: #fff;
-  padding: 40rpx;
+  padding: 20rpx 20rpx 20rpx 40rpx;
   display: flex;
   align-items: center;
 }
@@ -17,11 +17,12 @@
 }
 .shop-address{
   font-size: 28rpx;
-color:#4A4A4A ;
-margin-top: 10rpx;
-text-overflow:ellipsis;
+  color:#4A4A4A ;
+  margin-top: 10rpx;
+  text-overflow:ellipsis;
   white-space:nowrap;
   overflow: hidden;
+  font-family: "PingFangHK-Thin"
 }
 .shop-distance{
   font-size: 28rpx;

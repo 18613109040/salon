@@ -12,13 +12,23 @@ const pageConfig = {
   },
   // 预约
   gotobespoke() {
-    wx.navigateTo({
-      url: '/subHotPackage/pages/affirmSubscribe/index'
-    })
+    let { packageDetail } = this.data;
+    if (packageDetail.multiKinds != 0) {
+      this.setData({
+        showModel: true
+      })
+      this.dispatch(getPackageSkuList({
+        id: packageDetail.packageId
+      }))
+    } else {
+      wx.navigateTo({
+        url: '/subHotPackage/pages/affirmSubscribe/index'
+      })
+    }
+   
   },
   clickSkuModer(){
     let { packageDetail } = this.data;
-    
     wx.navigateTo({
       url: packageDetail.subcribe == 0 ? '/subHotPackage/pages/noReservation/index' : '/subHotPackage/pages/affirmSubscribe/index'
     })
@@ -26,6 +36,7 @@ const pageConfig = {
   //免预约
   gotobeSpokeFree(){
     let { packageDetail} = this.data;
+    console.dir(packageDetail)
     if (packageDetail.multiKinds!=0){
       this.setData({
         showModel:true
@@ -53,7 +64,6 @@ const pageConfig = {
           hasCollect: collect
         })
       }
-      
       wx.showToast({
         title: res.errorMsg,
         icon:"none"
@@ -96,7 +106,7 @@ const pageConfig = {
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function (res) {
     let { shopInfo, goodId } = this.data;
     if (res.from === 'button') {
       // 来自页面内转发按
@@ -116,7 +126,6 @@ const pageConfig = {
   }
 }
 function mapStateToProps(state) {
-  console.dir(state.packageSku.toJS())
   return {
     shopInfo: state.shopInfo.toJS(),
     packageDetail: state.packageDetail.toJS(),

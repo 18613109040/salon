@@ -94,12 +94,19 @@ const pageConfig = {
     }, (res) => {
     
       if (res.errorCode == 0) {
-        let data = res.result.filter(item => item.isRest == false && item.timeSlots.length > 0)
-        this.setData({
-          week: data,
-          showPick: true,
-          timeSlots: data[0].timeSlots
-        })
+        let data = res.result.filter(item => item.isRest == false && item.timeSlots.length > 0)||[]
+        if (data.length>0){
+          this.setData({
+            week: data,
+            showPick: true,
+            timeSlots: data.length > 0 ? data[0].timeSlots : []
+          })
+        }else{
+          wx.showToast({
+            title: '服务人员休息中...',
+            icon:"none"
+          })
+        } 
       }
     }) 
   },

@@ -25,21 +25,17 @@ const pageConfig = {
   },
   details:function(){
     let { orderId, type} = this.data
-    console.dir(type)
-    if(type == 1){
-      this.dispatch(groupPackageOrderDetail({
-        id: orderId
-      }))
-      
+   
+    if(type==2){
+      wx.redirectTo({
+        url: `/subreservation/pages/reservationdetails/index?id=${orderId}`,
+      })
     }else{
-      this.dispatch(getReservationOrderDetail({
-        orderId: orderId
-      }))
-      
+      wx.redirectTo({
+        url: `/subMyInfo/pages/orderDetails/index?id=${orderId}`,
+      })
     }
-    wx.redirectTo({
-      url: `/subMyInfo/pages/orderDetails/index`,
-    })
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -68,7 +64,6 @@ const pageConfig = {
   onUnload: function () {
   
   },
-
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */

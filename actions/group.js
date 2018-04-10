@@ -176,7 +176,15 @@ export const groupOrderDetail=(id,success=()=>{})=>{
   })
 }
 
+//查看团订单详情
 
+export  function getGroupOrderDetail(option, cb = () => { }){
+  wxRequest({
+    url: `beauty/groupPackage/orderDetail/${option.id}`,
+  }).then(({ errorCode, result }) => {
+    if (errorCode == 0) cb(result)
+  })
+}
 
 
 

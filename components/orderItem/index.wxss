@@ -13,7 +13,9 @@
   padding-bottom: 20rpx;
 }
 .text-li{
-  margin-left: 10rpx;
+  
+  color: #4A4A4A;
+  font-size: 22rpx;
 }
 .time {
   color: #000;
@@ -79,6 +81,9 @@
 .txt_noe{
   font-size: 28rpx;
   color: #000;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .txt_tow{
 color: #4A4A4A;

@@ -1,5 +1,5 @@
 const { connect } = require('../../../libs/wechat-weapp-redux.js')
-
+import {  getAppointmentTeacherDetail } from '../../../actions/beautician.js'
 const pageConfig = {
 
   /**
@@ -13,7 +13,16 @@ const pageConfig = {
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    //分享查询技师信息
+    if (options.id){
+      this.dispatch(getAppointmentTeacherDetail({
+        id: options.id
+      },(res)=>{
+        wx.setNavigationBarTitle({
+          title: res.result.serverName
+        })
+      }))
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -26,22 +35,8 @@ const pageConfig = {
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    // setTimeout(()=>{
-    //   let { appointmentTeacherdetail } = this.data;
-    //   console.dir(appointmentTeacherdetail)
-    //   this.ctx = wx.createCanvasContext('canvas')
-    //   this.ctx.beginPath();
-    //   this.ctx.drawImage(appointmentTeacherdetail.imgUrl, 0, 0, 100, 100)
-    //   this.ctx.arc(50, 50, 50, 0, 2 * Math.PI);
-    //   this.ctx.stroke();
-    //   this.ctx.draw()
-    //   wx.canvasToTempFilePath({
-    //     canvasId: 'canvas',
-    //     success: (res) => {
-    //       this.images = res.tempFilePath;
-    //     }
-    //   })
-    // },4000)
+  
+   
     
      
   },
@@ -93,22 +88,22 @@ const pageConfig = {
       urls: appointmentTeacherdetail.opus// 需要预览的图片http链接列表
     })
   },
-  onShareAppMessage: function () {
-    // let { shopInfo, goodId } = this.data;
-    // if (res.from === 'button') {
-    //   // 来自页面内转发按
-    // }
-    // return {
-    //   title: shopInfo.name,
-    //   path: `/subreservation/pages/character/index?id=${goodId}`,
-    //   success: function (res) {
-    //     // 转发成功
-    //     console.debug(res)
-    //   },
-    //   fail: function (res) {
-    //     // 转发失败
-    //   }
-    // }
+  onShareAppMessage (res) {
+    let { shopInfo, appointmentTeacherdetail } = this.data;
+    if (res.from === 'button') {
+      // 来自页面内转发按
+    }
+    return {
+      title: shopInfo.name,
+      path: `/subreservation/pages/character/index?id=${appointmentTeacherdetail.serverId}`,
+      success: function (res) {
+        // 转发成功
+        console.debug(res)
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
 
   }
 }

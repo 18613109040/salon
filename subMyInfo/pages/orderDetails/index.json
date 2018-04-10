@@ -3,6 +3,7 @@
   "navigationBarBackgroundColor": "#ffffff",
   "navigationBarTextStyle": "black",
   "usingComponents": {
-    "component-shopmap": "/components/ShopMap/index"
+    "component-shopmap": "/components/ShopMap/index",
+    "component-line": "/components/Line/index"
   }
 }

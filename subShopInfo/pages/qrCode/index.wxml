@@ -1,4 +1,17 @@
-<view>
-  <view></view>
+<view class='big_box'>
+  <view class='fenx'>
+    <view class='ico_img'>
+      <button class='btn' open-type="share">
+        <label class=" iconfont icon-shoucang"></label>
+      </button>
+    </view>
+    <view class='connent'>
+      <text class='title'>欢迎光临</text>
+      <text class='title_tow'>识别太阳码快速分享</text>
+      <image src='{{image}}'  style="width: 300px; height: 300px;" ></image>
+      <canvas canvas-id="canvas" style="width: 300px; height: 300px;left:-400px;position: absolute" ></canvas>
+      <text class='title_bottom'>保存至相册分享到朋友圈</text>
+    </view>
+  </view>
   <view class='save' bindtap='downLoad'>保存图片</view>
 </view>

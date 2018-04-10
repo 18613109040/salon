@@ -1,0 +1,18 @@
+<view wx:if="{{showModel}}">
+  <view class='mask' bindtap='coloseModel'></view>
+  <view class='model-content'>
+    <view class='header'>
+        <view class='title'>
+          <text class='name'>正在拼团中</text>
+          <text class='des'>(仅显示10个)</text> 
+        </view>
+        <view class='close-btn' bindtap='coloseModel'>
+          <label class='iconfont icon-colose'></label>
+        </view>
+    </view>
+    <component-line/>
+    <view class='content' wx:for='10000000000'>
+      <component-fightgroupitem/>
+    </view>
+  </view>
+</view>

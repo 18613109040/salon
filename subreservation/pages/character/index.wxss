@@ -25,11 +25,12 @@
 .Character {
   background: #fff;
   padding-bottom: 130rpx;
+  overflow-x: hidden;
 }
 
 .top-left {
   position: absolute;
-  right: 10rpx;
+  right: -30rpx;
   top: 20rpx;
 }
 .top-left button{
@@ -53,7 +54,7 @@
 }
 
 .header::before {
-  content: '';
+   content: '';
   width: 100%;
   height: 100%;
   position: absolute;
@@ -62,7 +63,7 @@
   bottom: 0;
   left: 0;
   background-image: linear-gradient(-1deg, #e0d0ee 0%, #8f7dec 100%);
-  opacity: 0.3;
+  opacity: 0.3; 
 }
 
 .header-late {

@@ -1,7 +1,7 @@
 <view class='hotpackage'>
   <navigator url='/subHotPackage/pages/search/index' hover-class="none"  class='search'>
     <view class='search-icon'><image src='../../../images/search.png' class='search-icon'></image></view>
-    <view class='title'>45个热门套餐</view>
+    <view class='title'>{{hotPackageList.totalCount}}个热门套餐</view>
   </navigator>
   <view class='host-item' wx:for="{{hotPackageList.data}}" wx:key="{{index}}">
     <HotPackItem data="{{item}}"/>

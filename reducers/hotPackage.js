@@ -54,7 +54,7 @@ export function packageDetail(state = { hasCollect:false}, action) {
 
       return fromJS(Object.assign({}, json.result, { imgUrl: imgUrl }, { detail: detail }))
     case UPDATA_PACK_DETAIL:
-      return fromJS(Object.assign({}, state.toJS(), { skuId: json.skuId, skuValue: json.skuValue}))
+      return fromJS(Object.assign({}, state.toJS(), { skuId: json.skuId, skuValue: json.skuValue, price: json.price}))
     default:
       return fromJS(state)
 

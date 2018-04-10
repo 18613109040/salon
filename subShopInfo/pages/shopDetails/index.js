@@ -70,7 +70,7 @@ const pageConfig = {
   call(){
     const {shopInfo} = this.data;
     wx.makePhoneCall({
-      phoneNumber: shopInfo.shopPhone
+      phoneNumber: shopInfo.servicePhone
     })
   },
   /**

@@ -5,11 +5,13 @@
   content: "\e642";
   color: #9ea2df;
 }
+
 .icon-hascollec::after {
   font-size: 53rpx;
   content: "\e61d";
   color: #9ea2df;
 }
+
 .icon-fenxiang::after {
   font-size: 50rpx;
   content: "\e6ad";
@@ -18,6 +20,7 @@
 
 .icon-wendan::after {
   content: "\e67c";
+  font-size: 40rpx;
 }
 
 .icon-home::after {
@@ -35,9 +38,12 @@
   position: relative;
   background: #fff;
 }
-.addup_top_left_name{
+
+.addup_top_left_name {
   font-size: 28rpx;
+  padding-left: 10rpx;
 }
+
 .project_collect {
   width: 40rpx;
   height: 40rpx;
@@ -45,23 +51,25 @@
   top: 40rpx;
   z-index: 10;
 }
-.project_share{
+
+.project_share {
   position: absolute;
   z-index: 10;
   top: 35rpx;
-  right: 100rpx;
+  right: 66rpx;
 }
-.project_share button{
+
+.project_share button {
   background: none;
   line-height: 1;
 }
-.project_share button::after{
+
+.project_share button::after {
   border: none;
 }
 
-
 .project_collect {
-  right: 55rpx;
+  right: 46rpx;
 }
 
 .project_list {
@@ -124,11 +132,14 @@
   line-height: 17px;
 }
 
-.project_content, .addup_bot_title, .details_conter {
+.project_content, .addup_bot_title {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 2;
   overflow: hidden;
+}
+.details_conter{
+  
 }
 
 .project .project_title .project_content {
@@ -164,12 +175,9 @@
   letter-spacing: 0;
   display: inline-block;
   margin-left: 60rpx;
-
 }
 
 .project_xx {
-  width: 120rpx;
-  height: 22rpx;
   display: inline-block;
   margin-left: 20rpx;
 }
@@ -227,7 +235,6 @@
 }
 
 .addup_top_left {
-
   display: flex;
   align-items: center;
 }
@@ -281,6 +288,8 @@
 
 .details_title {
   margin-bottom: 10rpx;
+  display: flex;
+  align-items: center;
 }
 
 .details_title_ico {

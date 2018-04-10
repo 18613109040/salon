@@ -2,7 +2,6 @@
   "pages": [
     "pages/home/index",
     "pages/account/index",
-   
     "pages/activity/index",
     "pages/login/index",
     "pages/accountEdit/index",
@@ -21,6 +20,12 @@
       ]
     },
     {
+      "root": "subFightGroups",
+      "pages": [
+        "pages/home/index"
+      ]
+    },
+    {
       "root": "subShopInfo",
       "pages": [
         "pages/shopDetails/index",
@@ -32,9 +37,7 @@
       "pages": [
         "pages/sample/index",
         "pages/character/index",
-        "pages/judge/index",
         "pages/bespoke/index",
-        "pages/reservationlist/index",
         "pages/reservationdetails/index",
         "pages/commentserve/index",
         "pages/wantrefund/index",
@@ -48,9 +51,7 @@
         "pages/home/index",
         "pages/search/index",
         "pages/comboDetails/index",
-        "pages/affirmOrder/index",
         "pages/affirmSubscribe/index",
-        "pages/indentDetails/index",
         "pages/evaluation/index",
         "pages/noReservation/index"
       ]
@@ -61,15 +62,26 @@
         "pages/FightGroups/index",
         "pages/LookCollage/index",
         "pages/consumed/index",
-        "pages/seckill/index",
-        "pages/home/index",
+      
+     
         "pages/allcomment/index",
-        "pages/bargain/index",
+  
         "pages/Collagedetails/index",
         "pages/Payment/index",
-        "pages/viewOrder/index",
         "pages/mygroup/index",
         "pages/beShared/index"
+      ]
+    },
+    {
+      "root": "subBargain",
+      "pages": [
+        "pages/home/index"
+      ]
+    },
+    {
+      "root": "subSpike",
+      "pages": [
+        "pages/home/index"
       ]
     }
   ],

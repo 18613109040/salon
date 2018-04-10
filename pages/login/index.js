@@ -4,8 +4,9 @@ import{
   register,
   registerXcxPhone
 } from '../../actions/account'
-const app = getApp()
-Page({
+const { connect } = require('../../libs/wechat-weapp-redux.js')
+const pageConfig = {
+  /**
 
   /**
    * 页面的初始数据
@@ -123,11 +124,13 @@ Page({
     })
   },
   //微信一键登录
-  getPhoneNumber: function (e) {
+  getPhoneNumber (e) {
+    let { shopInfo} = this.data;
     registerXcxPhone({
         encryptedData: e.detail.encryptedData,
         iv: e.detail.iv,
-        thridSessionKey: wx.getStorageSync("thridSessionKey")
+        thridSessionKey: wx.getStorageSync("thridSessionKey"),
+        shopId: shopInfo.id
       },(res) => {
         if (res.errorCode == 0) {
       
@@ -139,4 +142,10 @@ Page({
       }
     )
   }
-})
+}
+function mapStateToProps(state) {
+  return {
+    shopInfo: state.shopInfo.toJS()
+  }
+}
+Page(connect(mapStateToProps)(pageConfig))

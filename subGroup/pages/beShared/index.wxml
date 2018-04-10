@@ -20,25 +20,18 @@
   <view class='tuanyuan'>
     <view class="scroll-view_card">
       <scroll-view scroll-x> 
-        <view class='business_card'>
-          <view>
-            <image class='tuanzhu' style='width:71px; height:71px' src='../../../images/avatar.png'></image>
-          </view>
-          <view class='business_card_item' wx:for="[1,2,3,4,5,6,7,8,9,7]" wx:key="{{index}}">
-              <view class='business_image'>
-                <image src='../../../images/avatar.png'></image>
-              </view>
-            </view>
+        <view class='business_card' >
+            <image class='{{index==0?"tuanzhu":"images-item"}}' src='{{item}}' wx:for="{{groupDetail.memberImgs}}" wx:key="{{index}}" ></image>
         </view>
       </scroll-view>
 
-      <view class='tuanzhu_text'>剩余 <text style='color:rgb(131,179,235)'>23:30:12.09 </text> 结束，仅剩 <text style='color:rgb(131,179,235)'>1个</text> 名额</view>
+      <view class='tuanzhu_text'>剩余 <text style='color:rgb(131,179,235)'>{{time}} </text> 结束，仅剩 <text style='color:rgb(131,179,235)'>{{groupDetail.groupMembers-groupDetail.joinMembers}}个</text> 名额</view>
       <view class='t_shared'>分享到3个群后，成团率高达98%</view>
     </view>
   </view>
   <view class='xiadan'>
-    <view>订单编号 <text> 201822313271700001</text></view>
+    <view>订单编号 <text> {{groupDetail.groupCode}}</text></view>
     <view>下单事件 <text> 2018-02-03 13:30</text></view>    
   </view>
-  <view  class='btn'>邀请好友参团</view>
+  <button  class='btn' open-type="share" >邀请好友参团</button>
 </view>
